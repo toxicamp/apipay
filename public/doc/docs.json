@@ -1,0 +1,373 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ApiPay",
+    "description": "Документация по проекту",
+    "version": "0.0.4",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "Token": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http",
+        "name": "Token"
+      }
+    },
+    "schemas": {
+      "CreateCustomerDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Имя",
+            "description": "Язык пользователя"
+          },
+          "lang": {
+            "type": "string",
+            "example": "Язык",
+            "description": "Язык пользователя"
+          },
+          "dateTimeBirth": {
+            "format": "date-time",
+            "type": "string",
+            "example": "2021-06-19T05:35",
+            "description": "Дата и время рождения пользователя в формате iso 8601"
+          },
+          "email": {
+            "type": "string",
+            "example": "example@mail.ru",
+            "description": "Почта пользователя"
+          },
+          "placeId": {
+            "type": "string",
+            "example": "qwertyuiop",
+            "description": "google id города рождения пользователя пользователя"
+          },
+          "city": {
+            "type": "string",
+            "example": "Город",
+            "description": "Город пользователя"
+          },
+          "token": {
+            "type": "string",
+            "example": "qwertyuiopasdfghjkl",
+            "description": "Firebase token пользователя"
+          },
+          "timeZone": {
+            "type": "string",
+            "example": "Russia/Moscow",
+            "description": "тайм зона пользователя пользователя"
+          }
+        },
+        "required": [
+          "name",
+          "lang",
+          "dateTimeBirth",
+          "email",
+          "placeId",
+          "city",
+          "token",
+          "timeZone"
+        ]
+      },
+      "TokenUserDto": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "example": "1234567890.17890.1234567890",
+            "description": "jwt токен доступа для пользователя"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      },
+      "CheckEmailDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "example@mail.ru",
+            "description": "Почта пользователя"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      },
+      "CheckCodeDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "example@mail.ru",
+            "description": "Почта пользователя"
+          },
+          "code": {
+            "type": "string",
+            "example": "123",
+            "description": "Код подтверждения"
+          },
+          "token": {
+            "type": "string",
+            "example": "qwertyuiop",
+            "description": "Firebase токен"
+          }
+        },
+        "required": [
+          "email",
+          "code",
+          "token"
+        ]
+      },
+      "CheckUserDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "PushCustomerDto": {
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "number",
+            "example": 1,
+            "description": "Id пользователя"
+          },
+          "title": {
+            "type": "string",
+            "example": "Заголовок",
+            "description": "Заголовок сообщения пользователя"
+          },
+          "message": {
+            "type": "string",
+            "example": "Сообщение",
+            "description": "Сообщение для пользователя пользователя"
+          }
+        },
+        "required": [
+          "customerId",
+          "title",
+          "message"
+        ]
+      },
+      "CreatePredictionDto": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "example": 100.00,
+            "description": "Сумма для оплаты"
+          }
+        },
+        "required": [
+          "amount"
+        ]
+      },
+        "CreateWalletDto": {
+            "type": "object",
+            "properties": {
+                },
+            "required": []
+        },
+        "OrderHtml": {
+            "type": "object",
+            "properties": {
+               },
+            "required": []
+        },
+      "Prediction": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true,
+            "description": ""
+          },
+          "hash": {
+            "type": "string",
+            "example": "8f75d7fee0d83eeab771cfdc1d0cbab9",
+            "description": "Hash Транзакции"
+          },
+          "link": {
+            "type": "string",
+            "example": "https://easypay.ua/ua/8f75d7fee0d83eeab771cfdc1d0cbab9",
+            "description": "Url для оплаты"
+          }
+
+
+        },
+        "required": [
+          "hash"
+
+        ]
+      },
+      "PredictionStatus": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true,
+            "description": "true - оплата прошла. false - оплата не прошла"
+          }
+
+        },
+        "required": [
+          "success"
+
+        ]
+      },
+        "WalletInfo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": true,
+                    "description": "Название кошелька"
+                },
+                "number": {
+                    "type": "string",
+                    "example": true,
+                    "description": "shop_id магазина"
+                },
+                "balance": {
+                    "type": "double",
+                    "example": true,
+                    "description": "количества денег на счету сервиса"
+                },
+                "currency": {
+                    "type": "string",
+                    "example": true,
+                    "description": "Валюта"
+                },
+                "limit": {
+                    "type": "double",
+                    "example": true,
+                    "description": "Сумма допустимого лимита"
+                }
+            },
+            "required": [
+                "name",
+                "number",
+                "balance",
+                "currency",
+                "limit"
+
+            ]
+        }
+    }
+  },
+  "paths": {
+
+
+
+
+
+    "/api/payments/create": {
+      "post": {
+        "operationId": "PredictionsController_createPrediction",
+        "summary": "Создание кошелька",
+        "description": "Создание кошелька пользователю на easypay",
+        "parameters": [
+            "name": "string"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                  "name": "test05"
+                }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateWalletDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Интеграция"
+        ]
+      }
+    },
+    "/api/payments/get": {
+      "get": {
+        "operationId": "PredictionsController_findPredictionByData",
+        "summary": "Получение данных о кошельке",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WalletInfo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Интеграция"
+        ],
+        "security": [
+          {
+            "Token": []
+          }
+        ]
+      }
+    },
+      "/form/{transaction_id}/{shop_id}/{currency}/{price}": {
+          "get": {
+              "operationId": "OrderController_index",
+              "summary": "Генерация страницы оплаты",
+              "description": "Генерация страницы для оплаты.transaction_id-это id транзакции магазина,shop_id-id кошелька магазина,currency-валюта,price-сумма",
+              "parameters": [
+                  "transaction_id": "string",
+                  "shop_id": "string",
+                  "currency": "UAH",
+                  "price": "number"
+              ],
+              "requestBody": {
+                  "required": true,
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "$ref": "#/components/schemas/OrderHtml"
+                          }
+                      }
+                  }
+              },
+              "responses": {
+                  "200": {
+                      "description": "",
+                      "content": {
+                          "application/html": {
+                              "schema": {
+                                  "$ref": "#/components/schemas/OrderHtml"
+                              }
+                          }
+                      }
+                  }
+              },
+              "tags": [
+                  "Интеграция"
+              ]
+          }
+      }
+  }
+}

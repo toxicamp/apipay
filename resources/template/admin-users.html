@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="admin.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Обмен валют</span>
+            <span>Пользователи</span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+</div>
+
+        <nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a href="admin.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-transactions.html" class="nav__link ">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <a href="conclusions.html" class="nav__link nav__link-conclusions ">Выводы
+                <span class="nav__link-conclusions-value">+45</span>
+            </a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v2.html" class="nav__link ">Валюты ввод</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v3.html" class="nav__link @link-admin8">Валюты вывод</a>
+        </li>
+        <li class="nav__item">
+            <a href="user-page.html" class="nav__link ">Пользователи</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-discount.html" class="nav__link @link-admin9">Скидка</a>
+        </li>
+        <li class="nav__item">
+            <a href="affil-program.html" class="nav__link 0">Партнерка</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link nav__link--active">Обмен валют</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="exchange-requests.html" class="submenu__link ">Заявки</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-users.html" class="submenu__link submenu__link--active">Пользователи</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-direction.html" class="submenu__link ">Направления обмена</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-currencies.html" class="submenu__link ">Валюты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="reviews.html" class="submenu__link ">Отзывы</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="ref-prog-settings.html" class="submenu__link ">Партнерка</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="settings.html" class="submenu__link ">Настройки</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="fast-output.html" class="nav__link ">Быстрый вывод</a>
+        </li>
+    </ul>
+</nav>
+
+        <div class="page-content">
+            <section class="currencies user-page">
+                <div class="currencies__wrapper">
+                    <div class="currencies__top">
+                        <h2 class="user-page__title title fz18">
+                            Пользователи
+                            <span class="currencies__num">45</span>
+                        </h2>
+                        <div class="statistics">
+                            Статистика
+                        </div>
+                        <div class="control control-user">
+                            <div class="control__title">
+                                Управление
+                            </div>
+                            <div class="control__list">
+                                <button class="control__item activate">
+                                    Активировать
+                                </button>
+                                <button class="control__item deactivate">
+                                    Деактивировать
+                                </button>
+                                <button class="control__item remove">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                        <form class="search-block">
+                            <input type="text">
+                            <button class="search-block__btn gradi-btn">Найти</button>
+                        </form>
+                        <button class="btn-add btn-add-template"></button>
+                    </div>
+                    <div class="admin-table user__table">
+                        <div class="admin-table__row row-title">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                Дата регистрации
+                            </div>
+                            <div class="admin-table__two">
+                                Логин
+                            </div>
+                            <div class="admin-table__four">
+                                Электронная почта
+                            </div>
+                            <div class="admin-table__three">
+                                Баланс
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55
+                            </div>
+                            <div class="admin-table__two">
+                                Test626262
+                            </div>
+                            <div class="admin-table__four">
+                                Test2616@ukr.com
+                            </div>
+                            <div class="admin-table__three">
+                                <span>15 441 грн.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>112 362 руб.</span>
+                            </div>
+                            <button class="table-edit edit-show"></button>
+                        </div>
+                    </div>
+                </div>
+                <form class="add-template">
+                    <div class="add-template__closed"></div>
+                    <div class="add-template__title title fz12">
+                        Добавить шаблон
+                    </div>
+                    <div class="add-template__wrapper">
+                        <div class="add-template__input">
+                            <span>Логин</span>
+                            <input type="text">
+                        </div>
+                        <div class="add-template__input">
+                            <span>Пароль</span>
+                            <input type="text">
+                        </div>
+                        <div class="add-template__input">
+                            <span>Электронная почта</span>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <button class="add-template__btn btn-hover2 gradi-btn">
+                        Добавить
+                    </button>
+                </form>
+                <form class="edit-user">
+                    <div class="edit-user__closed"></div>
+                    <div class="edit-user__title title fz12">
+                        Редактирование пользователя
+                    </div>
+                    <div class="edit-user__wrapper">
+                        <div class="edit-user__input pointer-non">
+                            <div class="edit-user__input--title">
+                                <span>Дата регистрации</span>
+                            </div>
+                            <input type="text" value="01.11.2021, 13:53">
+                        </div>
+                        <div class="edit-user__input pointer-non">
+                            <div class="edit-user__input--title">
+                                <span>IР адрес</span>
+                            </div>
+                            <input type="text" value="194.62.30.137">
+                        </div>
+                        <div class="edit-user__input pointer-non">
+                            <div class="edit-user__input--title">
+                                <span>Код страны</span>
+                            </div>
+                            <input type="text" value="UA">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Логин</span>
+                            </div>
+                            <input type="text" value="login">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Электронная почта</span>
+                            </div>
+                            <input type="text" value="mail@rgr.ru">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Баланс</span>
+                            </div>
+                            <input type="text" placeholder="0">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Новый пароль</span>
+                            </div>
+                            <input type="text" placeholder="Новый пароль">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Логин реферера</span>
+                            </div>
+                            <input type="text" placeholder="Логин реферера">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Оборот обменов</span>
+                            </div>
+                            <input type="text" placeholder="0">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Оборот инвестиций</span>
+                            </div>
+                            <input type="text" placeholder="0">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Оборот рефералов</span>
+                            </div>
+                            <input type="text" placeholder="0">
+                        </div>
+                        <div class="edit-user__input input-token">
+                            <div class="edit-user__input--title">
+                                <span>Токен подтверждения регистрации</span>
+                            </div>
+                            <button></button>
+                            <input type="text" placeholder="7205е776526938004аа7646184064151">
+                        </div>
+                        <div class="edit-user__input input-token">
+                            <div class="edit-user__input--title">
+                                <span>Токен подтверждения сброса пароля</span>
+                            </div>
+                            <button></button>
+                            <input type="text" placeholder="7205е776526938004аа7646184064151">
+                        </div>
+                        <div class="edit-user__input input-token">
+                            <div class="edit-user__input--title">
+                                <span>Токен API доступа</span>
+                            </div>
+                            <button></button>
+                            <input type="text" placeholder="Токен API доступа">
+                        </div>
+                        <div class="edit-user__input">
+                            <div class="edit-user__input--title">
+                                <span>Токен двухфакторной фвторизации</span>
+                            </div>
+                            <input type="text" placeholder="Токен двухфакторной фвторизации">
+                        </div>
+                    </div>
+                    <div class="edit-user__check">
+                        <div class="custum-check__input">
+                            <input type="checkbox">
+                        </div>
+                        <span>Пользователь верифицирован</span>
+                    </div>
+                    <button class="edit-user__btn">
+                        Сохранить
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <div class="overley"></div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

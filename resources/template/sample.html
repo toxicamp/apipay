@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="personal-area.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Вывод</span>
+            <span>Шаблоны</span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <a href="password.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/password.png" alt="">
+                <span class="profile__btn-text">Изменить пароль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+
+</div>
+
+        <nav class="nav">
+    <ul class="nav__list ">
+        <li class="nav__item">
+            <a href="personal-area.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="pc-transactions.html" class="nav__link ">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link nav__link--active">Выводы</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="output-create.html" class="submenu__link ">Создать</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="output.html" class="submenu__link ">История</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="payment.html" class="submenu__link ">Массовые выплаты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="sample.html" class="submenu__link submenu__link--active">Шаблоны</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="discount.html" class="submenu__link ">Скидка</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link ">Api</a>
+        </li>
+        <li class="nav__item">
+            <a href="https://docs.apipay.is" class="nav__link @link5">Документация</a>
+        </li>
+        <li class="nav__item">
+            <a href="arbitrary-payment.html" class="nav__link @link6">Произвольный платеж</a>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link @link7">Новости</a>
+        </li>
+    </ul>
+    <a class="nav__link nav__link--bottom" href="#">Техническая поддержка</a>
+</nav>
+
+
+        <div class="page-content">
+            <section class="output-section">
+                <div class="output__top">
+                    <div class="filter-wrapper">
+                        <span class="filter__text">Шаблоны</span>
+                        <button class="sample__btn-big btn-hover2">Добавить шаблон</button>
+                        <form class="search-block sample__form">
+                            <div class="select-defolt">
+                                <select>
+                                    <option value="">
+                                        ID
+                                    </option>
+                                    <option value="">
+                                        Название
+                                    </option>
+                                </select>
+                            </div>
+                            <input class="sample__input sample__input-modern" type="text" placeholder="Значение...">
+                            <button class="search-block__btn gradi-btn btn-hover2">Найти</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="output__middle">
+                    <div class="list-wrapper">
+                        <div class="list list__titles">
+                            <div class="list__item sample__item1 list__title">
+                                ID
+                            </div>
+                            <div class="list__item sample__item2 list__title">
+                                Название шаблона
+                            </div>
+                            <div class="list__item sample__item3 list__title">
+                                Дата создания шаблона
+                            </div>
+                            <div class="list__item sample__item4 list__title">
+                                Количество карт
+                            </div>
+                            <div class="list__item sample__item5  list__title">
+                                Шаблон на сумму
+                            </div>
+                            <div class="list__item sample__item6 list__title">
+                                Действие
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list__item sample__item1 ">
+                                <span>14523</span>
+                            </div>
+                            <div class="list__item sample__item2 ">
+                                <span>cvc</span>
+                            </div>
+                            <div class="list__item sample__item3 ">
+                                <span>20.09.2021 18.00</span>
+                            </div>
+                            <div class="list__item sample__item4 ">
+                                <span>2</span>
+                            </div>
+                            <div class="list__item sample__item5 ">
+                                <span>14 500 руб.</span>
+                            </div>
+                            <div class="list__item sample__item6 ">
+                                <button class="sample__btn sample__btn-change">
+                                    <img src="img/change.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-exchange">
+                                    <img src="img/exchange.png" alt="">
+                                </button>
+                                <button class="sample__btn sample__btn-delete">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="modal-add modal-add-temp">
+                    <button class="modal-add__closed"></button>
+                    <div class="modal-add__title title fz12">
+                        Добавить шаблон
+                    </div>
+                    <div class="modal-add__template">
+                        <div class="modal-add__input">
+                            <span>Строка индификатор</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Код валюты</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Резерв</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Количество знаков после запятой</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Метка</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Платежные реквизиты</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Валидатор реквизитов</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input input-file">
+                            <span>Иконки</span>
+                            <input type="file">
+                            <button class="input-file__btn"></button>
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Название</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Название поля на странице обмена</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__input">
+                            <span>Подсказка для поля на страние обмена</span>
+                            <input type="text">
+                        </div>
+                        <div class="modal-add__bottom">
+                            <div class="modal-add__bottom--wrap">
+                                <div class="custum-check">
+                                    <span class="custum-check__text">
+                                        Направление обмена
+                                        активно
+                                    </span>
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                </div>
+                                <button class="modal-add__bottom--btn gradi-btn">
+                                    Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </section>
+            <div class="sample-popup sample-popup-change">
+                <div class="sample-popup__inner">
+                    <div class="sample-popup__top">
+                        <p class="sample-popup__title">Редактировать шаблон</p>
+                        <button class="sample-popup__close sample-popup__close-change"></button>
+                    </div>
+                    <form class="sample-popup__bottom" action="/">
+                        <div class="sample-popup__box">
+                            <div class="sample-popup__item sample-popup__item1">
+                                Номер карты
+                                <input class="payment__input sample-popup__input" name="number" type="text">
+                            </div>
+                            <div class="sample-popup__item sample-popup__item2">
+                                Сумма
+                                <input class="payment__input sample-popup__input" name="sum" type="text">
+                            </div>
+                            <div class="sample-popup__item sample-popup__item3">
+                                Название
+                                <input class="payment__input sample-popup__input" name="text" type="text">
+                            </div>
+                        </div>
+                        <div class="payment-box__btn">
+                            <button class="payment__btn-big payment__btn--reset btn-hover2"
+                                type="reset">Очистить</button>
+                            <button class="payment__btn-big payment__btn--submit btn-hover2"
+                                type="submit">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="sample-popup sample-popup-add">
+                <div class="sample-popup__inner">
+                    <div class="sample-popup__top">
+                        <p class="sample-popup__title">Добавить шаблон</p>
+                        <button class="sample-popup__close sample-popup__close-add"></button>
+                    </div>
+                    <form class="sample-popup__bottom" action="/">
+                        <div class="sample-popup__box">
+                            <div class="sample-popup__item sample-popup__item1">
+                                Номер карты
+                                <input class="payment__input sample-popup__input" name="number" type="text">
+                            </div>
+                            <div class="sample-popup__item sample-popup__item2">
+                                Сумма
+                                <input class="payment__input sample-popup__input" name="sum" type="text">
+                            </div>
+                            <div class="sample-popup__item sample-popup__item3">
+                                Название
+                                <input class="payment__input sample-popup__input" name="text" type="text">
+                            </div>
+                        </div>
+                        <div class="payment-box__btn">
+                            <button class="payment__btn-big payment__btn--reset btn-hover2"
+                                type="reset">Очистить</button>
+                            <button class="payment__btn-big payment__btn--submit btn-hover2"
+                                type="submit">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="overley"></div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
