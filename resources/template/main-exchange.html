@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo">
+                <img class="header__icon" src="img/logo.png" alt="">
+                apipay.is
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">О нас </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">API документация</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">Контакты</a>
+                    </li>
+                </ul>
+                <div class="header-profile header-profile--main-payment">
+                    <button class="profile-main__btn profile-hover mai profile-main__btn--main-payment">
+                        <div class="profile__inner">
+                            <img class="profile__icon1" loading="lazy" src="img/avatar.png" alt="">
+                            <span class="profile__text profile__text--main-payment">Mrvintage</span>
+                            <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+                        </div>
+                    </button>
+                    <div class="profile__content">
+                        <a href="pc-profile.html" class="profile__btn profile-hover">
+                            <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                            <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+                        </a>
+                        <button class="profile__btn profile-hover">
+                            <img class="profile__icon3" loading="lazy" src="img/password.png" alt="">
+                            <span class="profile__btn-text">Изменить пароль</span>
+                        </button>
+                        <button class="profile__btn profile-hover">
+                            <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                            <span class="profile__btn-text">Выйти</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="burger burger--main">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+</div>
+
+        <section class="exchange exchange-two">
+            <div class="container">
+                <div class="exchange__inner">
+                    <div class="exchange__inner--wrap">
+                        <div class="exchange__left">
+                            <div class="exchange__top">
+                                <p class="exchange__title">ВЫ ОТДАЕТЕ</p>
+                            </div>
+                            <div class="exchange__content">
+                                <div class="exchange__block">
+                                    <div class="exchange__block--top">
+                                        <div class="exchange__block--currency">
+                                            <img loading="lazy" src="img/brand/qiwi.png" alt="img">
+                                            <span>QIWI RUB</span>
+                                        </div>
+                                        <div class="exchange__block--sum">
+                                            <span>Сумма:</span>
+                                            <input class="exchange__block--input" type="text">
+                                            <div>
+                                                min.: 1000 RUB, <br>
+                                                max.: 150000 RUB
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="exchange__block--center">
+                                        <span>С кошелька:</span>
+                                        <input class="exchange__block--input" type="text">
+                                    </div>
+                                    <div class="exchange__block--bottom">
+                                        <span>Email:</span>
+                                        <input class="exchange__block--input" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exchange__right">
+                            <div class="exchange__top exchange__top--right">
+                                <p class="exchange__title">ВЫ ПОЛУЧАЕТЕ</p>
+                            </div>
+                            <div class="exchange__content">
+                                <div class="exchange__block">
+                                    <div class="exchange__block--top">
+                                        <div class="exchange__block--currency">
+                                            <img loading="lazy" src="img/brand/bitcoin.png" alt="img">
+                                            <span>Bitcoin BTC</span>
+                                        </div>
+                                        <div class="exchange__block--sum">
+                                            <span>Сумма:</span>
+                                            <input class="exchange__block--input" type="text">
+                                            <div>
+                                                min.: 1000 RUB, <br>
+                                                max.: 150000 RUB
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="exchange__block--center">
+                                        <span>На адрес Bitcoin:</span>
+                                        <input class="exchange__block--input" type="text">
+                                    </div>
+                                    <div class="exchange__block--bottom">
+                                        <div class="exchange__block--check">
+                                            <input type="checkbox" class="checkbox">
+                                            <span>Запомнить введенные данные</span>
+                                        </div>
+                                        <button class="exchange__block--btn gradi-btn btn-hover2">
+                                            Обменять
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exchange__inner--text">
+                        Как обменять киви (QIWI) на биткоин (BTC)?<br>
+                        Для того, чтобы совершить обмен QIWI (RUB) на Bitcoin (BTC), вам необходимо пошагово сделать
+                        выполнить несложные
+                        действия:
+                        <br><br>
+                        На главной странице нужно заполнить пустые поля. В поле, где указывается, каким способом Вы
+                        хотите заплатить за обмен
+                        киви на биткоин, нужно выбрать логотип QIWI кошелька. Затем указать, какую сумму в рублях Вы
+                        хотите перевести с киви на
+                        биткоин. В графе с указанием криптовалюты Вам следует выбрать желтый значок биткоина. Затем
+                        нажать на кнопку «Обменять».
+                        После чего нужно заполнить пустые поля на следующей странице — укажите ваш эмейл адрес, и
+                        проверьте сумму средств,
+                        которые хотите обменять.<br>
+                        Далее следует изучить условия по оказанию услуг обменника киви на биткоин. В случае, если Вы
+                        согласны с условиями и
+                        готовы их принять, сделайте отметку об этом в соответствующем поле. Далее нажимайте кнопку
+                        «Обменять». Таким образом
+                        будет создана Ваша заявка на то, чтобы совершить обмен qiwi на биткоин.
+                        После этого Вам необходимо сделать оплату заявки на выставленные Вам реквизиты, в размере той
+                        суммы, которую Вы
+                        указывали ранее. Далее сделайте перевод с Qiwi кошелька суммы в рублях, необходимой для обмена
+                        qiwi на btc, в указанном
+                        Вами ранее размере. После того, как будет сделан перевод для того, чтобы вывести биткоины через
+                        киви, система
+                        автоматически перенаправит Вас на страницу состояния заявки. На ней Вы сможете отслеживать, на
+                        каком этапе находится
+                        созданная Вами заявка на перевод с киви на биткоин.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a class="header__logo">
+        <img class="header__icon" src="img/logo.png" alt="">
+        apipay.is
+      </a>
+      <p class="header__copy">© 2021 APIPAY.IS</p>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

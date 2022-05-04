@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="personal-area.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Платеж</span>
+            <span></span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <a href="password.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/password.png" alt="">
+                <span class="profile__btn-text">Изменить пароль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+
+</div>
+
+        <nav class="nav">
+    <ul class="nav__list ">
+        <li class="nav__item">
+            <a href="personal-area.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="pc-transactions.html" class="nav__link ">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link ">Выводы</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="output-create.html" class="submenu__link ">Создать</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="output.html" class="submenu__link ">История</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="payment.html" class="submenu__link ">Массовые выплаты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="sample.html" class="submenu__link ">Шаблоны</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="discount.html" class="submenu__link ">Скидка</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link ">Api</a>
+        </li>
+        <li class="nav__item">
+            <a href="https://docs.apipay.is" class="nav__link nav__link--active">Документация</a>
+        </li>
+        <li class="nav__item">
+            <a href="arbitrary-payment.html" class="nav__link @link6">Произвольный платеж</a>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link @link7">Новости</a>
+        </li>
+    </ul>
+    <a class="nav__link nav__link--bottom" href="#">Техническая поддержка</a>
+</nav>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Статистика</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Транзакции</a>
+                </li>
+                <li class="nav__item">
+                    <span class="nav__link">Выводы</span>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Создать</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">История</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Масовые выплаты</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Шаблоны</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Скидка</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Api</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link  nav__link--active">Произвольный платеж</a>
+                </li>
+            </ul>
+            <a class="nav__link nav__link--bottom" href="#">Техническая поддержка</a>
+        </nav>
+
+        <div class="page-content">
+            <section class="arbitrary-payment">
+                <h2 class="arbitrary-payment__title title fz18">Создать произвольный платеж</h2>
+                <form class="arbitrary-payment__form arbitrary-payment__form2" action="/">
+                    <div class="arbitrary-payment__item arbitrary-payment__item2">
+                        Ссылка для оплаты
+                        <input class="payment__input arbitrary-payment__input2" name="payment-link" type="text"
+                            value="https://apipay.is/payments/sds2w2dsds">
+                    </div>
+                    <button class="arbitrary-payment__btn2 gradi-btn btn-hover">
+                        <img src="img/copy.png" alt="">
+                    </button>
+                </form>
+                <div class="list-wrapper">
+                    <div class="list list__titles">
+                        <div class="list__item arbitrary-payment__list1 list__title">
+                            ID
+                        </div>
+                        <div class="list__item arbitrary-payment__list2 list__title">
+                            Дата
+                        </div>
+                        <div class="list__item arbitrary-payment__list3 list__title">
+                            Логин
+                        </div>
+                        <div class="list__item arbitrary-payment__list4 list__title">
+                            Ссылка
+                        </div>
+                        <div class="list__item arbitrary-payment__list5 list__title">
+                            Сумма
+                        </div>
+                        <div class="list__item arbitrary-payment__list6 list__title">
+                            Статус
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list__item arbitrary-payment__list1">
+                            <span>14523</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list2">
+                            <span>18.08.2021</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list3">
+                            <span>Test26262</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list4">
+                            <span>https://apipay.is/payments/sds2w2dsds</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list5">
+                            <span>14 500 руб.</span>
+                        </div>
+                        <div class="list__item arbitrary-payment__list6">
+                            <span class="list__status">Выполнен</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

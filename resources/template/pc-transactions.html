@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="personal-area.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Транзакции</span>
+            <span></span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <a href="password.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/password.png" alt="">
+                <span class="profile__btn-text">Изменить пароль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+
+</div>
+
+
+        <nav class="nav">
+    <ul class="nav__list ">
+        <li class="nav__item">
+            <a href="personal-area.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="pc-transactions.html" class="nav__link nav__link--active">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link ">Выводы</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="output-create.html" class="submenu__link ">Создать</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="output.html" class="submenu__link ">История</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="payment.html" class="submenu__link ">Массовые выплаты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="sample.html" class="submenu__link ">Шаблоны</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="discount.html" class="submenu__link ">Скидка</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link ">Api</a>
+        </li>
+        <li class="nav__item">
+            <a href="https://docs.apipay.is" class="nav__link ">Документация</a>
+        </li>
+        <li class="nav__item">
+            <a href="arbitrary-payment.html" class="nav__link @link6">Произвольный платеж</a>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link @link7">Новости</a>
+        </li>
+    </ul>
+    <a class="nav__link nav__link--bottom" href="#">Техническая поддержка</a>
+</nav>
+
+        <div class="page-content">
+            <section class="currencies admin-trans pc-trans">
+                <div class="currencies__wrapper">
+                    <div class="currencies__top">
+                    </div>
+                    <div class="admin-trans__wrap">
+                        <div class="admin-trans__filter">
+                            <div class="select-defolt">
+                                <select>
+                                    <option value="">
+                                        ID
+                                    </option>
+                                    <option value="">
+                                        Реквизиты
+                                    </option>
+
+                                </select>
+                            </div>
+                            <form class="search-block">
+                                <input type="text" placeholder="Значения">
+                                <button class="search-block__btn gradi-btn">Найти</button>
+                            </form>
+                            <div class="select-defolt all-type">
+                                <select>
+                                    <option value="">
+                                        Easypay
+                                    </option>
+                                    <option value="">
+                                        Global24
+                                    </option>
+                                    <option value="">
+                                        Cash-in
+                                    </option>
+                                    <option value="">
+                                        Visa/Mc
+                                    </option>
+                                    <option value="">
+                                        Kuna
+                                    </option>
+                                    <option value="">
+                                        BTC
+                                    </option>
+                                    <option value="">
+                                        USDT
+                                    </option>
+                                    <option value="">
+                                        ETH
+                                    </option>
+                                    <option value="">
+                                        LTC
+                                    </option>
+                                    <option value="">
+                                        XRP
+                                    </option>
+                                    <option value="">
+                                        TRX
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="select-defolt cancellation">
+                                <select>
+                                    <option value="">
+                                        Завершен
+                                    </option>
+                                    <option value="">
+                                        Отменен
+                                    </option>
+                                    <option value="">
+                                        Приостановлен
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <form class="filter-wrapper" action="/">
+                            <span class="filter__text">На странице:</span>
+                            <div class="select-defolt cancellation">
+                                <select>
+                                    <option value="">
+                                        10
+                                    </option>
+                                    <option value="">
+                                        20
+                                    </option>
+                                    <option value="">
+                                        30
+                                    </option>
+                                    <option value="">
+                                        40
+                                    </option>
+                                    <option value="">
+                                        50
+                                    </option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="admin-table user__table">
+                        <div class="admin-table__row row-title">
+                            <div class="admin-table__first">
+                                ID
+                            </div>
+                            <div class="admin-table__two">
+                                Дата
+                            </div>
+
+                            <div class="admin-table__three">
+                                Реквизиты
+                            </div>
+                            <div class="admin-table__five">
+                                ПС
+                            </div>
+                            <div class="admin-table__six">
+                                Сумма
+                            </div>
+                            <div class="admin-table__seven">
+                                Сумма мерчанта
+                            </div>
+                            <div class="admin-table__eight">
+                                Сумма клиента
+                            </div>
+                            <div class="admin-table__nine">
+                                Статус
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__first">
+                                14523
+                            </div>
+                            <div class="admin-table__two">
+                                18.08.2021
+                            </div>
+
+                            <div class="admin-table__three">
+                                1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee
+                            </div>
+                            <div class="admin-table__five">
+                                -
+                            </div>
+                            <div class="admin-table__six">
+                                15 050 руб.
+                            </div>
+                            <div class="admin-table__seven">
+                                550 руб.
+                            </div>
+                            <div class="admin-table__eight">
+                                14 500 руб.
+                            </div>
+                            <div class="admin-table__nine green-text">
+                                Оплачен
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <ul class="pagination">
+                <li class="pagination__item active">
+                    <span class="pagination__link">1</span>
+                </li>
+                <li class="pagination__item btn-hover3">
+                    <a class="pagination__link" href="#">2</a>
+                </li>
+                <li class="pagination__item btn-hover3">
+                    <a class="pagination__link" href="#">3</a>
+                </li>
+                <li class="pagination__item btn-hover3">
+                    <a class="pagination__link" href="#">4</a>
+                </li>
+                <li class="pagination__item btn-hover3">
+                    <a class="pagination__link" href="#">5</a>
+                </li>
+                <li class="pagination__item btn-hover3">
+                    <a class="pagination__link" href="#">6</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="overley"></div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

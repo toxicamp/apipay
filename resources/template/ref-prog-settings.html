@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="admin.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Обмен валют</span>
+            <span>Партнерка</span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+</div>
+        <nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a href="admin.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-transactions.html" class="nav__link ">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <a href="conclusions.html" class="nav__link nav__link-conclusions ">Выводы
+                <span class="nav__link-conclusions-value">+45</span>
+            </a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v2.html" class="nav__link ">Валюты ввод</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v3.html" class="nav__link @link-admin8">Валюты вывод</a>
+        </li>
+        <li class="nav__item">
+            <a href="user-page.html" class="nav__link ">Пользователи</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-discount.html" class="nav__link @link-admin9">Скидка</a>
+        </li>
+        <li class="nav__item">
+            <a href="affil-program.html" class="nav__link 0">Партнерка</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link nav__link--active">Обмен валют</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="exchange-requests.html" class="submenu__link ">Заявки</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-users.html" class="submenu__link @sublink-admin2">Пользователи</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-direction.html" class="submenu__link ">Направления обмена</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-currencies.html" class="submenu__link @sublink-admin4">Валюты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="reviews.html" class="submenu__link ">Отзывы</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="ref-prog-settings.html" class="submenu__link submenu__link--active">Партнерка</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="settings.html" class="submenu__link ">Настройки</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="fast-output.html" class="nav__link ">Быстрый вывод</a>
+        </li>
+    </ul>
+</nav>
+
+        <div class="page-content">
+            <section class="currencies ref-prog-sec">
+                <div class="currencies__wrapper">
+                    <div class="currencies__top">
+                        <h2 class="user-page__title title fz18">
+                            Настройки реферальной программы
+                        </h2>
+                    </div>
+                    <div class="ref-prog">
+                        <div class="ref-prog__col">
+                            <div class="ref-prog__col-title">
+                                Оборот (=) или логин пользователя
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text">
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="1000">
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="5000">
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="10 000">
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="25 000">
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="50 000">
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="100 000">
+                            </div>
+                        </div>
+                        <div class="ref-prog__col">
+                            <div class="ref-prog__col-title">
+                                Вознаграждения %
+                                <button class="btn-add"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="0.1">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="0.2">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="0.3">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="0.4">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="0.5 ">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="0.75">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                            <div class="ref-prog__col--input">
+                                <input type="text" value="1">
+                                <button class="delete btn-hover"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="ref-prog__btn">
+                        Сохранить
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <div class="overley"></div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

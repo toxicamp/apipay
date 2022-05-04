@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="admin.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Обмен валют</span>
+            <span>Направления обмена</span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+</div>
+
+        <nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a href="admin.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-transactions.html" class="nav__link ">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <a href="conclusions.html" class="nav__link nav__link-conclusions ">Выводы
+                <span class="nav__link-conclusions-value">+45</span>
+            </a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v2.html" class="nav__link ">Валюты ввод</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v3.html" class="nav__link @link-admin8">Валюты вывод</a>
+        </li>
+        <li class="nav__item">
+            <a href="user-page.html" class="nav__link ">Пользователи</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-discount.html" class="nav__link @link-admin9">Скидка</a>
+        </li>
+        <li class="nav__item">
+            <a href="affil-program.html" class="nav__link 0">Партнерка</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link nav__link--active">Обмен валют</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="exchange-requests.html" class="submenu__link ">Заявки</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-users.html" class="submenu__link ">Пользователи</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-direction.html" class="submenu__link submenu__link--active">Направления обмена</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-currencies.html" class="submenu__link ">Валюты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="reviews.html" class="submenu__link ">Отзывы</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="ref-prog-settings.html" class="submenu__link ">Партнерка</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="settings.html" class="submenu__link ">Настройки</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="fast-output.html" class="nav__link ">Быстрый вывод</a>
+        </li>
+    </ul>
+</nav>
+
+        <div class="page-content">
+            <section class="currencies direction">
+                <div class="currencies__wrapper">
+                    <div class="currencies__top">
+                        <h2 class="direction__title title fz18">
+                            Направление обмена
+                            <span class="currencies__num">45</span>
+                        </h2>
+                        <div class="control">
+                            <div class="control__title">
+                                Управление
+                            </div>
+                            <div class="control__list">
+                                <button class="control__item change-min-sum">
+                                    Изменить мин. сумму
+                                </button>
+                                <button class="control__item change-max-sum">
+                                    Изменить макс. сумму
+                                </button>
+                                <button class="control__item change-commission">
+                                    Изменить доп. комиссию
+                                </button>
+                                <button class="control__item change-verification">
+                                    Изменить тип верификации
+                                </button>
+                                <button class="control__item change-merchant">
+                                    Изменить мерчант
+                                </button>
+                                <button class="control__item change-descr">
+                                    Изменить описание
+                                </button>
+                                <button class="control__item change-field">
+                                    Изменить поля
+                                </button>
+                                <button class="control__item activate">
+                                    Активировать
+                                </button>
+                                <button class="control__item deactivate">
+                                    Деактивировать
+                                </button>
+                                <button class="control__item remove">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                        <div class="search-block">
+                            <button class="search-block__btn search-modal-show gradi-btn">Найти</button>
+                        </div>
+                        <button class="btn-add-exchange btn-add btn-open"></button>
+                    </div>
+                    <div class="admin-table direction__table">
+                        <div class="admin-table__row row-title">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                Отдаваемая валюта
+                            </div>
+                            <div class="admin-table__two">
+                                Получаемая валюта
+                            </div>
+                            <div class="admin-table__three">
+                                Курс обмена
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                <span>
+                                    <img loading="lazy" src="img/privat.png" alt="img">
+                                    Privat24 UAH
+                                </span>
+                            </div>
+                            <div class="admin-table__two">
+                                <span>
+                                    <img loading="lazy" src="img/qiwi.png" alt="img">
+                                    QIWI РУБ
+                                </span>
+                            </div>
+                            <div class="admin-table__three">
+                                <span>25,355 грн.</span>
+                                <img loading="lazy" src="img/arrow-right.svg" alt="img">
+                                <span>41 руб.</span>
+                            </div>
+                            <button class="table-edit"></button>
+                            <button class="table-link"></button>
+                        </div>
+                    </div>
+                </div>
+                <form class="search-modal">
+                    <div class="search-modal__closed"></div>
+                    <div class="search-modal__title title fz12">
+                        Поиск
+                    </div>
+                    <div class="search-modal__wrapper">
+                        <div class="search-modal__input">
+                            <span>Текст для поиска</span>
+                            <input type="text" placeholder="Текст для поиска">
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Поле для поиска</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Поле для поиска</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Поле для поиска</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Поле для поиска</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Поле для поиска</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Статус</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Любой</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Поле для сортировки</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Поле для сортировки</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Поле для сортировки</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Поле для сортировки</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Поле для сортировки</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Тип сортировки</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Тип сортировки</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Тип сортировки</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Тип сортировки</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Тип сортировки</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Отдаваемая валюта</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Любая</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любая</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любая</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любая</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Получаемая валюта</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Любая</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любая</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любая</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любая</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Мерчант обработки исходящих платежей</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Любой</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Мерчант обработки входящих платежей</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Любой</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__input">
+                            <span>Парсер курса</span>
+                            <div class="select">
+                                <div class="select__top">
+                                    <span class="select__top-title">Любой</span>
+                                </div>
+                                <div class="select__content">
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio">
+                                        <span class="select__item">Любой</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-modal__bottom">
+                        <button class="search-modal__btn">
+                            Продолжить
+                        </button>
+                        <button class="search-modal__btn search-modal__btn-remove">
+                            Очистить
+                        </button>
+                    </div>
+
+                </form>
+                <div class="modal-add modal-add-popup">
+                    <button class="modal-add__closed"></button>
+                    <div class="modal-add__title title fz12">
+                        Добавить направление обмена
+                    </div>
+                    <div class="tabs-wrapper tab-link-wrapper">
+                        <a class="tab tab-active" href="#tab-1">
+                            Обмен
+                        </a>
+                        <a class="tab" href="#tab-2">
+                            Парсер курса
+                        </a>
+                        <a class="tab" href="#tab-3">
+                            Поля
+                        </a>
+                        <a class="tab" href="#tab-4">
+                            Описание
+                        </a>
+                    </div>
+                    <div class="tabs-wrapper tab-content-wrapper">
+                        <form id="tab-1" class="tabs-content tabs-content-active">
+                            <div class="modal-add__input">
+                                <span>Отдаваемая валюта</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Получаемая валюта</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Тип верификации</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Тип минимальной суммы обмена</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Тип максимальной суммы обмена</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Тип дополнительной комиссии</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Способ расчета доп. комиссии</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input input-file">
+                                <span>Строка индификатора</span>
+                                <input type="file">
+                                <button class="input-file__btn"></button>
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Курс отдаваемой валюты</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Сумма дополнительной комиссии</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Курс получаемой валюты</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Максимальная сумма обмена</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Максимальная сума обмена</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Мерчант обработки входящих платежей</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Мерчант обработки исходящих платежей</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__bottom">
+                                <div class="modal-add__bottom--wrap">
+                                    <div class="custum-check">
+                                        <span class="custum-check__text">
+                                            Направление обмена
+                                            активно
+                                        </span>
+                                        <div class="custum-check__input">
+                                            <input type="checkbox">
+                                        </div>
+                                    </div>
+                                    <button class="modal-add__bottom--btn gradi-btn">
+                                        Добавить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="tab-2" class="tabs-content">
+                            <div class="modal-add__input modal-add__select">
+                                <span>Парсер курса</span>
+                                <div class="select">
+                                    <div class="select__top">
+                                        <span class="select__top-title">Парсер курса</span>
+                                    </div>
+                                    <div class="select__content">
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Парсер курса</span>
+                                        </div>
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Парсер курса</span>
+                                        </div>
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Парсер курса</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Сумма</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input modal-add__select">
+                                <span>Способ расчета</span>
+                                <div class="select">
+                                    <div class="select__top">
+                                        <span class="select__top-title">Способ расчета</span>
+                                    </div>
+                                    <div class="select__content">
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Способ расчета</span>
+                                        </div>
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Способ расчета</span>
+                                        </div>
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Способ расчета</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-add__input">
+                                <span>Пара</span>
+                                <input type="text">
+                            </div>
+                            <div class="modal-add__input modal-add__select">
+                                <span>Тип корекции</span>
+                                <div class="select">
+                                    <div class="select__top">
+                                        <span class="select__top-title">Тип корекции</span>
+                                    </div>
+                                    <div class="select__content">
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Тип корекции</span>
+                                        </div>
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Тип корекции</span>
+                                        </div>
+                                        <div class="select__input">
+                                            <input type="radio" name="select-radio">
+                                            <span class="select__item">Тип корекции</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-add__bottom">
+                                <div class="modal-add__bottom--wrap">
+                                    <button class="modal-add__bottom--btn gradi-btn">
+                                        Добавить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="tab-3" class="tabs-content">
+                            <div class="check-wrap">
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Реквизиты отдаваемой валюты
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Реквизиты получаемой валюты
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Тег назначения
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Имя
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Среднее имя
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Фамилия
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Электронная почта
+                                    </span>
+                                </div>
+                                <div class="custum-check custum-check-v2">
+                                    <div class="custum-check__input">
+                                        <input type="checkbox">
+                                    </div>
+                                    <span class="custum-check__text">
+                                        Номер телефона
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="modal-add__bottom mrg-left">
+                                <div class="modal-add__bottom--wrap">
+                                    <button class="modal-add__bottom--btn gradi-btn">
+                                        Добавить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="tab-4" class="tabs-content">
+                            <div class="input-wrap">
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                                <p>Описание направление обмена</p>
+                            </div>
+                            <div class="modal-add__bottom mrg-left">
+                                <div class="modal-add__bottom--wrap">
+                                    <button class="modal-add__bottom--btn gradi-btn">
+                                        Добавить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="overley"></div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

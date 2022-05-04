@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header-admin">
+    <div class="header-admin__left">
+        <a href="admin.html" class="header-admin__logo">
+            apipay.is
+        </a>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="header-admin__static">
+        <div class="header-title">
+            <span>Обмен валют</span>
+            <span>Пользователи</span>
+        </div>
+        <img loading="lazy" src="img/calendar.png" alt="img">
+        <div class="header-admin__static--date">
+            <span>
+                08.08.2021 14:00
+            </span>
+            <span>
+                -
+            </span>
+            <span>
+                02.09.2021 15:00
+            </span>
+        </div>
+    </div>
+    <div class="header-profile">
+        <button class="profile-main__btn profile-hover">
+            <div class="profile__inner">
+                <img class="profile__icon1" loading="lazy" src="img/avatar.svg" alt="">
+                <span class="profile__text">Mrvintage</span>
+                <img class="profile__icon2" loading="lazy" src="img/settings.png" alt="">
+            </div>
+        </button>
+        <div class="profile__content">
+            <a href="pc-profile.html" class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/profile.png" alt="">
+                <span class="profile__btn-text profile__btn-text--one">Профиль</span>
+            </a>
+            <button class="profile__btn profile-hover">
+                <img class="profile__icon3" loading="lazy" src="img/exit.png" alt="">
+                <span class="profile__btn-text">Выйти</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="navigation">
+    <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
+    <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
+    <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
+    <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
+    <a class="navigation__link" href="admin.html">Админка</a>
+    <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
+    <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
+    <a class="navigation__link" href="conclusions.html">Админка вывод</a>
+    <a class="navigation__link" href="discount.html">Лк скидка</a>
+    <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
+    <a class="navigation__link" href="index.html">главная</a>
+    <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
+    <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
+    <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
+    <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
+    <a class="navigation__link" href="output-create.html">Лк вывод</a>
+    <a class="navigation__link" href="output.html">Лк вывод история</a>
+    <a class="navigation__link" href="payment.html">Лк вывод масов</a>
+    <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
+    <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
+    <a class="navigation__link" href="personal-area.html">Лк</a>
+    <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
+    <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
+    <a class="navigation__link" href="user-page.html">Админка пользователи</a>
+</div>
+        <nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a href="admin.html" class="nav__link ">Статистика</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-transactions.html" class="nav__link ">Транзакции</a>
+        </li>
+        <li class="nav__item">
+            <a href="conclusions.html" class="nav__link nav__link-conclusions ">Выводы
+                <span class="nav__link-conclusions-value">+45</span>
+            </a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v2.html" class="nav__link ">Валюты ввод</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-currencies_v3.html" class="nav__link @link-admin8">Валюты вывод</a>
+        </li>
+        <li class="nav__item">
+            <a href="user-page.html" class="nav__link ">Пользователи</a>
+        </li>
+        <li class="nav__item">
+            <a href="admin-discount.html" class="nav__link @link-admin9">Скидка</a>
+        </li>
+        <li class="nav__item">
+            <a href="affil-program.html" class="nav__link 0">Партнерка</a>
+        </li>
+        <li class="nav__item">
+            <span class="nav__link nav__link--active">Обмен валют</span>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="exchange-requests.html" class="submenu__link submenu__link--active">Заявки</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-users.html" class="submenu__link @sublink-admin2">Пользователи</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-direction.html" class="submenu__link ">Направления обмена</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="admin-currencies.html" class="submenu__link @sublink-admin4">Валюты</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="reviews.html" class="submenu__link ">Отзывы</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="ref-prog-settings.html" class="submenu__link ">Партнерка</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="settings.html" class="submenu__link ">Настройки</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item">
+            <a href="fast-output.html" class="nav__link ">Быстрый вывод</a>
+        </li>
+    </ul>
+</nav>
+
+        <div class="page-content">
+            <section class="currencies exc-req">
+                <div class="currencies__wrapper">
+                    <div class="currencies__top">
+                        <h2 class="user-page__title title fz18">
+                            Заявки на обмен
+                            <span class="currencies__num">+455</span>
+                        </h2>
+                        <div class="statistics">
+                            Статистика
+                        </div>
+                        <div class="control control-user">
+                            <div class="control__title">
+                                Управление
+                            </div>
+                            <div class="control__list">
+                                <button class="control__item change-status ">
+                                    Изменить статус
+                                </button>
+                                <button class="control__item block-ref ">
+                                    Заблокировать реквизиты
+                                </button>
+                                <button class="control__item remove">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                        <form class="search-block">
+                            <input type="text">
+                            <button class="search-block__btn gradi-btn">Найти</button>
+                        </form>
+                    </div>
+                    <div class="admin-table user__table exchange-table">
+                        <div class="admin-table__row row-title">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                Дата создания
+                            </div>
+                            <div class="admin-table__two">
+                                Отдаваемая валюта
+                            </div>
+                            <div class="admin-table__three">
+                                Получаемая валюта
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                        <div class="admin-table__row">
+                            <div class="admin-table__checkbox checkbox-block">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                            <div class="admin-table__first">
+                                14.08.2021 14:55 <span class="green-text">выполнена</span> <br>
+                                id 4464 <span class="read-more">Подробнее</span>
+                            </div>
+                            <div class="admin-table__two">
+                                <img loading="lazy" src="img/qiwi.png" alt="img">
+                                <span>QIWI +380000000</span>
+                                <span>45 562 руб.</span>
+                            </div>
+                            <div class="admin-table__three">
+                                <img loading="lazy" src="img/privat.png" alt="img">
+                                <span>Privat24 4148 5566 5666 6333</span>
+                                <span>15 033 грн</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="applic-modal">
+                    <div class="applic-modal__closed"></div>
+                    <div class="applic-modal__title title fz12">
+                        Заявка на обмен # 35164741а89а9с63219950463625218
+                    </div>
+                    <div class="applic-modal__wrapper">
+                        <div>
+                            <span>Идентификатор</span><span>1490</span>
+                        </div>
+                        <div>
+                            <span>Курс отдаваемой валюты</span><span>1</span>
+                        </div>
+                        <div>
+                            <span>Курс получаемой валюты</span><span>0.3756493</span>
+                        </div>
+                        <div>
+                            <span>Идентификатор транзакции об оплате</span><span>2584а276244с4е347361100166416633</span>
+                        </div>
+                        <div>
+                            <span>Идентификатор транзакции об выплате</span><span>Нет данных для просмотра</span>
+                        </div>
+                        <div>
+                            <span>Логин пользователя</span><span>login</span>
+                        </div>
+                        <div>
+                            <span>Сумма бонуса</span><span>69.14</span>
+                        </div>
+                        <div>
+                            <span>Логин реферера</span><span>login</span>
+                        </div>
+                        <div>
+                            <span>Сумма реферального вознаграждения</span><span>8.8</span>
+                        </div>
+                        <div>
+                            <span>IР адрес</span><span>146.70.52.53</span>
+                        </div>
+                        <div>
+                            <span>Страна</span><span>RU</span>
+                        </div>
+                        <div>
+                            <span>Реквизиты отдаваемой валюты</span><span>4100112141373201</span>
+                        </div>
+                        <div>
+                            <span>Реквизиты получаемой валюты</span><span>5375414117648971</span>
+                        </div>
+                        <div>
+                            <span>Электронная почта</span><span>mail@ma.ru</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="overley"></div>
+
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
