@@ -16,7 +16,8 @@ class PaymentForm extends Model
         'sum',
         'status',
         'url',
-        'payment'
+        'payment',
+        'transaction_id'
     ];
 
     public function getUserAttribute()

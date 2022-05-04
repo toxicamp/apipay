@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\TransactionProcessed;
 use App\Models\FreezingAmount;
 use App\Models\Payment;
+use App\Models\PaymentForm;
 use App\Models\Shop;
 use App\Models\Transactions;
 use Illuminate\Http\Request;
@@ -97,6 +98,11 @@ class OrderController extends Controller
         $transac->status = 'success';
         $transac->save();
 
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->last();
+        $payInfo->transaction_id = $transaction_id;
+        $payInfo->status = 1;
+        $payInfo->save();
+
         return view('order.success', compact('transaction_id'));
     }
 
@@ -105,6 +111,11 @@ class OrderController extends Controller
         $transac = Transactions::find($transaction_id);
         $transac->status = 'fail';
         $transac->save();
+
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->last();
+        $payInfo->transaction_id = $transaction_id;
+        $payInfo->status = 0;
+        $payInfo->save();
 
         return view('order.fail', compact('transaction_id'));
     }
