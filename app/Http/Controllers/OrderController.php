@@ -74,6 +74,18 @@ class OrderController extends Controller
 
     }
 
+    public function callback(){
+
+    }
+
+    public function success(){
+
+    }
+
+    public function fail(){
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -164,16 +176,6 @@ class OrderController extends Controller
         $transaction->save();
 
         event(new TransactionProcessed($transaction));
-    }
-
-    public function success()
-    {
-        dd('success');
-    }
-
-    public function fail()
-    {
-        dd('fail');
     }
 
 }

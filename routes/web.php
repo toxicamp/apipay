@@ -92,5 +92,6 @@ Route::post('/pay-cul', [\App\Http\Controllers\OrderController::class, 'payCul']
 Route::get('/table-excel', [\App\Http\Controllers\Profile\TableExcelController::class, 'index']);
 Route::post('/table', [\App\Http\Controllers\Profile\TableExcelController::class, 'store'])->name('table_save_complete');
 
-Route::get('/fail-url', [\App\Http\Controllers\OrderController::class, 'fail']);
-Route::get('/success-url', [\App\Http\Controllers\OrderController::class, 'success']);
+Route::get('/fail', [\App\Http\Controllers\OrderController::class, 'fail']);
+Route::get('/success', [\App\Http\Controllers\OrderController::class, 'success']);
+Route::get('/callback', [\App\Http\Controllers\OrderController::class, 'callback']);
