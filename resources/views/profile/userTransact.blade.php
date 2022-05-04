@@ -201,7 +201,15 @@
                             {{$item->amount}} {{$item->currency}}
                         </div>
                         <div class="admin-table__nine">
+                            @if($item->status == 'success')
                             <span class="status done">Выполнен</span>
+                            @endif
+                            @if($item->status == 'fail')
+                             <span class="status done">Не выполнен</span>
+                             @endif
+                             @if($item->status == 'process')
+                             <span class="status done">В обработке</span>
+                             @endif
                             <button class="admin-table__nine-btn">
                                 <img class="gear-img1" src="img/gear.png" alt="">
                                 <img class="gear-img2" src="img/gear-color.png" alt="">
