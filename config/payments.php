@@ -16,9 +16,9 @@ return [
         'acc' => 9515,
         'wallet' => 10889,
         'point' => [
-//            'callback_url' => env('APP_URL').'/pay-cul',
+            'callback_url' => env('APP_URL').'/pay-cul',
             'success_url' => env('APP_URL').'/pay-cul',
-//            'fail_url' => env('APP_URL').'/pay-cul',
+            'fail_url' => env('APP_URL').'/pay-cul',
         ]
     ],
 

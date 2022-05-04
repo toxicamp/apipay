@@ -45,7 +45,7 @@ class TransactionCreateRequest extends ApiRequest
             'service_id' => config('payments.'.$paymentSlug.'.service_id.on'),
             'account_id' => config('payments.'.$paymentSlug.'.acc'),
             'wallet_id' => config('payments.'.$paymentSlug.'.wallet'),
-//            'point' => config('payments.'.$paymentSlug.'.point'),
+            'point' => config('payments.'.$paymentSlug.'.point'),
         );
     }
 
