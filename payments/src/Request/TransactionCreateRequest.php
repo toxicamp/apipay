@@ -36,6 +36,11 @@ class TransactionCreateRequest extends ApiRequest
         $res = $this->orderReference->getResult();
         $paymentSlug = $res->get('payment');
 
+        $point = config('payments.'.$paymentSlug.'.point');
+        $point ['callback_url'] = str_replace('{transaction_id}', $res->get('transaction_id'), $point ['callback_url']);
+        $point ['success_url'] = str_replace('{transaction_id}', $res->get('transaction_id'), $point ['success_url']);
+        $point ['fail_url'] = str_replace('{transaction_id}', $res->get('transaction_id'), $point ['fail_url']);
+
         return array(
             'locale' => 'ru',
             'external_transaction_id' => $res->get('transaction_id'),
@@ -45,7 +50,7 @@ class TransactionCreateRequest extends ApiRequest
             'service_id' => config('payments.'.$paymentSlug.'.service_id.on'),
             'account_id' => config('payments.'.$paymentSlug.'.acc'),
             'wallet_id' => config('payments.'.$paymentSlug.'.wallet'),
-            'point' => config('payments.'.$paymentSlug.'.point'),
+            'point' => $point,
         );
     }
 

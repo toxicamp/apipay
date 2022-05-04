@@ -74,16 +74,31 @@ class OrderController extends Controller
 
     }
 
-    public function callback(){
+    public function callback($transaction_id)
+    {
+        $transac = Transactions::find($transaction_id);
+        $transac->status = 'callback';
+        $transac->save();
 
+            return view('order.callback', compact('transaction_id'));
     }
 
-    public function success(){
+    public function success($transaction_id)
+    {
+        $transac = Transactions::find($transaction_id);
+        $transac->status = 'success';
+        $transac->save();
 
+        return view('order.success', compact('transaction_id'));
     }
 
-    public function fail(){
+    public function fail($transaction_id)
+    {
+        $transac = Transactions::find($transaction_id);
+        $transac->status = 'fail';
+        $transac->save();
 
+        return view('order.fail', compact('transaction_id'));
     }
 
     /**
