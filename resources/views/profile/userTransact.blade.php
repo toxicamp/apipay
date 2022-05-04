@@ -219,6 +219,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
                 </form>
         </section>
