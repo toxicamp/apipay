@@ -23,8 +23,8 @@ class OrderController extends Controller
      */
     public function index($payment, $shop_id, $currency, $price)
     {
-        if($price < 500){
-            throw new \Exception('Миннимальная сумма 500', 400);
+        if($price < 5){
+            throw new \Exception('Миннимальная сумма 5', 400);
         }
 
         $pay = PaymentList::where('name', $payment)->where('currency', $currency)->first();
