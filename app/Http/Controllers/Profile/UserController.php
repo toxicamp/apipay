@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Profile;
 use App\Http\Controllers\CabinetController;
 use App\Models\PaymentForm;
 use App\Models\PaymentList;
+use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -213,7 +214,8 @@ class UserController extends CabinetController
     }
     public function userTransaction()
     {
-        return view('profile.userTransact');
+        $transactions = Transactions::where('shop_id', auth()->id())->get();
+        return view('profile.userTransact', ['trans'=>$transactions]);
     }
     public function conclusionsCreate()
     {

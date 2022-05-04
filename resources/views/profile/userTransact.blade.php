@@ -164,9 +164,6 @@
                         <div class="admin-table__four">
                             Аккаунт
                         </div>
-                        <div class="admin-table__three">
-                            Реквизиты
-                        </div>
                         <div class="admin-table__five">
                             ПС
                         </div>
@@ -180,30 +177,28 @@
                             Статус
                         </div>
                     </div>
+                    @foreach($trans as $item)
                     <div class="admin-table__row">
                         <div class="admin-table__first">
-                            54
+                            {{$item->id}}
                         </div>
                         <div class="admin-table__two">
-                            18.03.2022
+                            {{$item->created_at}}
                         </div>
                         <div class="admin-table__four">
-                            apipay
-                        </div>
-                        <div class="admin-table__three">
-                                4441 1144 5375 6574
+                            {{auth()->user()->name}}
                         </div>
                         <div class="admin-table__five">
                             -
                         </div>
                         <div class="admin-table__six">
-                            125 грн
+                            {{$item->serv_percent}}
                         </div>
                         <div class="admin-table__seven">
-                            500 грн
+                            {{$item->total}} {{$item->currency}}
                         </div>
                         <div class="admin-table__eight">
-                            375 грн
+                            {{$item->amount}} {{$item->currency}}
                         </div>
                         <div class="admin-table__nine">
                             <span class="status done">Выполнен</span>
@@ -212,11 +207,15 @@
                                 <img class="gear-img2" src="img/gear-color.png" alt="">
                             </button>
                             <div class="gear__content">
+                                @if($item->status == 'success')
                                 <p>Завершен</p>
-                                <p>Отменен</p>
-                                <p>Приостановлен</p>
-                                <p>Возврат</p>
-                                <p>Удален</p>
+                                @endif
+                                @if($item->status == 'fail')
+                                <p>Не выполнен</p>
+                                 @endif
+                                 @if($item->status == 'process')
+                                 <p>В обработке</p>
+                                 @endif
                             </div>
                         </div>
                     </div>

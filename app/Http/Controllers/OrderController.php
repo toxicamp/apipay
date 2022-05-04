@@ -23,11 +23,12 @@ class OrderController extends Controller
      */
     public function index($payment, $shop_id, $currency, $price)
     {
-        if($price < 5){
+        $pay = PaymentList::where('name', $payment)->where('currency', $currency)->first();
+
+        if($price < $pay->limit){
             throw new \Exception('Миннимальная сумма 5', 400);
         }
 
-        $pay = PaymentList::where('name', $payment)->where('currency', $currency)->first();
         $commission = $pay->serv_commission;
         $percent = $pay->serv_percent;
         $limit = $pay->serv_limit;
@@ -38,7 +39,7 @@ class OrderController extends Controller
         $total = $price + $pay_sum + $sum + $pay->commission + $commission;
         $tot2 = $price + $sum + $commission;
 
-        if ($pay->limit != 0 && $pay->limit < $price) {
+        if ($pay->serv_limit != 0 && $pay->serv_limit < $price) {
             abort('Привышение лимитов платежа!', 406);
         }
 
@@ -50,7 +51,14 @@ class OrderController extends Controller
             'currency'=>$currency,
             'shop_id'=>$shop_id,
             'payment'=>$payment,
-            'total'=>$tot2
+            'total'=>$tot2,
+            'pay_commission'=>$pay_sum,
+            'pay_percent'=>$pay->percent,
+            'pay_limit'=>$pay->limit,
+            'serv_commission'=>$pay->serv_commission,
+            'serv_percent'=>$pay->serv_percent,
+            'serv_limit'=>$pay->serv_limit
+
 
             ]);
         $transaction_id =$transaction->id;
