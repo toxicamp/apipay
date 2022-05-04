@@ -86,8 +86,13 @@ class OrderController extends Controller
     public function callback($transaction_id)
     {
         $transac = Transactions::find($transaction_id);
-        $transac->status = 'callback';
+        $transac->status = 'success';
         $transac->save();
+
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
+        $payInfo->transaction_id = $transaction_id;
+        $payInfo->status = 1;
+        $payInfo->save();
 
             return view('order.callback', compact('transaction_id'));
     }
