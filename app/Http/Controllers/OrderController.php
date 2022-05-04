@@ -98,7 +98,7 @@ class OrderController extends Controller
         $transac->status = 'success';
         $transac->save();
 
-        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->last();
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
         $payInfo->transaction_id = $transaction_id;
         $payInfo->status = 1;
         $payInfo->save();
@@ -112,7 +112,7 @@ class OrderController extends Controller
         $transac->status = 'fail';
         $transac->save();
 
-        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->last();
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
         $payInfo->transaction_id = $transaction_id;
         $payInfo->status = 0;
         $payInfo->save();
