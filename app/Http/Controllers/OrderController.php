@@ -14,6 +14,7 @@ use App\Models\Settings;
 use App\Models\User;
 use Payments\Facades\PaymentsFacad as Payments;
 use Payments\Collection\Dto;
+use Illuminate\Support\Carbon;
 
 class OrderController extends Controller
 {
@@ -25,6 +26,13 @@ class OrderController extends Controller
     public function index($payment, $shop_id, $currency, $price)
     {
         $pay = PaymentList::where('name', $payment)->where('currency', $currency)->first();
+
+        $paymForm = PaymentForm::where('user_id', $shop_id)->where('blocked', 0)->orderBy('id', 'desc')->first();
+
+        if(!$paymForm){
+            return redirect(route('order_block'));
+        }
+
 
         if($price < $pay->limit){
             throw new \Exception('Миннимальная сумма 5', 400);
@@ -64,6 +72,16 @@ class OrderController extends Controller
             ]);
         $transaction_id =$transaction->id;
 
+        $now = Carbon::now()->timestamp;
+        $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
+        if ($now > $createAt){
+
+            $transaction->status='block';
+            $transaction->save();
+
+            return redirect(route('order_fail' , ['transaction_id' => $transaction_id]), 301);
+        }
+
         $tot2 *= 100;
 
         $dto = new Dto([
@@ -79,7 +97,7 @@ class OrderController extends Controller
         {
             dd($payResult);
         }
-        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total'));
+        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2'));
 
     }
 
@@ -120,9 +138,15 @@ class OrderController extends Controller
         $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
         $payInfo->transaction_id = $transaction_id;
         $payInfo->status = 0;
+        $payInfo->blocked = 1;
         $payInfo->save();
 
         return view('order.fail', compact('transaction_id'));
+    }
+
+    public function block()
+    {
+        return view('order.block');
     }
 
     /**

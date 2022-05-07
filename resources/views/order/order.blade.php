@@ -4,7 +4,7 @@
         <div class="container">
             <div class="exchange__inner main-payment">
                 <div class="main-payment__top">
-                    <h2 class="title fz18">Оплата счета <span>ID:{{$transaction_id }}</span></h2>
+                    <h2 class="title fz18">Оплата счета <span>ID:{{$transaction_id }} {{$tot2}}</span></h2>
                 </div>
                 @if($payment == 'easypay')
                 <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"

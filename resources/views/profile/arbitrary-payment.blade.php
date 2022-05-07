@@ -146,7 +146,7 @@
                         <span>{{$iten->sum}} UAH</span>
                     </div>
                     <div class="list__item arbitrary-payment__list6">
-                        <span class="list__status"> @if($iten->status==0) Не выполнен @else Выполнен @endif</span>
+                        <span class="list__status"> @if($iten->status==0) Не выполнен @elseif($iten->blocked==1) Заблокирован @else Выполнен @endif</span>
                     </div>
                 </div>
                 @endforeach

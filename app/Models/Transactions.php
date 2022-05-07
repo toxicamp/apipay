@@ -10,6 +10,8 @@ class Transactions extends Model
     use HasFactory;
     use SoftDeletes;
 
+    const BLOCK = 'block';
+
     protected $table = 'transaction';
 
     protected $fillable = [
