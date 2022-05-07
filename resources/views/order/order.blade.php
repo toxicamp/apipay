@@ -91,16 +91,12 @@
                 var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
                 console.log(percent);
                 var load = document.getElementById('payPolosa');
-                var strInteger = percent+'';
-                var strPercent = strInteger.slice('.');
-                var percent2 = parseInt(strPercent.substr(1));
-                console.log(percent2);
                 load.style.width=percent+'%';
 
 
             }
 
-            setInterval(blockBy(), 1000)
+            setInterval(blockBy(), 1000);
         </script>
 @endsection
 
