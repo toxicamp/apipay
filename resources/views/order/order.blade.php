@@ -68,13 +68,15 @@
 
 
 
-                var now = parseInt('@php echo  $carbon::now() @endphp');
+                var now = Date.now();
                 if (now > createAt){
                     $('#payOrder').addClass('disabled').attr('disabled', true);
                     location.href='/block';
                 }
                 var percent = createAt/now*100;
                 console.log(percent);
+                console.log(now);
+                console.log(createAt);
             }
 
             setInterval(blockBy( parseInt('@php echo $createAt @endphp')), 1000)
