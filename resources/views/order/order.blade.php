@@ -82,6 +82,7 @@
 
                 console.log(now);
                 console.log(newDate.getTime());
+                console.log(createAtt);
                 if (now > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
