@@ -75,19 +75,15 @@
                 var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
                 var newDate = new Date( createAtt);
                 var now = getUtc();
-                console.log(now);
-                console.log(newDate.getTime());
-                console.log(new Date());
-                console.log(createAtt);
-                if (now > newDate.getTime()){
+                if (now.getTime() > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
                     payOrder.classList.add("disabled");
                     payOrder.setAttribute("disabled", "disabled");
 
-                    // document.location.href='/block';
+                    document.location.href='/block';
                 }
-                var percent = newDate.getTime()/now*100;
+                var percent = newDate.getTime()/now.getTime()*100;
                 console.log(percent);
 
             }
