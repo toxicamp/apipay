@@ -96,7 +96,7 @@
 
             }
 
-            setInterval(blockBy(), 1000);
+            setInterval(function () {blockBy();}, 1000);
         </script>
 @endsection
 
