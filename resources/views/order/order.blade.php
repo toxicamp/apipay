@@ -87,9 +87,11 @@
                     payOrder.classList.add("disabled");
                     payOrder.setAttribute("disabled", "disabled");
 
-                    // document.location.href='/block';
+                    document.location.href='/block';
                 }
-                var percent = newDate.getTime()/now*100;
+                var strNow = now+'';
+                var strNewData = newDate.getTime()+'';
+                var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
                 console.log(percent);
 
             }
