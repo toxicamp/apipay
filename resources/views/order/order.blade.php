@@ -66,8 +66,11 @@
         <script>
             function getUtc(){
                 var date = new Date();
+                var now = new Date;
+                var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() ,
+                    now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
 
-                return date.toUTCString();
+                return utc_timestamp;
             }
             function blockBy(){
 
@@ -75,12 +78,11 @@
                 var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
                 var newDate = new Date( createAtt);
                 var now = getUtc();
-                var newNow = new Date(now);
+
 
                 console.log(now);
-                console.log(newNow);
                 console.log(newDate);
-                if (newNow.getTime() > newDate.getTime()){
+                if (now > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
                     payOrder.classList.add("disabled");
@@ -88,7 +90,7 @@
 
                     // document.location.href='/block';
                 }
-                var percent = newDate.getTime()/newNow.getTime()*100;
+                var percent = newDate.getTime()/now*100;
                 console.log(percent);
 
             }
