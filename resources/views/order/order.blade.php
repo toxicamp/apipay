@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('exchange')
+    @inject('carbon', 'Carbon\Carbon')
 
         <div class="container">
             <div class="exchange__inner main-payment">
@@ -40,7 +41,7 @@
                     <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
                     </div>
 
-                    <a href="{{$payResult['response']['result']['pay_url']}}"
+                    <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
                         class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Отправить
                     </a>
@@ -66,6 +67,19 @@
 
 @section('custom_scripts')
     <script>
+
+
+var createAt = '@php $createAt @endphp';
+
+setTimeout(function (){
+    var now = '@php  $carbon::now() @endphp';
+    if (now > createAt){
+$('#payOrder').addClass('disabled').attr('disabled', true);
+location.href='/block';
+    }
+    var percent = createAt*100/now;
+    console.log(percent);
+},1000)
 
     </script>
 @endsection

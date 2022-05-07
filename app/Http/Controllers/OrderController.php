@@ -97,7 +97,7 @@ class OrderController extends Controller
         {
             dd($payResult);
         }
-        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2'));
+        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt'));
 
     }
 
