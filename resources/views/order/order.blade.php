@@ -77,7 +77,7 @@
                 console.log(percent);
             }
 
-            setInterval(blockBy('@php $createAt @endphp'), 1000)
+            setInterval(blockBy( '@php echo $createAt @endphp'), 1000)
         </script>
 @endsection
 
