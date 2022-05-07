@@ -4647,7 +4647,7 @@ body.scroll-hide {
 .main-payment__line-red {
   display: block;
   height: 100%;
-  width: 15%;
+  width: 1%;
   background-color: #ed2f61;
 }
 
