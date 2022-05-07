@@ -76,13 +76,17 @@
                 var newDate = new Date( createAtt);
                 var now = getUtc();
                 var newNow = new Date(now);
+
+                console.log(now);
+                console.log(newNow);
+                console.log(newDate);
                 if (newNow.getTime() > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
                     payOrder.classList.add("disabled");
                     payOrder.setAttribute("disabled", "disabled");
 
-                    document.location.href='/block';
+                    // document.location.href='/block';
                 }
                 var percent = newDate.getTime()/newNow.getTime()*100;
                 console.log(percent);
