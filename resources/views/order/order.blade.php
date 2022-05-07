@@ -81,7 +81,7 @@
 
 
                 console.log(now);
-                console.log(newDate);
+                console.log(newDate.getTime());
                 if (now > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
