@@ -64,12 +64,19 @@
         </div>
 
         <script>
+            function getUtc(){
+                var date = new Date();
+                var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+                    date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+
+                return new Date(now_utc);
+            }
             function blockBy(){
 
 
                 var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
                 var newDate = new Date( createAtt);
-                var now = Date.now();
+                var now = getUtc();
                 console.log(now);
                 console.log(newDate.getTime());
                 console.log(new Date());
