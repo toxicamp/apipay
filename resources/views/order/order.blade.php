@@ -95,7 +95,7 @@
                 var strPercent = strInteger.slice('.');
                 var percent2 = parseInt(strPercent.substr(1));
                 console.log(percent2);
-                load.style.width=percent2+'%';
+                load.style.width=percent+'%';
 
 
             }
