@@ -73,7 +73,7 @@
                     $('#payOrder').addClass('disabled').attr('disabled', true);
                     location.href='/block';
                 }
-                var percent = createAt*100/now;
+                var percent = now*100/createAt;
                 console.log(percent);
             }
 
