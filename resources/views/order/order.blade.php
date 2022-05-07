@@ -69,14 +69,15 @@
 
 
                 var now = Date.now();
+                console.log(now);
+                console.log(createAt);
                 if (now > createAt){
                     $('#payOrder').addClass('disabled').attr('disabled', true);
                     location.href='/block';
                 }
                 var percent = createAt/now*100;
                 console.log(percent);
-                console.log(now);
-                console.log(createAt);
+
             }
 
             setInterval(blockBy(@php echo $createAt @endphp), 1000)
