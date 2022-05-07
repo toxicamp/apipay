@@ -73,13 +73,13 @@
                 return utc_timestamp;
             }
             function blockBy(){
-
+               var newData = @php echo $carbon::createFromTimestamp($createAtt->timestamp) @endphp
 
                 var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
                 var newDate = new Date( createAtt);
                 var now = getUtc();
 
-
+                console.log(newData);
                 console.log(now);
                 console.log(newDate.getTime());
                 console.log(createAtt);
