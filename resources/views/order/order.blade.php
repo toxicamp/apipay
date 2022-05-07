@@ -73,8 +73,8 @@
                     $('#payOrder').addClass('disabled').attr('disabled', true);
                     location.href='/block';
                 }
-                var percent = createAt*100/now;
-                console.log(percent, createAt, now);
+                var percent = createAt/now*100;
+                console.log(percent);
             }
 
             setInterval(blockBy( parseInt('@php echo $createAt @endphp')), 1000)
