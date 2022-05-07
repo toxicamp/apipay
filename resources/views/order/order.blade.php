@@ -49,7 +49,7 @@
                 <p class="sub-text">Вы будете направлены на страницу оплаты</p>
                 <div class="main-payment__bottom">
                     <div class="main-payment__line">
-                        <span class="main-payment__line-red"></span>
+                        <span class="main-payment__line-red" id="payPolosa"></span>
                     </div>
 {{--                    <div class="main-payment__info">--}}
 {{--                        У вас есть <span class="main-payment__info-red"> {{auth()->user()->UAH}} UAH </span> для оплаты счета--}}
@@ -78,9 +78,6 @@
                 var newDate = new Date(createAtt*1000);
                 var now = getUtc();
 
-                console.log(now);
-                console.log(newDate.getTime());
-                console.log(createAtt);
                 if (now > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
@@ -92,9 +89,14 @@
                 var strNow = now+'';
                 var strNewData = newDate.getTime()+'';
                 var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
-                console.log(parseInt(strNow.substr(6)));
-                console.log(parseInt(strNewData.substr(6)));
                 console.log(percent);
+                var load = document.getElementById('payPolosa');
+                var strInteger = percent+'';
+                var strPercent = strInteger.slice('.');
+                var percent2 = parseInt(strPercent.substr(1));
+                console.log(percent2);
+                load.style.width=percent2+'%';
+
 
             }
 
