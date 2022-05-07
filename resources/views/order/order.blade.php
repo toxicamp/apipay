@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('exchange')
-
+    @inject('carbon', 'Carbon\Carbon')
 
         <div class="container">
             <div class="exchange__inner main-payment">
