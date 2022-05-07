@@ -76,7 +76,7 @@
                     payOrder.classList.add("disabled");
                     payOrder.setAttribute("disabled", "disabled");
 
-                    location.href=location.protocol+':/'+ location.host+'/block';
+                    document.location.href='https:/'+ location.host+'/block';
                 }
                 var percent = createAt/now*100;
                 console.log(percent);
