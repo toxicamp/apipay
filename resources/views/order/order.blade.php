@@ -75,7 +75,8 @@
                 var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
                 var newDate = new Date( createAtt);
                 var now = getUtc();
-                if (now.getTime() > newDate.getTime()){
+                var newNow = new Date(now);
+                if (newNow.getTime() > newDate.getTime()){
 
                     var payOrder = document.getElementById("payOrder");
                     payOrder.classList.add("disabled");
@@ -83,7 +84,7 @@
 
                     document.location.href='/block';
                 }
-                var percent = newDate.getTime()/now.getTime()*100;
+                var percent = newDate.getTime()/newNow.getTime()*100;
                 console.log(percent);
 
             }
