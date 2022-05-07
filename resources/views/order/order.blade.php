@@ -69,12 +69,14 @@
 
                 var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
                 var newDate = new Date( createAtt);
-                console.log(newDate.getTime());
                 var now = Date.now();
-                console.log(now);
-                if (now > createAt){
-                    $('#payOrder').addClass('disabled').attr('disabled', true);
-                    location.href='/block';
+                if (now > newDate.getTime()){
+
+                    var payOrder = document.getElementById("payOrder");
+                    payOrder.classList.add("disabled");
+                    payOrder.setAttribute("disabled", "disabled");
+
+                    location.href=location.protocol+':/'+ location.host+'/block';
                 }
                 var percent = createAt/now*100;
                 console.log(percent);
