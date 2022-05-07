@@ -67,7 +67,7 @@
             function blockBy(){
 
 
-                var createAtt = '@php echo $createAtt->data @endphp'
+                var createAtt = '@php echo $createAtt->toDateTimeString() @endphp'
                 var now = Date.now();
                 console.log(now);
                 console.log(createAtt);
