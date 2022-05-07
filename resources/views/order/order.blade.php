@@ -74,7 +74,7 @@
             }
             function blockBy(){
 
-                var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
+                var createAtt = @php echo $createAtt->timestamp @endphp;
                 var newDate = new Date(createAtt*1000);
                 var now = getUtc();
 
