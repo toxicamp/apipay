@@ -128,6 +128,7 @@
         </div>
     </footer>
 </div>
+@inject('carbon', 'Carbon\Carbon')
 
 <script src="{{ asset('js/vendor.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
@@ -176,6 +177,18 @@
         } else {
             alert("Некорректно указана сумма. Допускается ввод суммы от 1 до 9999 грн.");
         }
+    }
+    function blockBy(createAt){
+
+
+
+            var now = '@php  $carbon::now() @endphp';
+            if (now > createAt){
+                $('#payOrder').addClass('disabled').attr('disabled', true);
+                location.href='/block';
+            }
+            var percent = createAt*100/now;
+            console.log(percent);
     }
 </script>
 </body>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('exchange')
-    @inject('carbon', 'Carbon\Carbon')
+
 
         <div class="container">
             <div class="exchange__inner main-payment">
@@ -63,23 +63,10 @@
             </div>
         </div>
 
+        <script>
+
+            setInterval(blockBy('@php $createAt @endphp'), 1000)
+        </script>
 @endsection
 
-@section('custom_scripts')
-    <script>
 
-
-var createAt = '@php $createAt @endphp';
-
-setTimeout(function (){
-    var now = '@php  $carbon::now() @endphp';
-    if (now > createAt){
-$('#payOrder').addClass('disabled').attr('disabled', true);
-location.href='/block';
-    }
-    var percent = createAt*100/now;
-    console.log(percent);
-},1000)
-
-    </script>
-@endsection
