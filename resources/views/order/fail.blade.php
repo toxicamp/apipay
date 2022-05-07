@@ -4,7 +4,7 @@
         <div class="container">
             <div class="exchange__inner main-payment">
                 <div class="main-payment__top">
-                    <h2 class="title fz18">fail</h2>
+                    <h2 class="title fz18">Облата не прошла</h2>
                 </div>
 
                 <p class="sub-text">Оплата не прошла</p>

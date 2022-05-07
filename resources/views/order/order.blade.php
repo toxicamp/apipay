@@ -43,17 +43,17 @@
 
                     <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
                         class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
-                        Отправить
+                        Оплатить
                     </a>
                 @endif
-                <p class="sub-text">Вы будете направлены на страницу оплаты</p>
+                <span class="sub-text" >Вы будете направлены на страницу оплаты</span>
                 <div class="main-payment__bottom">
                     <div class="main-payment__line">
                         <span class="main-payment__line-red" id="payPolosa"></span>
                     </div>
-{{--                    <div class="main-payment__info">--}}
-{{--                        У вас есть <span class="main-payment__info-red"> {{auth()->user()->UAH}} UAH </span> для оплаты счета--}}
-{{--                    </div>--}}
+                    <div class="main-payment__info">
+                        У вас есть <span class="main-payment__info-red"> У вас есть 20 мин </span> для оплаты счета
+                    </div>
                     <div class="main-payment__info main-payment__info--two">
                         Статус счета: <img class="main-payment__info-img" src="img/circle.png" alt=""> <span
                             class="main-payment__info-red">не
