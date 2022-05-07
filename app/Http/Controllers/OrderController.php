@@ -72,8 +72,9 @@ class OrderController extends Controller
             ]);
         $transaction_id =$transaction->id;
 
-        $now = Carbon::now()->timestamp;
-        $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
+        $now = time();
+        $createAt = strtotime($paymForm->created_at)+(20*60);//->addMinutes(20)->timestamp;
+
         if ($now > $createAt){
 
             $transaction->status='block';
