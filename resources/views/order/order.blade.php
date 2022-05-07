@@ -92,6 +92,8 @@
                 var strNow = now+'';
                 var strNewData = newDate.getTime()+'';
                 var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
+                console.log(parseInt(strNow.substr(6)));
+                console.log(parseInt(strNewData.substr(6)));
                 console.log(percent);
 
             }
