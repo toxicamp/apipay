@@ -79,7 +79,7 @@
                 console.log(createAt);
             }
 
-            setInterval(blockBy( parseInt('@php echo $createAt @endphp')), 1000)
+            setInterval(blockBy(@php echo $createAt @endphp), 1000)
         </script>
 @endsection
 
