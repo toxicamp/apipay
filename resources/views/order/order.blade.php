@@ -64,13 +64,13 @@
         </div>
 
         <script>
-            function blockBy(createAt){
+            function blockBy(){
 
 
-
+                var createAtt = '@php echo $createAtt->data @endphp'
                 var now = Date.now();
                 console.log(now);
-                console.log(createAt);
+                console.log(createAtt);
                 if (now > createAt){
                     $('#payOrder').addClass('disabled').attr('disabled', true);
                     location.href='/block';
@@ -80,7 +80,7 @@
 
             }
 
-            setInterval(blockBy(@php echo $createAt @endphp), 1000)
+            setInterval(blockBy(), 1000)
         </script>
 @endsection
 

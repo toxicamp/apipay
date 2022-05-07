@@ -72,9 +72,10 @@ class OrderController extends Controller
             ]);
         $transaction_id =$transaction->id;
 
-        $now = time();
-        $createAt = strtotime($paymForm->created_at)+(20*60);//->addMinutes(20)->timestamp;
+        $createAtt = $paymForm->created_at->addMinutes(20);
 
+        $now = Carbon::now()->timestamp;
+        $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
         if ($now > $createAt){
 
             $transaction->status='block';
@@ -98,7 +99,7 @@ class OrderController extends Controller
         {
             dd($payResult);
         }
-        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt'));
+        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 
     }
 
