@@ -67,10 +67,11 @@
             function blockBy(){
 
 
-                var createAtt = '@php echo $createAtt->toDateTimeString() @endphp'
+                var createAtt = '@php echo $createAtt->toDateTimeString() @endphp';
+                var newDate = new Date( createAtt);
+                console.log(newDate.getTime());
                 var now = Date.now();
                 console.log(now);
-                console.log(createAtt);
                 if (now > createAt){
                     $('#payOrder').addClass('disabled').attr('disabled', true);
                     location.href='/block';
