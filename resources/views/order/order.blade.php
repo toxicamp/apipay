@@ -64,6 +64,18 @@
         </div>
 
         <script>
+            function blockBy(createAt){
+
+
+
+                var now = '@php  $carbon::now() @endphp';
+                if (now > createAt){
+                    $('#payOrder').addClass('disabled').attr('disabled', true);
+                    location.href='/block';
+                }
+                var percent = createAt*100/now;
+                console.log(percent);
+            }
 
             setInterval(blockBy('@php $createAt @endphp'), 1000)
         </script>
