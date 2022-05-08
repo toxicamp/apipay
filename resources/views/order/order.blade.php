@@ -6,7 +6,8 @@
             <div class="exchange__inner main-payment">
                 <div class="main-payment__top" class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span>
                 </div>
-                <form id="form_pay_system3" action="/" name="form_pay_system3" class="main-payment__box main-payment__box2"
+                @if($payment == 'easypay')
+                <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
                       action="/" method="get">
                     <div class="payment-amount"><span>
                         Сумма платежа: </span><span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
@@ -14,20 +15,21 @@
 
                     <input type="hidden" name="account" value="{{$shop_id}}">
                     <input type="hidden" name="amount" value="{{$price ?? ''}}">
-                    <button onclick="use_online_pay('form_pay_system3','amount');"
-                            class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
-                        Отправить
-                    </button>
-                </form>
-                    <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
-                    </div>
-                <div>
 
                     <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
                         class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Оплатить
                     </a>
+                </form>
+                @else
+                    <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
+                    </div>
+                <div>
+
+
                 </div>
+                @endif
+    <div>
                 <span class="sub-text" >Вы будете направлены на страницу оплаты</span>
                 <div class="main-payment__bottom">
                     <div class="main-payment__line">
