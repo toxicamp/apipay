@@ -102,7 +102,14 @@ class OrderController extends Controller
         }
 
         $tot2 *= 100;
-        if (isset($tarnsaction_id) && $now > $createAt) {
+        $newSession = Session::get('transaction_id_'. $shop_id);
+
+        if (isset($newSession) && $now < $createAt) {
+            $payResult = json_decode($transaction->pay_result, true);
+
+        }
+        else
+        {
             $dto = new Dto([
                 'payment' => $payment,
                 'transaction_id' => $transaction->id,
@@ -119,10 +126,8 @@ class OrderController extends Controller
             if ($payResult['error']['code'] > 0) {
                 dd($payResult);
             }
-        }
-        else
-        {
-            $payResult = json_decode($transaction->pay_result, true);
+
+
         }
         return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 
