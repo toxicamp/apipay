@@ -7,10 +7,8 @@
                 <div class="main-payment__top" class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span>
                 </div>
                 @if($payment == 'easypay')
-                <div id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
+                <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
                       action="/" method="get">
-                </div>
-                <div>
                     <div class="payment-amount">
                         Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
                     </div>
@@ -21,7 +19,7 @@
                             class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Отправить
                     </button>
-                </div>
+                </form>
                 @else
                     <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
                     </div>
@@ -43,7 +41,7 @@
                         У вас есть <span class="main-payment__info-red"> 20 мин </span> для оплаты счета
                     </div>
                     <div class="main-payment__info main-payment__info--two">
-                        Статус счета: <img class="main-payment__info-img" src="img/circle.png" alt=""> <span
+                        Статус счета: <img class="main-payment__info-img" src="{{'img/circle.png'}}" alt=""> <span
                             class="main-payment__info-red">не
                                 оплачен</span>
                     </div>
