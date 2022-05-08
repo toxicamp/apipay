@@ -102,7 +102,7 @@ class OrderController extends Controller
         }
 
         $tot2 *= 100;
-        if (isset($tarnsaction_id) && $now < $createAt) {
+        if (isset($tarnsaction_id) && $now > $createAt) {
             $dto = new Dto([
                 'payment' => $payment,
                 'transaction_id' => $transaction->id,
