@@ -193,7 +193,7 @@
                             -
                         </div>
                         <div class="admin-table__six">
-                            {{$listPay->name}}
+                            {{$item->name}}
                         </div>
                         <div class="admin-table__seven">
                             {{$item->amount}} {{$item->currency}}
