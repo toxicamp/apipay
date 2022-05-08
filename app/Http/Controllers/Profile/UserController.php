@@ -214,7 +214,7 @@ class UserController extends CabinetController
     }
     public function userTransaction()
     {
-        $transactions = Transactions::where('shop_id', 'name',  auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
+        $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
         return view('profile.userTransact', ['trans'=>$transactions]);
     }
     public function conclusionsCreate()
