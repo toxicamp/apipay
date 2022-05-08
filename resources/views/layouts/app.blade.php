@@ -128,7 +128,7 @@
         </div>
     </footer>
 </div>
-
+@inject('carbon', 'Carbon\Carbon')
 
 <script src="{{ asset('js/vendor.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>

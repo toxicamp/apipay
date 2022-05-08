@@ -5,32 +5,32 @@
         <div class="container">
             <div class="exchange__inner main-payment">
                 <div class="main-payment__top">
-                    <h2 class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span></h2>
+                     class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span>
                 </div>
                 @if($payment == 'easypay')
                 <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
                       action="/" method="get">
                     <div class="payment-amount">
-                        <h2>Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span></h2>
+                        Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
                     </div>
-{{--                    <div class="main-payment__item main-payment__item3">--}}
-{{--                        <p>Выбор валют</p>--}}
-{{--                        <div class="select main-payment__input">--}}
-{{--                            <div class="select__top">--}}
-{{--                                <img class="select__top-icon" src="img/privat.png" alt="">--}}
-{{--                                <span class="select__top-title">{{$payActual }} {{$currency }}</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="select__content">--}}
-{{--                                @foreach ($listPay as $id => $name)--}}
-{{--                                    <div class="select__input">--}}
-{{--                                        <input type="radio" name="select-radio" value="{{$id}}" onchange="selectUsePay(this)">--}}
-{{--                                        <img src="img/privat.png" alt="">--}}
-{{--                                        <span class="select__item">{{$name}}</span>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="main-payment__item main-payment__item3">
+                        <p>Выбор валют</p>
+                        <div class="select main-payment__input">
+                            <div class="select__top">
+                                <img class="select__top-icon" src="img/privat.png" alt="">
+                                <span class="select__top-title">{{$payActual }} {{$currency }}</span>
+                            </div>
+                            <div class="select__content">
+                                @foreach ($listPay as $id => $name)
+                                    <div class="select__input">
+                                        <input type="radio" name="select-radio" value="{{$id}}" onchange="selectUsePay(this)">
+                                        <img src="img/privat.png" alt="">
+                                        <span class="select__item">{{$name}}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                     <input type="hidden" name="account" value="{{$shop_id}}">
                     <input type="hidden" name="amount" value="{{$price ?? ''}}">
                     <button onclick="use_online_pay('form_pay_system3','amount');"
