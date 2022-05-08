@@ -1,75 +1,6 @@
-
+@extends('layouts.app')
 @section('exchange')
     @inject('carbon', 'Carbon\Carbon')
-
-    <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/vendor.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-
-</head>
-<body>
-
-
-<div class="page">
-
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <a href="{{ route('index') }}" class="header__logo">
-                    <img class="header__icon" src="img/logo.png" alt="">
-                    apipay.is
-                </a>
-                <nav class="header__nav">
-                    <ul class="header__nav-list">
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="{{ route('yourself') }}">О нас </a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="{{ route('apiDocument') }}">API документация</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="{{ route('contact') }}">Контакты</a>
-                        </li>
-                    </ul>
-                    @guest
-                        <button class="main__btn main__btn--header"><a class="header__nav-link" href="{{ route('login') }}">Авторизация</a></button>
-                    @else
-
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="main__btn main__btn--header">Выход</button>
-                        </form>
-                    @endguest
-
-                </nav>
-                <div class="burger burger--main">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-
-    </header>
 
         <div class="container">
             <div class="exchange__inner main-payment">
@@ -116,41 +47,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-            @yield('exchange')
-            @yield('benefits')
-            @yield('partners')
-
-
-
-
-            <div class="popup popup--registration">
-                <form class="popup__inner" action="/">
-                    <span class="popup__close popup__close--registration"></span>
-                    <h2 class="popup__title title-main fz27">Регистрация</h2>
-                    <input class="popup__input payment__input" name="login" placeholder="Логин" type="text">
-                    <input class="popup__input payment__input" name="password" placeholder="Пароль" type="password">
-                    <input class="popup__input payment__input" name="email" placeholder="E-mail" type="text">
-                    <input class="popup__input payment__input" name="tel" placeholder="Номер телефона" type="tel">
-                    <button class="main__btn main__btn--logo popup__btn">подключится</button>
-                </form>
-            </div>
-
-            @include('auth._forms.login')
-
-
-            <footer class="footer">
-                <div class="container">
-                    <div class="footer__inner">
-                        <a class="header__logo">
-                            <img class="header__icon" src="img/logo.png" alt="">
-                            apipay.is
-                        </a>
-                        <p class="header__copy">© 2022 APIPAY.IS</p>
-                    </div>
-                </div>
-            </footer>
         </div>
 
         <script>
