@@ -48,7 +48,11 @@
                     </a>
                 </div>
                 @endif
+            </div>
+        </div>
+    <div>
                 <span class="sub-text" >Вы будете направлены на страницу оплаты</span>
+    </div>
                 <div class="main-payment__bottom">
                     <div class="main-payment__line">
                         <span class="main-payment__line-red" id="payPolosa"></span>
