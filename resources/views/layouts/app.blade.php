@@ -67,32 +67,32 @@
 
     </header>
 
-    <div class="navigation">
-        <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>
-        <a class="navigation__link" href="admin-direction.html">Направление обмена</a>
-        <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>
-        <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>
-        <a class="navigation__link" href="admin.html">Админка</a>
-        <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>
-        <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>
-        <a class="navigation__link" href="conclusions.html">Админка вывод</a>
-        <a class="navigation__link" href="discount.html">Лк скидка</a>
-        <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>
-        <a class="navigation__link" href="index.html">главная</a>
-        <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>
-        <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>
-        <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>
-        <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>
-        <a class="navigation__link" href="output-create.html">Лк вывод</a>
-        <a class="navigation__link" href="output.html">Лк вывод история</a>
-        <a class="navigation__link" href="payment.html">Лк вывод масов</a>
-        <a class="navigation__link" href="pc-profile.html">Лк профиль</a>
-        <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>
-        <a class="navigation__link" href="personal-area.html">Лк</a>
-        <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>
-        <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>
-        <a class="navigation__link" href="user-page.html">Админка пользователи</a>
-    </div>
+{{--    <div class="navigation">--}}
+{{--        <a class="navigation__link" href="admin-currencies.html">Админка валюты</a>--}}
+{{--        <a class="navigation__link" href="admin-direction.html">Направление обмена</a>--}}
+{{--        <a class="navigation__link" href="admin-transactions.html">Админка транзакции</a>--}}
+{{--        <a class="navigation__link" href="admin-users.html">Админка обмен валю пользователи</a>--}}
+{{--        <a class="navigation__link" href="admin.html">Админка</a>--}}
+{{--        <a class="navigation__link" href="arbitrary-payment-link.html">Лк произвольный платеж ссылка</a>--}}
+{{--        <a class="navigation__link" href="arbitrary-payment.html">Лк произвольный платеж</a>--}}
+{{--        <a class="navigation__link" href="conclusions.html">Админка вывод</a>--}}
+{{--        <a class="navigation__link" href="discount.html">Лк скидка</a>--}}
+{{--        <a class="navigation__link" href="exchange-requests.html">Админка обмен валю заявки</a>--}}
+{{--        <a class="navigation__link" href="index.html">главная</a>--}}
+{{--        <a class="navigation__link" href="main-arbitrary-payment.html">главная Произвольный платеж</a>--}}
+{{--        <a class="navigation__link" href="main-arbitrary-payment2.html">главная Произвольный платеж2</a>--}}
+{{--        <a class="navigation__link" href="main-exchange.html">Главная обмен 2</a>--}}
+{{--        <a class="navigation__link" href="main-exchange2.html">Главная обмен 3</a>--}}
+{{--        <a class="navigation__link" href="output-create.html">Лк вывод</a>--}}
+{{--        <a class="navigation__link" href="output.html">Лк вывод история</a>--}}
+{{--        <a class="navigation__link" href="payment.html">Лк вывод масов</a>--}}
+{{--        <a class="navigation__link" href="pc-profile.html">Лк профиль</a>--}}
+{{--        <a class="navigation__link" href="pc-transactions.html">Лк транзакции</a>--}}
+{{--        <a class="navigation__link" href="personal-area.html">Лк</a>--}}
+{{--        <a class="navigation__link" href="ref-prog-settings.html">Админка валюты партнерка</a>--}}
+{{--        <a class="navigation__link" href="sample.html">Лк вывод шаблоны</a>--}}
+{{--        <a class="navigation__link" href="user-page.html">Админка пользователи</a>--}}
+{{--    </div>--}}
 
     @yield('exchange')
     @yield('benefits')
