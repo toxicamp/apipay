@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'USDT' => $data['USDT'],
-            'UAH' => $data['UAH']->where(0),
+            'UAH' => $data['UAH'],
             'RUB' => $data['RUB'],
             'BTC' => $data['BTC'],
             'global' => $data['global'],

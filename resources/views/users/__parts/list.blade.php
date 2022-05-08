@@ -9,12 +9,14 @@
     <div class="admin-table__two">
         {{$user->email}}
     </div>
+    @if($user->UAH == 0)
     <div class="admin-table__three">
         {{$user->UAH}} UAH
     </div>
     <div class="admin-table__four">
         Оборот {{$user->UAH}} грн.
     </div>
+    @endif
     <div class="admin-table__five">
         <button id="{{$user->id}}" class="edit">
             <img loading="lazy" src="{{ asset('img/edit.png') }}" alt="img" title="редактировать">

@@ -106,6 +106,10 @@ class UserController extends CabinetController
             'name'=>$request->post('name'),
             'email'=>$request->post('email'),
             'kuna'=>$request->post('kuna'),
+            'BTC'=>$request->post('BTC'),
+            'RUB'=>$request->post('RUB'),
+            'UAH'=>$request->post('UAH'),
+            'USDT'=>$request->post('USDT'),
         ]);
 
         $user_currency = User::query()->where('id',$request->post('id'));
