@@ -9,8 +9,8 @@
                 @if($payment == 'easypay')
                 <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
                       action="/" method="get">
-                    <div class="payment-amount"><span>
-                        Сумма платежа: </span><span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
+                    <div class="payment-amount">
+                        Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
                     </div>
 
                     <input type="hidden" name="account" value="{{$shop_id}}">
@@ -31,7 +31,7 @@
                     </a>
                 </div>
                 @endif
-    <div>
+
                 <span class="sub-text" >Вы будете направлены на страницу оплаты</span>
                 <div class="main-payment__bottom">
                     <div class="main-payment__line">
