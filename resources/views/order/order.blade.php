@@ -13,24 +13,24 @@
                     <div class="payment-amount">
                         Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
                     </div>
-                    <div class="main-payment__item main-payment__item3">
-                        <p>Выбор валют</p>
-                        <div class="select main-payment__input">
-                            <div class="select__top">
-                                <img class="select__top-icon" src="img/privat.png" alt="">
-                                <span class="select__top-title">{{$payActual }} {{$currency }}</span>
-                            </div>
-                            <div class="select__content">
-                                @foreach ($listPay as $id => $name)
-                                    <div class="select__input">
-                                        <input type="radio" name="select-radio" value="{{$id}}" onchange="selectUsePay(this)">
-                                        <img src="img/privat.png" alt="">
-                                        <span class="select__item">{{$name}}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="main-payment__item main-payment__item3">--}}
+{{--                        <p>Выбор валют</p>--}}
+{{--                        <div class="select main-payment__input">--}}
+{{--                            <div class="select__top">--}}
+{{--                                <img class="select__top-icon" src="img/privat.png" alt="">--}}
+{{--                                <span class="select__top-title">{{$payActual }} {{$currency }}</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="select__content">--}}
+{{--                                @foreach ($listPay as $id => $name)--}}
+{{--                                    <div class="select__input">--}}
+{{--                                        <input type="radio" name="select-radio" value="{{$id}}" onchange="selectUsePay(this)">--}}
+{{--                                        <img src="img/privat.png" alt="">--}}
+{{--                                        <span class="select__item">{{$name}}</span>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <input type="hidden" name="account" value="{{$shop_id}}">
                     <input type="hidden" name="amount" value="{{$price ?? ''}}">
                     <button onclick="use_online_pay('form_pay_system3','amount');"
@@ -41,11 +41,13 @@
                 @else
                     <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
                     </div>
+                <div>
 
                     <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
                         class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Оплатить
                     </a>
+                </div>
                 @endif
                 <span class="sub-text" >Вы будете направлены на страницу оплаты</span>
                 <div class="main-payment__bottom">
