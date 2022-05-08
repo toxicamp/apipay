@@ -7,8 +7,10 @@
                 <div class="main-payment__top" class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span>
                 </div>
                 @if($payment == 'easypay')
-                <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
+                <div id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
                       action="/" method="get">
+                </div>
+                <div>
                     <div class="payment-amount">
                         Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
                     </div>
@@ -19,7 +21,7 @@
                             class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Отправить
                     </button>
-                </form>
+                </div>
                 @else
                     <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
                     </div>
