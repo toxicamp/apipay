@@ -68,7 +68,7 @@
     </header>
 @section('exchange')
     @inject('carbon', 'Carbon\Carbon')
-
+<body>
         <div class="container">
             <div class="exchange__inner main-payment">
                 <div class="main-payment__top" class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span>
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-
+</body>
         <script>
             function getUtc(){
                 var date = new Date();
