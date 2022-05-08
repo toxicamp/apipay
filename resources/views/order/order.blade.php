@@ -48,8 +48,6 @@
                     </a>
                 </div>
                 @endif
-            </div>
-        </div>
     <div>
                 <span class="sub-text" >Вы будете направлены на страницу оплаты</span>
     </div>
