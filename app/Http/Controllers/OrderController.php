@@ -59,7 +59,7 @@ class OrderController extends Controller
         $now = Carbon::now()->timestamp;
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
 
-        $tarnsaction_id = Session::get('transaction_id_'. $shop_id);
+        $tarnsaction_id = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
         if (isset($tarnsaction_id) && $now < $createAt){
             $transaction = Transactions::find($tarnsaction_id);
         }
@@ -83,7 +83,7 @@ class OrderController extends Controller
 
             ]);
 
-            Session::put('transaction_id_'. $shop_id, $transaction->id);
+            Session::put('transaction_id_'. $shop_id.'_'.$paymForm->id, $transaction->id);
         }
 
 
@@ -102,7 +102,7 @@ class OrderController extends Controller
         }
 
         $tot2 *= 100;
-        $newSession = Session::get('transaction_id_'. $shop_id);
+        $newSession = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
 
         if (isset($newSession) && $now < $createAt) {
             $payResult = json_decode($transaction->pay_result, true);
