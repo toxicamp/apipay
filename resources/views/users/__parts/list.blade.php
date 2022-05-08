@@ -9,7 +9,7 @@
     <div class="admin-table__two">
         {{$user->email}}
     </div>
-    @if($user->UAH == 0)
+    @if($user->UAH !='')
     <div class="admin-table__three">
         {{$user->UAH}} UAH
     </div>
