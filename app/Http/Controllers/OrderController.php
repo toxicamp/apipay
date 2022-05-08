@@ -49,6 +49,8 @@ class OrderController extends Controller
 
         $total = $price + $pay_sum + $sum + $pay->commission + $commission;
         $tot2 = $price + $sum + $commission;
+        $total2 = $tot2;
+        $tot2 *= 100;
 
         if ($pay->serv_limit != 0 && $pay->serv_limit < $price) {
             abort('Привышение лимитов платежа!', 406);
@@ -62,6 +64,7 @@ class OrderController extends Controller
         $tarnsaction_id = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
         if (isset($tarnsaction_id) && $now < $createAt){
             $transaction = Transactions::find($tarnsaction_id);
+            $payResult = json_decode($transaction->pay_result, true);
         }
 
         else {
@@ -72,7 +75,7 @@ class OrderController extends Controller
                 'currency'=>$currency,
                 'shop_id'=>$shop_id,
                 'payment'=>$payment,
-                'total'=>$tot2,
+                'total'=>$total2,
                 'pay_commission'=>$pay_sum,
                 'pay_percent'=>$pay->percent,
                 'pay_limit'=>$pay->limit,
@@ -84,32 +87,7 @@ class OrderController extends Controller
             ]);
 
             Session::put('transaction_id_'. $shop_id.'_'.$paymForm->id, $transaction->id);
-        }
 
-
-
-        $transaction_id =$transaction->id;
-
-
-
-
-        if ($now > $createAt){
-
-            $transaction->status='block';
-            $transaction->save();
-
-            return redirect(route('order_fail' , ['transaction_id' => $transaction_id]), 301);
-        }
-
-        $tot2 *= 100;
-        $newSession = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
-
-        if (isset($newSession) && $now < $createAt) {
-            $payResult = json_decode($transaction->pay_result, true);
-
-        }
-        else
-        {
             $dto = new Dto([
                 'payment' => $payment,
                 'transaction_id' => $transaction->id,
@@ -127,8 +105,25 @@ class OrderController extends Controller
                 dd($payResult);
             }
 
-
         }
+
+
+
+        $transaction_id =$transaction->id;
+
+
+
+
+        if ($now > $createAt){
+
+            $transaction->status='block';
+            $transaction->save();
+
+            return redirect(route('order_fail' , ['transaction_id' => $transaction_id]), 301);
+        }
+
+
+
         return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 
     }
