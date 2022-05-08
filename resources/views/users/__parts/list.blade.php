@@ -10,10 +10,10 @@
         {{$user->email}}
     </div>
     <div class="admin-table__three">
-        {{$user->UAH}} UAH
+        @if($user->UAH =='' and is_null($user->UAH)) 0 @else {{$user->UAH}}  @endif UAH
     </div>
     <div class="admin-table__four">
-        Оборот {{$user->UAH}} грн.
+        Оборот @if($user->UAH =='' and is_null($user->UAH)) 0 @else {{$user->UAH}}  @endif грн.
     </div>
     <div class="admin-table__five">
         <button id="{{$user->id}}" class="edit">
