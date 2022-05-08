@@ -102,19 +102,19 @@ class OrderController extends Controller
         }
 
         $tot2 *= 100;
+        if (isset($tarnsaction_id) && $now < $createAt) {
+            $dto = new Dto([
+                'payment' => $payment,
+                'transaction_id' => $transaction->id,
+                'shop_id' => $shop_id,
+                'currency' => $currency,
+                'price' => $tot2]);
 
-        $dto = new Dto([
-            'payment' => $payment,
-            'transaction_id' => $transaction->id,
-            'shop_id' => $shop_id,
-            'currency' => $currency,
-            'price' => $tot2]);
+            $payResult = Payments::transactionCreate($dto);
 
-        $payResult = Payments::transactionCreate($dto);
-
-        if($payResult['error']['code']>0)
-        {
-            dd($payResult);
+            if ($payResult['error']['code'] > 0) {
+                dd($payResult);
+            }
         }
         return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 
