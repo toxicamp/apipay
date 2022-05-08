@@ -23,8 +23,7 @@
                 @else
                     <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
                     </div>
-                <div>
-
+                <div class="payment__bottom">
                     <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
                         class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Оплатить
