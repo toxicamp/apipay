@@ -60,6 +60,7 @@ class OrderController extends Controller
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
 
         $tarnsaction_id = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
+        dd($tarnsaction_id);
         if (isset($tarnsaction_id) && $now < $createAt){
             $transaction = Transactions::find($tarnsaction_id);
         }
