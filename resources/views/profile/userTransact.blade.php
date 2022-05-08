@@ -161,9 +161,9 @@
                         <div class="admin-table__two">
                             Дата
                         </div>
-                        <div class="admin-table__four">
-                            Аккаунт
-                        </div>
+{{--                        <div class="admin-table__four">--}}
+{{--                            Аккаунт--}}
+{{--                        </div>--}}
                         <div class="admin-table__five">
                             ПС
                         </div>
@@ -185,9 +185,10 @@
                         <div class="admin-table__two">
                             {{$item->created_at}}
                         </div>
-                        <div class="admin-table__four">
-                            {{auth()->user()->name}}
-                        </div>
+{{--                        <div class="admin-table__four">--}}
+{{--                            {{auth()->user()->name}}--}}
+{{--                        </div>--}}
+
                         <div class="admin-table__five">
                             -
                         </div>
@@ -195,10 +196,10 @@
                             {{$item->serv_percent}}
                         </div>
                         <div class="admin-table__seven">
-                            {{$item->total}} {{$item->currency}}
+                            {{$item->amount}} {{$item->currency}}
                         </div>
                         <div class="admin-table__eight">
-                            {{$item->amount}} {{$item->currency}}
+                            {{$item->total}} {{$item->currency}}
                         </div>
                         <div class="admin-table__nine">
                             @if($item->status == 'success')
