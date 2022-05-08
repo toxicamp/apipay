@@ -60,8 +60,7 @@ class OrderController extends Controller
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
 
         $tarnsaction_id = Session::get('transaction_id');
-        dd($tarnsaction_id, $now, $createAt);
-        if (isset($tarnsaction_id) && $now > $createAt){
+        if (isset($tarnsaction_id) && $now < $createAt){
             $transaction = Transactions::find($tarnsaction_id);
         }
 
@@ -85,7 +84,6 @@ class OrderController extends Controller
             ]);
 
             Session::put('transaction_id', $transaction->id);
-            dd( Session::get('transaction_id'));
         }
 
 
