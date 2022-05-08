@@ -193,7 +193,7 @@
 
                         </div>
                         <div class="admin-table__six">
-                            {{$item->payment}}
+                            <span>Card UAH</span>
                         </div>
                         <div class="admin-table__seven">
                             {{$item->amount}} {{$item->currency}}
@@ -211,10 +211,10 @@
                              @if($item->status == 'process')
                              <span class="status done">В обработке</span>
                              @endif
-                            <button class="admin-table__nine-btn">
-                                <img class="gear-img1" src="img/gear.png" alt="">
-                                <img class="gear-img2" src="img/gear-color.png" alt="">
-                            </button>
+{{--                            <button class="admin-table__nine-btn">--}}
+{{--                                <img class="gear-img1" src="img/gear.png" alt="">--}}
+{{--                                <img class="gear-img2" src="img/gear-color.png" alt="">--}}
+{{--                            </button>--}}
                             <div class="gear__content">
                                 @if($item->status == 'success')
                                 <p>Завершен</p>

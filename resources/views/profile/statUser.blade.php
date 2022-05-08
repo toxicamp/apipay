@@ -143,18 +143,18 @@
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
                             <span>{{auth()->user()->UAH}} UAH</span>
                         </div>
-                        <div class="turn-system__item">
-                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">
-                            <span>{{auth()->user()->RUB}} RUB</span>
-                        </div>
-                        <div class="turn-system__item">
-                            <img loading="lazy" src={{asset("img/turn-system__item--icon9.png")}} alt="img">
-                            <span>{{auth()->user()->USDT}} USDT</span>
-                        </div>
-                        <div class="turn-system__item">
-                            <img loading="lazy" src={{asset("img/turn-system__item--icon3.png")}} alt="img">
-                            <span>{{auth()->user()->BTC}} BTC  </span>
-                        </div>
+{{--                        <div class="turn-system__item">--}}
+{{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">--}}
+{{--                            <span>{{auth()->user()->RUB}} RUB</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="turn-system__item">--}}
+{{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon9.png")}} alt="img">--}}
+{{--                            <span>{{auth()->user()->USDT}} USDT</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="turn-system__item">--}}
+{{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon3.png")}} alt="img">--}}
+{{--                            <span>{{auth()->user()->BTC}} BTC  </span>--}}
+{{--                        </div>--}}
                     {{--                <div class="turn-system__item">--}}
                     {{--                    <img loading="lazy" src="img/turn-system__item--icon5.png" alt="img">--}}
                     {{--                    <span>1,255</span>--}}

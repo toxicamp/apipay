@@ -871,7 +871,7 @@ body.scroll-hide {
 }
 
 .status {
-  width: 75px;
+  width: 100px;
 }
 .status.done {
   color: #64af32;
@@ -1445,7 +1445,7 @@ body.scroll-hide {
   min-width: 700px;
 }
 .admin-table.user__table .admin-table__two {
-  width: 100px;
+  width: 140px;
     text-align: right;
 }
 
@@ -1897,8 +1897,8 @@ body.scroll-hide {
   text-align: center;
 }
 .admin-trans .admin-table__six {
-    width: 31px;
-    text-align: left;
+    width: 100px;
+    text-align: right;
 }
 .admin-trans .admin-table__seven {
   width: 140px;
@@ -1909,7 +1909,7 @@ body.scroll-hide {
   text-align: center;
 }
 .admin-trans .admin-table__nine {
-  width: 80px;
+    width: 110px;
   text-align: center;
 }
 .admin-trans .admin-table__nine.green-text {

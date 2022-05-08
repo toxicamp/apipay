@@ -12,9 +12,11 @@ use Illuminate\Http\Request;
 use App\Models\PaymentList;
 use App\Models\Settings;
 use App\Models\User;
+use Illuminate\Support\Facades\Cache;
 use Payments\Facades\PaymentsFacad as Payments;
 use Payments\Collection\Dto;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -52,30 +54,45 @@ class OrderController extends Controller
             abort('Привышение лимитов платежа!', 406);
         }
 
-
-
-        $transaction = Transactions::create([
-            'amount'=>$price,
-            'status'=>'process',
-            'currency'=>$currency,
-            'shop_id'=>$shop_id,
-            'payment'=>$payment,
-            'total'=>$tot2,
-            'pay_commission'=>$pay_sum,
-            'pay_percent'=>$pay->percent,
-            'pay_limit'=>$pay->limit,
-            'serv_commission'=>$pay->serv_commission,
-            'serv_percent'=>$pay->serv_percent,
-            'serv_limit'=>$pay->serv_limit
-
-
-            ]);
-        $transaction_id =$transaction->id;
-
         $createAtt = $paymForm->created_at->addMinutes(20);
 
         $now = Carbon::now()->timestamp;
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
+
+        $tarnsaction_id = Session::get('transaction_id');
+        if (isset($tarnsaction_id) && $now > $createAt){
+            $transaction = Transactions::find($tarnsaction_id);
+        }
+
+        else {
+
+            $transaction = Transactions::create([
+                'amount'=>$price,
+                'status'=>'process',
+                'currency'=>$currency,
+                'shop_id'=>$shop_id,
+                'payment'=>$payment,
+                'total'=>$tot2,
+                'pay_commission'=>$pay_sum,
+                'pay_percent'=>$pay->percent,
+                'pay_limit'=>$pay->limit,
+                'serv_commission'=>$pay->serv_commission,
+                'serv_percent'=>$pay->serv_percent,
+                'serv_limit'=>$pay->serv_limit
+
+
+            ]);
+
+            Session::put('transaction_id', $transaction->id);
+        }
+
+
+
+        $transaction_id =$transaction->id;
+
+
+
+
         if ($now > $createAt){
 
             $transaction->status='block';
