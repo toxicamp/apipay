@@ -190,7 +190,7 @@
 {{--                        </div>--}}
 
                         <div class="admin-table__five">
-                            -
+
                         </div>
                         <div class="admin-table__six">
                             {{$item->payment}}
