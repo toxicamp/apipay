@@ -13,7 +13,7 @@
         {{$user->UAH}} UAH
     </div>
     <div class="admin-table__four">
-        Оборот {{$user->UAH->UAH}} грн.
+        Оборот {{$user->UAH}} грн.
     </div>
     <div class="admin-table__five">
         <button id="{{$user->id}}" class="edit">
