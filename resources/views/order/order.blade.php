@@ -10,7 +10,8 @@
                 @if($payment == 'easypay')
                 <form id="form_pay_system3" action="{{'https://easypay.ua/ua/moneytransfer/transfer2wallet'}}" name="form_pay_system3" class="main-payment__box main-payment__box2"
                       action="/" method="get">
-                    <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span>
+                    <div class="payment-amount">
+                        <h2>Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$price }} {{$currency }}.</span></h2>
                     </div>
 {{--                    <div class="main-payment__item main-payment__item3">--}}
 {{--                        <p>Выбор валют</p>--}}
@@ -52,7 +53,7 @@
                         <span class="main-payment__line-red" id="payPolosa"></span>
                     </div>
                     <div class="main-payment__info">
-                        У вас есть <span class="main-payment__info-red"> У вас есть 20 мин </span> для оплаты счета
+                        У вас есть <span class="main-payment__info-red"> 20 мин </span> для оплаты счета
                     </div>
                     <div class="main-payment__info main-payment__info--two">
                         Статус счета: <img class="main-payment__info-img" src="img/circle.png" alt=""> <span
