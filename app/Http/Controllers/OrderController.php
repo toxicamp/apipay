@@ -111,10 +111,18 @@ class OrderController extends Controller
                 'price' => $tot2]);
 
             $payResult = Payments::transactionCreate($dto);
+            $transaction->pay_result = json_encode($payResult);
+            $transaction->save();
+
+
 
             if ($payResult['error']['code'] > 0) {
                 dd($payResult);
             }
+        }
+        else
+        {
+            $payResult = json_decode($transaction->pay_result, true);
         }
         return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 

@@ -35,7 +35,8 @@ class Transactions extends Model
         'payment',
         'point',
         'key',
-        'hash'
+        'hash',
+        'pay_result'
 
     ];
 }
