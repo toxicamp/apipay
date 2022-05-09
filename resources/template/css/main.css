@@ -3692,12 +3692,14 @@ body.scroll-hide {
 }
 
 .exchange__inner {
-  display: flex;
-  padding: 25px 35px 40px;
-  box-shadow: 0 2px 5px 1px rgba(8, 3, 0, 0.05);
-  border-radius: 2px;
-  background-color: #ffffff;
-  position: relative;
+    display: flex;
+    padding: 25px 35px 40px;
+    box-shadow: 0 2px 5px 1px rgb(8 3 0 / 5%);
+    border-radius: 2px;
+    background-color: #ffffff;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
 }
 .exchange__inner::before {
   content: "";

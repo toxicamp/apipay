@@ -3692,7 +3692,7 @@ body.scroll-hide {
 
 .exchange__inner {
     display: flex;
-    padding: 25px 152px 49px;
+    padding: 25px 35px 40px;
     box-shadow: 0 2px 5px 1px rgb(8 3 0 / 5%);
     border-radius: 2px;
     background-color: #ffffff;
