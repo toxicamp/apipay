@@ -206,7 +206,7 @@
                             <span class="status done">Выполнен</span>
                             @endif
                             @if($item->status == 'fail')
-                             <span class="status done"> <font color="red">Оплачен</font></span>
+                             <span class="status done"> <font color="red">Не выполнен</font></span>
                              @endif
                              @if($item->status == 'process')
                              <span class="status done">В обработке</span>
