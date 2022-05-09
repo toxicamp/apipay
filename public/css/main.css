@@ -3696,7 +3696,7 @@ body.scroll-hide {
   box-shadow: 0 2px 5px 1px rgba(8, 3, 0, 0.05);
   border-radius: 2px;
   background-color: #ffffff;
-  position: relative;
+    position: relative;
     flex-direction: column;
 }
 .exchange__inner::before {
