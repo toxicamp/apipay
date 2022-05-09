@@ -7,7 +7,7 @@
                     <h2 class="title fz18">Оплата не прошла!</h2>
                 </div>
                 <div>
-                <span><p class="gig">  <img src="{{asset('img/payFail.png')}}" alt="" ></p></span>
+                <span class="gig">  <img src="{{asset('img/payFail.png')}}" alt="" ></span>
             </div>
 
             <style> .gig {
