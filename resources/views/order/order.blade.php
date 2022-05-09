@@ -15,11 +15,13 @@
 
                     <input type="hidden" name="account" value="{{$shop_id}}">
                     <input type="hidden" name="amount" value="{{$price ?? ''}}">
+                </form>
+                <div>
                     <button onclick="use_online_pay('form_pay_system3','amount');"
                             class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
                         Отправить
                     </button>
-                </form>
+                </div>
             @else
                 <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum" id="payment-amount__sum">{{$total }} {{$currency }}.</span>
                 </div>
