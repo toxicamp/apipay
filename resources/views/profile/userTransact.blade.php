@@ -89,19 +89,19 @@
                 </div>
                 <div class="admin-trans__wrap">
                     <div class="admin-trans__filter">
-                        <div class="select-defolt">
-                            <select>
-                                <option value="">
-                                    ID
-                                </option>
-                                <option value="">
-                                   Дата
-                                </option>
-                                <option value="">
-                                    Аккаунт
-                                </option>
-                            </select>
-                        </div>
+{{--                        <div class="select-defolt">--}}
+{{--                            <select>--}}
+{{--                                <option value="">--}}
+{{--                                    ID--}}
+{{--                                </option>--}}
+{{--                                <option value="">--}}
+{{--                                   Дата--}}
+{{--                                </option>--}}
+{{--                                <option value="">--}}
+{{--                                    Аккаунт--}}
+{{--                                </option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <form class="search-block">
                             <input type="text" placeholder="Значения">
                             <button class="search-block__btn gradi-btn">Найти</button>
@@ -109,13 +109,16 @@
                         <div class="select-defolt all-type">
                             <select>
                                 <option value="">
-                                    Реквизиты
+                                    ID
                                 </option>
                                 <option value="">
-                                    сумма
+                                    Дата
                                 </option>
                                 <option value="">
-                                    Все типы
+                                    Аккаунт
+                                </option>
+                                <option value="">
+                                   Сумма
                                 </option>
                             </select>
                         </div>
@@ -161,9 +164,6 @@
                         <div class="admin-table__two">
                             Дата
                         </div>
-{{--                        <div class="admin-table__four">--}}
-{{--                            Аккаунт--}}
-{{--                        </div>--}}
                         <div class="admin-table__five">
                             ПС
                         </div>
@@ -190,12 +190,12 @@
 {{--                        </div>--}}
 
                         <div class="admin-table__five">
-
-                        </div>
-                        <div class="admin-table__six">
                             <span>Card UAH</span>
                         </div>
-                        <div class="admin-table__seven">
+{{--                        <div class="admin-table__six">--}}
+{{--                           --}}
+{{--                        </div>--}}
+                        <div class="admin-table__six">
                             {{$item->amount}} {{$item->currency}}
                         </div>
                         <div class="admin-table__eight">
@@ -206,7 +206,7 @@
                             <span class="status done">Выполнен</span>
                             @endif
                             @if($item->status == 'fail')
-                             <span class="status done">Не выполнен</span>
+                             <span class="status done"> <font color="red">Оплачен</font></span>
                              @endif
                              @if($item->status == 'process')
                              <span class="status done">В обработке</span>

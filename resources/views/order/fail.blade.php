@@ -25,8 +25,7 @@
 {{--                    </div>--}}
                     <div class="main-payment__info main-payment__info--two">
                         Статус счета: <img class="main-payment__info-img" src="{{asset('img/circle.png')}}" alt=""> <span
-                            class="main-payment__info-red">не
-                                оплачен</span>
+                            class="main-payment__info-red"> <font color="red">Не оплачен</font></span>
                     </div>
                 </div>
             </div>
