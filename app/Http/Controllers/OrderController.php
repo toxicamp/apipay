@@ -123,7 +123,17 @@ class OrderController extends Controller
         }
 
 
+        $newSession = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
 
+        if (isset($newSession) && $now < $createAt) {
+
+
+        }
+        else
+        {
+
+
+        }
         return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 
     }

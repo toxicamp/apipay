@@ -3588,7 +3588,7 @@ body.scroll-hide {
 }
 
 .header {
-  height: 500px;
+  height: 200px;
   background-color: #222332;
 }
 
@@ -3697,6 +3697,7 @@ body.scroll-hide {
   border-radius: 2px;
   background-color: #ffffff;
   position: relative;
+    flex-direction: column;
 }
 .exchange__inner::before {
   content: "";

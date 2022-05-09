@@ -4,12 +4,20 @@
         <div class="container">
             <div class="exchange__inner main-payment">
                 <div class="main-payment__top">
-                    <h2 class="title fz18"></h2>
+                  <b>  <h2 class="title fz18">Время для оплаты данного счета истекло! </h2></b>
                 </div>
 
-                <p class="sub-text">Ссылка заблокирована</p>
+                <span><p class="fig">  <img src="img/payBlock.png" alt="" ></p></span>
+                <style> .fig {
+                        text-align: center; /* Выравнивание по центру */
+                    }</style>
+
+
+
+
+               <b><p class="sub-text">Ссылка заблокирована</p> </b>
                 <div class="main-payment__bottom">
-                    <div class="main-payment__line">
+{{--                    <div class="main-payment__line">--}}
                         <span class="main-payment__line-red"></span>
                     </div>
 {{--                    <div class="main-payment__info">--}}
