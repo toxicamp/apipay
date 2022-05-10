@@ -141,7 +141,10 @@
                     <div class="turn-system__wrap">
                         <div class="turn-system__item">
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
-                            <span> @foreach($trans as $item)  {{$item->sum('total')}} {{$item->currency}} @endforeach </span>
+                            <span> <?php
+                                $names = DB::table('transaction')->sum('total', 'currency');
+                                echo $names;
+                                ?> </span>
                         </div>
 {{--                        <div class="turn-system__item">--}}
 {{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">--}}
