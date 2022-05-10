@@ -125,6 +125,7 @@
         </div>
     </header>
 @section('page-body')
+    @foreach($trans as $item)
     <div class="page-body">
 
         <div class="page-content">
@@ -141,10 +142,7 @@
                     <div class="turn-system__wrap">
                         <div class="turn-system__item">
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
-                            <span> <?php
-                                $names = DB::table('transaction')->sum('total', 'currency');
-                                echo $names;
-                                ?> </span>
+                          <span>{{$item->total}} {{$item->currency}}</span>
                         </div>
 {{--                        <div class="turn-system__item">--}}
 {{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">--}}
@@ -358,6 +356,7 @@
             </div>
         </section>
     </div>
+        @endforeach
 @endsection
 
         <nav class="nav">
