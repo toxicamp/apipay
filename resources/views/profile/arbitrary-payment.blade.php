@@ -99,7 +99,7 @@
                             <div class="select__input">
                                 <input type="radio" value="{{$id}}" name="listpay">
                                 <img src="" alt="">
-                                <span class="select__item">{{$name}}</span>
+                                <span class="select__item">Card UAH</span>
                             </div>
                             @endforeach
                         </div>

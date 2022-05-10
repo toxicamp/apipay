@@ -9,6 +9,7 @@ use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends CabinetController
 {
@@ -218,6 +219,7 @@ class UserController extends CabinetController
     }
     public function userTransaction()
     {
+        $sort = DB::table('transaction')->orderBy('id', 'desc')->get();
         $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
         return view('profile.userTransact', ['trans'=>$transactions]);
     }
