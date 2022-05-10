@@ -91,39 +91,39 @@
                             <div class="fast-output-box">
                                 <div class="fast-output-select-wrap">
                                     <select class="fast-output-select">
-                                        <option value="">
-                                            Easypay
-                                        </option>
-                                        <option value="">
-                                            Global24
-                                        </option>
-                                        <option value="">
-                                            Cash-in
+{{--                                        <option value="">--}}
+{{--                                            Easypay--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            Global24--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            Cash-in--}}
                                         </option>
                                         <option value="">
                                             Visa/Mc
                                         </option>
-                                        <option value="">
-                                            Kuna
-                                        </option>
-                                        <option value="">
-                                            BTC
-                                        </option>
-                                        <option value="">
-                                            USDT
-                                        </option>
-                                        <option value="">
-                                            ETH
-                                        </option>
-                                        <option value="">
-                                            LTC
-                                        </option>
-                                        <option value="">
-                                            XRP
-                                        </option>
-                                        <option value="">
-                                            TRX
-                                        </option>
+{{--                                        <option value="">--}}
+{{--                                            Kuna--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            BTC--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            USDT--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            ETH--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            LTC--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            XRP--}}
+{{--                                        </option>--}}
+{{--                                        <option value="">--}}
+{{--                                            TRX--}}
+{{--                                        </option>--}}
                                     </select>
                                 </div>
                                 <input class="payment__input" type="text">

@@ -199,7 +199,7 @@
 {{--                            {{$item->amount}} {{$item->currency}}--}}
 {{--                        </div>--}}
                         <div class="admin-table__eight">
-                            {{$item->total}} {{$item->currency}}
+                            {{$item->total}}  {{$item->currency}}
                         </div>
                         <div class="admin-table__nine">
                             @if($item->status == 'success')
@@ -209,7 +209,7 @@
                              <span class="status done">Не выполнен</span>
                              @endif
                              @if($item->status == 'process')
-                             <span class="status done"><font color="orange">в обработке</font></span>
+                             <span class="status done"><font color="orange">На проверке</font></span>
                              @endif
 {{--                            <button class="admin-table__nine-btn">--}}
 {{--                                <img class="gear-img1" src="img/gear.png" alt="">--}}

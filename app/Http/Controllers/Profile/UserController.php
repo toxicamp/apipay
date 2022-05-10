@@ -172,7 +172,8 @@ class UserController extends CabinetController
 
     public function userPage()
     {
-        return view('profile.userPage');
+        $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
+        return view('profile.userPage', ['trans'=>$transactions]);
     }
 
     public function discount()
@@ -215,7 +216,8 @@ class UserController extends CabinetController
     }
     public function statUser()
     {
-        return view('profile.statUser');
+        $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
+        return view('profile.statUser', ['trans'=>$transactions, 'amount']);
     }
     public function userTransaction()
     {

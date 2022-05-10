@@ -141,7 +141,7 @@
                     <div class="turn-system__wrap">
                         <div class="turn-system__item">
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
-                            <span>{{auth()->user()->UAH}} UAH</span>
+                        @foreach($trans as $item)  <span>{{$item->sum('total')}} {{$item->currency}} </span> @endforeach
                         </div>
 {{--                        <div class="turn-system__item">--}}
 {{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">--}}
@@ -173,6 +173,7 @@
                     {{--                </div>--}}
                 </div>
             </div>
+
             <div class="chart">
                 <div class="chart__title title fz18">
                     Транзакции
