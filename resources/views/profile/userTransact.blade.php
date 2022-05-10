@@ -192,12 +192,12 @@
                         <div class="admin-table__five">
                             <span>Card UAH</span>
                         </div>
-{{--                        <div class="admin-table__six">--}}
-{{--                           --}}
-{{--                        </div>--}}
                         <div class="admin-table__six">
                             {{$item->amount}} {{$item->currency}}
                         </div>
+{{--                        <div class="admin-table__seven">--}}
+{{--                            {{$item->amount}} {{$item->currency}}--}}
+{{--                        </div>--}}
                         <div class="admin-table__eight">
                             {{$item->total}} {{$item->currency}}
                         </div>
@@ -206,10 +206,10 @@
                             <span class="status done">Выполнен</span>
                             @endif
                             @if($item->status == 'fail')
-                             <span class="status done"> <font color="red">Не выполнен</font></span>
+                             <span class="status done">Не выполнен</span>
                              @endif
                              @if($item->status == 'process')
-                             <span class="status done">В обработке</span>
+                             <span class="status done"><font color="orange">в обработке</font></span>
                              @endif
 {{--                            <button class="admin-table__nine-btn">--}}
 {{--                                <img class="gear-img1" src="img/gear.png" alt="">--}}
