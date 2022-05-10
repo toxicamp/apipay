@@ -142,7 +142,7 @@
                     <div class="turn-system__wrap">
                         <div class="turn-system__item">
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
-                          <span>{{$item->total}} {{$item->currency}}</span>
+                          <span>{{$item->sum('total')}} {{$item->currency}}</span>
                         </div>
 {{--                        <div class="turn-system__item">--}}
 {{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">--}}
