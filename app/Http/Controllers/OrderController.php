@@ -31,9 +31,11 @@ class OrderController extends Controller
 
         $paymForm = PaymentForm::where('user_id', $shop_id)->where('blocked', 0)->where('id', $url_id)->first();
 
+
         if(!$paymForm){
             return redirect(route('order_block'));
         }
+        $transaction = Transactions::find($paymForm->transaction_id);
 
 
         if($price < $pay->limit){
@@ -61,27 +63,26 @@ class OrderController extends Controller
         $now = Carbon::now()->timestamp;
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
 
-        if ($now < $createAt){
-            $transaction = Transactions::find($paymForm->transaction_id);
+        if ($now < $createAt && $transaction->status == 'process' && !is_null($transaction->pay_result)){
+
             $payResult = json_decode($transaction->pay_result, true);
         }
 
         else {
 
-            $transaction = Transactions::create([
-                'amount'=>$price,
-                'status'=>'process',
-                'currency'=>$currency,
-                'shop_id'=>$shop_id,
-                'payment'=>$payment,
-                'total'=>$total2,
-                'pay_commission'=>$pay_sum,
-                'pay_percent'=>$pay->percent,
-                'pay_limit'=>$pay->limit,
-                'serv_commission'=>$pay->serv_commission,
-                'serv_percent'=>$pay->serv_percent,
-                'serv_limit'=>$pay->serv_limit,
-            ]);
+                 $transaction->amount=$price;
+                 $transaction->status='process';
+                 $transaction->currency=$currency;
+                 $transaction->shop_id=$shop_id;
+                 $transaction->payment=$payment;
+                 $transaction->total=$total2;
+                 $transaction->pay_commission=$pay_sum;
+                 $transaction->pay_percent=$pay->percent;
+                 $transaction->pay_limit=$pay->limit;
+                 $transaction->serv_commission=$pay->serv_commission;
+                 $transaction->serv_percent=$pay->serv_percent;
+                 $transaction->serv_limit=$pay->serv_limit;
+                 $transaction->save();
 
 
             $dto = new Dto([
