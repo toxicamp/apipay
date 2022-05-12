@@ -172,7 +172,7 @@ class UserController extends CabinetController
 
     public function userPage()
     {
-        $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
+        $transactions = Transactions::where('uder_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
         return view('profile.userPage', ['trans'=>$transactions]);
     }
 
@@ -216,8 +216,9 @@ class UserController extends CabinetController
     }
     public function statUser()
     {
-        $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
-        return view('profile.statUser', ['trans'=>$transactions, 'amount']);
+        $transactions = Transactions::where('shop_id', auth()->user()->id)->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
+
+        return view('profile.statUser', ['trans'=>$transactions->groupBy('currency')]);
     }
     public function userTransaction()
     {

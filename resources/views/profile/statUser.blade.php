@@ -125,6 +125,7 @@
         </div>
     </header>
 @section('page-body')
+
     <div class="page-body">
 
         <div class="page-content">
@@ -138,40 +139,16 @@
                 </h2>
                 <p class="static__subtitle">сводная статистика</p>
                 <div class="turn-system">
+
+                    @foreach($trans as $currency=>$item)
                     <div class="turn-system__wrap">
                         <div class="turn-system__item">
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
-                            <span>{{auth()->user()->UAH}} UAH</span>
+                            <span>     {{$item->sum('amount')}} {{$currency}}  </span>
                         </div>
-{{--                        <div class="turn-system__item">--}}
-{{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon2.png")}} alt="img">--}}
-{{--                            <span>{{auth()->user()->RUB}} RUB</span>--}}
-{{--                        </div>--}}
-{{--                        <div class="turn-system__item">--}}
-{{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon9.png")}} alt="img">--}}
-{{--                            <span>{{auth()->user()->USDT}} USDT</span>--}}
-{{--                        </div>--}}
-{{--                        <div class="turn-system__item">--}}
-{{--                            <img loading="lazy" src={{asset("img/turn-system__item--icon3.png")}} alt="img">--}}
-{{--                            <span>{{auth()->user()->BTC}} BTC  </span>--}}
-{{--                        </div>--}}
-                    {{--                <div class="turn-system__item">--}}
-                    {{--                    <img loading="lazy" src="img/turn-system__item--icon5.png" alt="img">--}}
-                    {{--                    <span>1,255</span>--}}
-                    {{--                </div>--}}
-                    {{--                <div class="turn-system__item">--}}
-                    {{--                    <img loading="lazy" src="img/turn-system__item--icon6.png" alt="img">--}}
-                    {{--                    <span>0,751</span>--}}
-                    {{--                </div>--}}
-                    {{--                <div class="turn-system__item">--}}
-                    {{--                    <img loading="lazy" src="img/turn-system__item--icon7.png" alt="img">--}}
-                    {{--                    <span>0,355</span>--}}
-                    {{--                </div>--}}
-                    {{--                <div class="turn-system__item">--}}
-                    {{--                    <img loading="lazy" src="img/turn-system__item--icon8.png" alt="img">--}}
-                    {{--                    <span>1,001</span>--}}
-                    {{--                </div>--}}
-                </div>
+                    </div>
+                    @endforeach
+
             </div>
             <div class="chart">
                 <div class="chart__title title fz18">
@@ -182,6 +159,7 @@
                     <img loading="lazy" src="{{ asset('img/chart.png') }}" alt="img">
                 </div>
             </div>
+
             <div class="replenish">
                 <div class="replenish__wrapper">
                     <div class="replenish__block">
@@ -267,6 +245,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="replenish__block">
                         <div class="replenish__block--title title fz14">
                             Пополнение карты

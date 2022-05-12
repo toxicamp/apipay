@@ -26,7 +26,7 @@
   font-style: normal;
 }
 @font-face {
-  /*font-family: "Play";*/
+  font-family: "Play";
   src: url("../fonts/Play-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
@@ -356,6 +356,7 @@ body.scroll-hide {
 }
 
 .header-admin__logo {
+  font-family: "Play";
   font-size: 30px;
   font-weight: 400;
   text-transform: uppercase;
@@ -411,7 +412,7 @@ body.scroll-hide {
 }
 .header-admin__static--date span {
   color: #222332;
-  font-size: 0px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.4px;
   border-radius: 2px;
@@ -517,7 +518,7 @@ body.scroll-hide {
   flex-direction: column;
   min-width: 267px;
   width: 267px;
-  padding: 10px 17px;
+  padding: 10px 23px;
   border-right: 1px solid #e8e8e8;
   height: calc(100vh - 65px);
   background-color: #fff;
@@ -871,7 +872,7 @@ body.scroll-hide {
 }
 
 .status {
-  width: 100px;
+  width: 75px;
 }
 .status.done {
   color: #64af32;
@@ -1370,7 +1371,7 @@ body.scroll-hide {
   height: 38px;
   margin-top: 20px;
   transition: all 0.3s;
-  /*
+  /* 
   &:hover {
       transform: scale(1.05);
   } */
@@ -1445,8 +1446,7 @@ body.scroll-hide {
   min-width: 700px;
 }
 .admin-table.user__table .admin-table__two {
-  width: 140px;
-    text-align: right;
+  width: 100px;
 }
 
 .admin-table__row {
@@ -1847,7 +1847,7 @@ body.scroll-hide {
 }
 
 .admin-trans {
-  /*
+  /* 
   .select-defolt.cancellation {
       margin-left: 18px;
 
@@ -1893,12 +1893,12 @@ body.scroll-hide {
   text-align: center;
 }
 .admin-trans .admin-table__five {
-  width: 80px;
+  width: 40px;
   text-align: center;
 }
 .admin-trans .admin-table__six {
-    width: 100px;
-    text-align: right;
+  width: 100px;
+  text-align: center;
 }
 .admin-trans .admin-table__seven {
   width: 140px;
@@ -1909,7 +1909,7 @@ body.scroll-hide {
   text-align: center;
 }
 .admin-trans .admin-table__nine {
-    width: 110px;
+  width: 80px;
   text-align: center;
 }
 .admin-trans .admin-table__nine.green-text {
@@ -3588,7 +3588,7 @@ body.scroll-hide {
 }
 
 .header {
-  height: 200px;
+  height: 500px;
   background-color: #222332;
 }
 
@@ -3603,7 +3603,7 @@ body.scroll-hide {
 .header__logo {
   display: flex;
   align-items: center;
-  /*font-family: "Play";*/
+  font-family: "Play";
   font-size: 30px;
   font-weight: 400;
   text-transform: uppercase;
@@ -3691,14 +3691,12 @@ body.scroll-hide {
 }
 
 .exchange__inner {
-    display: flex;
-    padding: 25px 35px 40px;
-    box-shadow: 0 2px 5px 1px rgb(8 3 0 / 5%);
-    border-radius: 2px;
-    background-color: #ffffff;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  padding: 25px 35px 40px;
+  box-shadow: 0 2px 5px 1px rgba(8, 3, 0, 0.05);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
 }
 .exchange__inner::before {
   content: "";
@@ -4650,7 +4648,7 @@ body.scroll-hide {
 .main-payment__line-red {
   display: block;
   height: 100%;
-  width: 1%;
+  width: 15%;
   background-color: #ed2f61;
 }
 
@@ -5789,7 +5787,7 @@ body.scroll-hide {
     padding: 0;
   }
 
-  /*
+  /* 
   .modal-add {
       padding-top: 35px;
       margin: 0 -15px;

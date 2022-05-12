@@ -60,7 +60,7 @@
 
             return utc_timestamp;
         }
-        function blockBy(){
+        function blockBy(transaction_id){
 
             var createAtt = @php echo $createAtt->timestamp @endphp;
             var newDate = new Date(createAtt*1000);
@@ -72,7 +72,7 @@
                 payOrder.classList.add("disabled");
                 payOrder.setAttribute("disabled", "disabled");
 
-                document.location.href='/block';
+                document.location.href='/block/'+transaction_id;
             }
             var strNow = now+'';
             var strNewData = newDate.getTime()+'';
@@ -93,7 +93,7 @@
             load.style.width=40+'%';
         }, 20000);
         setTimeout(function(){
-            setInterval(function () {blockBy();}, 1000);
+            setInterval(function () {blockBy({{$transaction_id}});}, 1000);
         }, 30000);
 
         // setInterval(function () {blockBy();}, 1000);

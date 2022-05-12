@@ -81,7 +81,7 @@ class OrderController extends Controller
                 'pay_limit'=>$pay->limit,
                 'serv_commission'=>$pay->serv_commission,
                 'serv_percent'=>$pay->serv_percent,
-                'serv_limit'=>$pay->serv_limit
+                'serv_limit'=>$pay->serv_limit,
 
 
             ]);
@@ -125,15 +125,6 @@ class OrderController extends Controller
 
         $newSession = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
 
-        if (isset($newSession) && $now < $createAt) {
-
-
-        }
-        else
-        {
-
-
-        }
         return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt'));
 
     }
@@ -181,9 +172,19 @@ class OrderController extends Controller
         return view('order.fail', compact('transaction_id'));
     }
 
-    public function block()
+    public function block($transaction_id)
     {
-        return view('order.block');
+        $transac = Transactions::find($transaction_id);
+        $transac->status = 'block';
+        $transac->save();
+
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
+        $payInfo->transaction_id = $transaction_id;
+        $payInfo->status = 0;
+        $payInfo->blocked = 1;
+        $payInfo->save();
+
+        return view('order.block', compact('transac', 'payInfo'));
     }
 
     /**

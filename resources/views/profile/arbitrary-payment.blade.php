@@ -140,7 +140,16 @@
 {{--                        <span>{{$iten->name}}</span>--}}
 {{--                    </div>--}}
                     <div class="list__item arbitrary-payment__list4">
-                        <a href="{{$iten->url}}" target="_blank"> Ссылка для оплаты</a>
+                        @if($iten->blocked == 1)
+                            @if(!is_null($iten->transaction_id))
+                            <a href="/block/{{$iten->transaction_id}}" target="_blank"> Транзакция заблокирована</a>
+                            @else
+                                <a href="#" target="_blank"> Не обработанная</a>
+                            @endif
+                        @else
+                            <a href="{{$iten->url}}" target="_blank"> Ссылка для оплаты</a>
+                        @endif
+
                     </div>
                     <div class="list__item arbitrary-payment__list5">
                         <span>{{$iten->sum}} UAH</span>

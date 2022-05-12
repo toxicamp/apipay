@@ -20,6 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/vendor.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('custom/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('custom/animate.min.css') }}">
 
 </head>
 <body>
