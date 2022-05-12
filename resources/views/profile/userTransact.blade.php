@@ -103,34 +103,34 @@
 {{--                            </select>--}}
 {{--                        </div>--}}
                         <form class="search-block">
-                            <input type="text" placeholder="Значения">
+                            <input type="text" placeholder="Значения" name="value">
                             <button class="search-block__btn gradi-btn">Найти</button>
                         </form>
                         <div class="select-defolt all-type">
-                            <select>
-                                <option value="">
+                            <select name="select">
+                                <option value="id">
                                     ID
                                 </option>
-                                <option value="">
+                                <option value="created_at">
                                     Дата
                                 </option>
-                                <option value="">
+                                <option value="shop_id">
                                     Аккаунт
                                 </option>
-                                <option value="">
+                                <option value="total">
                                    Сумма
                                 </option>
                             </select>
                         </div>
                         <div class="select-defolt cancellation">
-                            <select>
-                                <option value="">
+                            <select name="status">
+                                <option value="process">
                                     Новый
                                 </option>
-                                <option value="">
+                                <option value="fail, block">
                                     Отмена
                                 </option>
-                                <option value="">
+                                <option value="success">
                                    Оплачен
                                 </option>
 
@@ -140,14 +140,14 @@
                     <form class="filter-wrapper" action="/">
                         <span class="filter__text">На странице:</span>
                         <div class="select-defolt cancellation">
-                            <select>
-                                <option value="">
+                            <select name="limit">
+                                <option value="10">
                                     10
                                 </option>
-                                <option value="">
+                                <option value="20">
                                     20
                                 </option>
-                                <option value="">
+                                <option value="30">
                                     30
                                 </option>
 

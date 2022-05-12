@@ -235,9 +235,24 @@ class UserController extends CabinetController
 
         return view('profile.statUser', ['trans'=>$transactions->groupBy('currency')]);
     }
-    public function userTransaction()
+    public function userTransaction(Request $request)
     {
-        $transactions = Transactions::where('shop_id', auth()->id())->where('status', '!=', Transactions::BLOCK)->orderBy('id', 'desc')->get();
+        $build = Transactions::where('shop_id', auth()->id());
+
+        if ($request->has('select'))
+        {
+            $build->where($request->get('select'), $request->get('value'));
+        }
+        if ($request->has('status'))
+        {
+            $build->where('status',$request->get('status'));
+        }
+        if ($request->has('limit'))
+        {
+            $build->limit($request->get('limit'));
+        }
+
+        $transactions = $build->orderBy('id', 'desc')->get();
         return view('profile.userTransact', ['trans'=>$transactions]);
     }
     public function conclusionsCreate()
