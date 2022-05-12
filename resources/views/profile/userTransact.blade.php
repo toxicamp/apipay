@@ -88,6 +88,7 @@
                     <p class="admin-trans__subtitle">Найти транзакцию</p>
                 </div>
                 <div class="admin-trans__wrap">
+                    <form class="search-block">
                     <div class="admin-trans__filter">
 {{--                        <div class="select-defolt">--}}
 {{--                            <select>--}}
@@ -102,10 +103,10 @@
 {{--                                </option>--}}
 {{--                            </select>--}}
 {{--                        </div>--}}
-                        <form class="search-block">
+
                             <input type="text" placeholder="Значения" name="value">
                             <button class="search-block__btn gradi-btn">Найти</button>
-                        </form>
+
                         <div class="select-defolt all-type">
                             <select name="select">
                                 <option value="id">
@@ -137,7 +138,6 @@
                             </select>
                         </div>
                     </div>
-                    <form class="filter-wrapper" action="/">
                         <span class="filter__text">На странице:</span>
                         <div class="select-defolt cancellation">
                             <select name="limit">
