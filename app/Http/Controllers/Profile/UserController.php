@@ -251,8 +251,8 @@ class UserController extends CabinetController
         {
             $build->limit($request->get('limit'));
         }
-        
-        dd(vsprintf(str_replace(['?'], ['\'%s\''], $build->toSql()), $build->getBindings()));
+
+//        dd(vsprintf(str_replace(['?'], ['\'%s\''], $build->toSql()), $build->getBindings()));
 
         $transactions = $build->orderBy('id', 'desc')->get();
         return view('profile.userTransact', ['trans'=>$transactions]);
