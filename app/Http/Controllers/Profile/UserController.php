@@ -199,24 +199,7 @@ class UserController extends CabinetController
         $key = array_key_first($copyListPay);
         $payActual = array_shift($copyListPay);
         $paymList = PaymentForm::where('user_id', auth()->id())->orderBy('id', 'desc')->get();
-        foreach ($paymList as $item)
-        {
-            if (!is_null($item->transaction_id)){
-                $createAtt = $item->created_at->addMinutes(20);
 
-                $now = Carbon::now()->timestamp;
-                $createAt = $item->created_at->addMinutes(20)->timestamp;
-                if ($now < $createAt){
-                    $transaction = Transactions::find($item->transaction_id);
-                    $transaction->status = 'block';
-                    $transaction->save();
-                    $item->status = 0;
-                    $item->blocked = 1;
-                    $item->save();
-                }
-
-            }
-        }
 
         return view('profile.arbitrary-payment', compact('listPay','paymList'));
     }
