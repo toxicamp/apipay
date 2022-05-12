@@ -114,9 +114,9 @@
                                 <option value="created_at">
                                     Дата
                                 </option>
-                                <option value="shop_id">
-                                    Аккаунт
-                                </option>
+{{--                                <option value="shop_id">--}}
+{{--                                    Аккаунт--}}
+{{--                                </option>--}}
                                 <option value="total">
                                    Сумма
                                 </option>
