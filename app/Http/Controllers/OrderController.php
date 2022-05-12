@@ -25,11 +25,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($payment, $shop_id, $currency, $price)
+    public function index($payment, $shop_id, $currency, $price, $url_id)
     {
         $pay = PaymentList::where('name', $payment)->where('currency', $currency)->first();
 
-        $paymForm = PaymentForm::where('user_id', $shop_id)->where('blocked', 0)->orderBy('id', 'desc')->first();
+        $paymForm = PaymentForm::where('user_id', $shop_id)->where('blocked', 0)->where('id', $url_id)->first();
 
         if(!$paymForm){
             return redirect(route('order_block'));
@@ -61,9 +61,8 @@ class OrderController extends Controller
         $now = Carbon::now()->timestamp;
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
 
-        $tarnsaction_id = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
-        if (isset($tarnsaction_id) && $now < $createAt){
-            $transaction = Transactions::find($tarnsaction_id);
+        if ($now < $createAt){
+            $transaction = Transactions::find($paymForm->transaction_id);
             $payResult = json_decode($transaction->pay_result, true);
         }
 
@@ -82,11 +81,8 @@ class OrderController extends Controller
                 'serv_commission'=>$pay->serv_commission,
                 'serv_percent'=>$pay->serv_percent,
                 'serv_limit'=>$pay->serv_limit,
-
-
             ]);
 
-            Session::put('transaction_id_'. $shop_id.'_'.$paymForm->id, $transaction->id);
 
             $dto = new Dto([
                 'payment' => $payment,
@@ -135,8 +131,7 @@ class OrderController extends Controller
         $transac->status = 'success';
         $transac->save();
 
-        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
-        $payInfo->transaction_id = $transaction_id;
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->where('id', $transac->url_id)->first();
         $payInfo->status = 1;
         $payInfo->save();
 
@@ -149,8 +144,7 @@ class OrderController extends Controller
         $transac->status = 'success';
         $transac->save();
 
-        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
-        $payInfo->transaction_id = $transaction_id;
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->where('id', $transac->url_id)->first();
         $payInfo->status = 1;
         $payInfo->save();
 
@@ -163,8 +157,7 @@ class OrderController extends Controller
         $transac->status = 'fail';
         $transac->save();
 
-        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
-        $payInfo->transaction_id = $transaction_id;
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->where('id', $transac->url_id)->first();
         $payInfo->status = 0;
         $payInfo->blocked = 1;
         $payInfo->save();
@@ -178,8 +171,7 @@ class OrderController extends Controller
         $transac->status = 'block';
         $transac->save();
 
-        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->orderBy('id', 'desc')->first();
-        $payInfo->transaction_id = $transaction_id;
+        $payInfo = PaymentForm::where('user_id', $transac->shop_id)->where('id', $transac->url_id)->first();
         $payInfo->status = 0;
         $payInfo->blocked = 1;
         $payInfo->save();

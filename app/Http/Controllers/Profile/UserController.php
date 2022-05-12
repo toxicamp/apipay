@@ -223,14 +223,27 @@ class UserController extends CabinetController
 
     public function arbitraryPaymentSave(Request $request)
     {
+        $transaction = Transactions::create([
+            'amount'=>$request->get('payment'),
+            'status'=>'process',
+            'currency'=>'UAH',
+            'shop_id'=>auth()->user()->id,
+            'total'=>0,
+        ]);
+
        $paymList = PaymentList::find($request->get('listpay'));
-        PaymentForm::create([
+        $payForm = PaymentForm::create([
             'user_id'=>auth()->user()->id,
             'sum'=>$request->get('payment'),
             'payment'=>$paymList->name,
-            'url'=>env('APP_URL').'/form/'.$paymList->name.'/'.auth()->user()->id.'/UAH/'.$request->get('payment')
-
+            'transaction_id'=> $transaction->id
             ]);
+
+        $payForm->url = env('APP_URL').'/form/'.$paymList->name.'/'.auth()->user()->id.'/UAH/'.$request->get('payment').'/'.$payForm->id;
+        $payForm->save();
+        $transaction->url_id = $payForm->id;
+        $transaction->save();
+
         return redirect(route('profile_arbitraryPayment'));
     }
     public function statUser()
