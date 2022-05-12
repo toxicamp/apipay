@@ -147,7 +147,11 @@
                                 <a href="#" target="_blank"> Не обработанная</a>
                             @endif
                         @else
+                            @if($iten->status==1)
+                                <a href="/success/{{$iten->transaction_id}}" target="_blank"> Оплачен</a>
+                            @else
                             <a href="{{$iten->url}}" target="_blank"> Ссылка для оплаты</a>
+                            @endif
                         @endif
 
                     </div>
