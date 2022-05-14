@@ -142,42 +142,45 @@
                         </h2>
                         <div class="static__pay-turn">
                             <span>Оборот платежей</span>
-                            <b><span> Плетежей еще не было</span> </b>
+                            <b><span> <?php
+                                    $names = DB::table('transaction')->sum('total');
+                                    echo $names;
+                                    ?> UAH</span> </b>
                             <span class=pc-profile__sum"></span>
                         </div>
                         <div class="turn-system">
                             <div class="turn-system__title title fz16">
-                                Оборот платежей по платежным системам
+
                             </div>
                             <div class="turn-system__wrap">
                                 <div class="turn-system__item">
                                     <img loading="lazy" src="img/turn-system__item--icon.png" alt="img" title="UAH" >
                                     <span><?php
-                                        $names = DB::table('users')->sum('UAH');
+                                        $names = DB::table('transaction')->sum('total');
                                         echo $names;
                                         ?> UAH</span>
                                 </div>
-                                <div class="turn-system__item">
-                                    <img loading="lazy" src="img/turn-system__item--icon2.png" alt="img" title="RUB">
-                                    <span><?php
-                                        $names = DB::table('users')->sum('RUB');
-                                        echo $names;
-                                        ?> RUB</span>
-                                </div>
-                                <div class="turn-system__item">
-                                    <img loading="lazy" src="img/turn-system__item--icon3.png" alt="img" title="BTC">
-                                    <span><?php
-                                        $names = DB::table('users')->sum('BTC');
-                                        echo $names;
-                                        ?> BTC</span>
-                                </div>
-                                <div class="turn-system__item">
-                                    <img loading="lazy" src="img/turn-system__item--icon4.png" alt="img" title="USDT">
-                                    <span><?php
-                                        $names = DB::table('users')->sum('USDT');
-                                        echo $names;
-                                        ?> USDT</span>
-                                </div>
+{{--                                <div class="turn-system__item">--}}
+{{--                                    <img loading="lazy" src="img/turn-system__item--icon2.png" alt="img" title="RUB">--}}
+{{--                                    <span><?php--}}
+{{--                                        $names = DB::table('users')->sum('RUB');--}}
+{{--                                        echo $names;--}}
+{{--                                        ?> RUB</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="turn-system__item">--}}
+{{--                                    <img loading="lazy" src="img/turn-system__item--icon3.png" alt="img" title="BTC">--}}
+{{--                                    <span><?php--}}
+{{--                                        $names = DB::table('users')->sum('BTC');--}}
+{{--                                        echo $names;--}}
+{{--                                        ?> BTC</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="turn-system__item">--}}
+{{--                                    <img loading="lazy" src="img/turn-system__item--icon4.png" alt="img" title="USDT">--}}
+{{--                                    <span><?php--}}
+{{--                                        $names = DB::table('users')->sum('USDT');--}}
+{{--                                        echo $names;--}}
+{{--                                        ?> USDT</span>--}}
+{{--                                </div>--}}
                                 {{--                <div class="turn-system__item">--}}
                                 {{--                    <img loading="lazy" src="img/turn-system__item--icon5.png" alt="img">--}}
                                 {{--                    <span>1,255</span>--}}

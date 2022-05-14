@@ -149,7 +149,7 @@ class OrderController extends Controller
         $payInfo->status = 1;
         $payInfo->save();
 
-        return view('order.success', compact('transaction_id'));
+        return view('order.success', compact('transac', 'payInfo'));
     }
 
     public function fail($transaction_id)
@@ -163,7 +163,7 @@ class OrderController extends Controller
         $payInfo->blocked = 1;
         $payInfo->save();
 
-        return view('order.fail', compact('transaction_id'));
+        return view('order.fail', compact('transac', 'payInfo'));
     }
 
     public function block($transaction_id)
