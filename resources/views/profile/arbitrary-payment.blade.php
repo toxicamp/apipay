@@ -89,20 +89,28 @@
                 </div>
                 <div class="arbitrary-payment__item">
                     Выбор сервиса
-                    <div class="select arbitrary-payment__select">
-                        <div class="select__top">
-                            <img class="select__top-icon" src="" alt="">
-                            <span class="select__top-title">Выберите сервис</span>
-                        </div>
-                        <div class="select__content">
+{{--                    <div class="select arbitrary-payment__select">--}}
+{{--                        <div class="select__top">--}}
+{{--                            <img class="select__top-icon" src="" alt="">--}}
+{{--                            <span class="select__top-title">Выберите сервис</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="select__content">--}}
+{{--                            @foreach($listPay as $id=>$name)--}}
+{{--                            <div class="select__input">--}}
+{{--                                <input type="radio" value="{{$id}}" name="listpay">--}}
+{{--                                <span class="select__item">Card UAH</span>--}}
+{{--                            </div>--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                    <div class="select-defolt all-type">
+                        <select name="listpay">
                             @foreach($listPay as $id=>$name)
-                            <div class="select__input">
-                                <input type="radio" value="{{$id}}" name="listpay">
-                                <img src="" alt="">
-                                <span class="select__item">Card UAH</span>
-                            </div>
+                            <option value="{{$id}}">
+                                Card UAH
+                            </option>
                             @endforeach
-                        </div>
+                        </select>
                     </div>
                 </div>
                 <button class="arbitrary-payment__btn gradi-btn btn-hover2" onclick="">Получить ссылку</button>
