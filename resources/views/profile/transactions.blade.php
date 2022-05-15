@@ -91,70 +91,73 @@
                             <p class="admin-trans__subtitle">Найти транзакцию</p>
                         </div>
                         <div class="admin-trans__wrap">
-                            <div class="admin-trans__filter">
-                                <div class="select-defolt">
-                                    <select>
-                                        <option value="">
-                                            ID
-                                        </option>
-                                        <option value="">
-                                            Дата
-                                        </option>
-                                        <option value="">
-                                            Аккаунт
-                                        </option>
-                                    </select>
-                                </div>
-                                <form class="search-block">
-                                    <input type="text" placeholder="Значения">
-                                    <button class="search-block__btn gradi-btn">Найти</button>
-                                </form>
-                                <div class="select-defolt all-type">
-                                    <select>
-                                        <option value="">
-                                            Реквизиты
-                                        </option>
-                                        <option value="">
-                                            сумма
-                                        </option>
-                                        <option value="">
-                                            Все типы
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="select-defolt cancellation">
-                                    <select>
-                                        <option value="">
-                                            Новый
-                                        </option>
-                                        <option value="">
-                                            Отмена
-                                        </option>
-                                        <option value="">
-                                            Оплачен
-                                        </option>
+                            <form class="search-block">
+                                <div class="admin-trans__filter">
+                                    {{--                        <div class="select-defolt">--}}
+                                    {{--                            <select>--}}
+                                    {{--                                <option value="">--}}
+                                    {{--                                    ID--}}
+                                    {{--                                </option>--}}
+                                    {{--                                <option value="">--}}
+                                    {{--                                   Дата--}}
+                                    {{--                                </option>--}}
+                                    {{--                                <option value="">--}}
+                                    {{--                                    Аккаунт--}}
+                                    {{--                                </option>--}}
+                                    {{--                            </select>--}}
+                                    {{--                        </div>--}}
 
-                                    </select>
+                                    <input type="text" placeholder="Значения" name="value">
+                                    <button class="search-block__btn gradi-btn">Найти</button>
+
+                                    <div class="select-defolt all-type">
+                                        <select name="select">
+                                            <option value="id">
+                                                ID
+                                            </option>
+                                            <option value="created_at">
+                                                Дата
+                                            </option>
+                                            <option value="shop_id">
+                                                Аккаунт
+                                            </option>
+                                            <option value="total">
+                                                Сумма
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="select-defolt cancellation">
+                                        <select name="status">
+                                            <option value="process">
+                                                Новый
+                                            </option>
+                                            <option value="fail, block">
+                                                Отмена
+                                            </option>
+                                            <option value="success">
+                                                Оплачен
+                                            </option>
+
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <form class="filter-wrapper" action="/">
                                 <span class="filter__text">На странице:</span>
                                 <div class="select-defolt cancellation">
-                                    <select>
-                                        <option value="">
+                                    <select name="limit">
+                                        <option value="10">
                                             10
                                         </option>
-                                        <option value="">
+                                        <option value="20">
                                             20
                                         </option>
-                                        <option value="">
+                                        <option value="30">
                                             30
                                         </option>
 
                                     </select>
                                 </div>
                             </form>
-                            <button class="btn-add btn-open"></button>
+                            {{--                    <button class="btn-add btn-open"></button>--}}
                         </div>
                         <div class="admin-table user__table">
                             <div class="admin-table__row row-title">
@@ -167,12 +170,12 @@
                                 <div class="admin-table__four">
                                     Аккаунт
                                 </div>
-                                <div class="admin-table__three">
-                                    Реквизиты
-                                </div>
-                                <div class="admin-table__five">
-                                    ПС
-                                </div>
+{{--                                <div class="admin-table__three">--}}
+{{--                                    Реквизиты--}}
+{{--                                </div>--}}
+{{--                                <div class="admin-table__five">--}}
+{{--                                    ПС--}}
+{{--                                </div>--}}
                                 <div class="admin-table__six">
                                     Сумма
                                 </div>
@@ -183,46 +186,64 @@
                                     Статус
                                 </div>
                             </div>
+                            @foreach($users as $user)
+                                @foreach($user->trans as $currency=>$items)
+                                    @foreach($items as $item)
                             <div class="admin-table__row">
                                 <div class="admin-table__first">
-                                    54
+                                    {{$item->id}}
                                 </div>
                                 <div class="admin-table__two">
-                                    18.03.2022
+                                    {{$item->created_at}}
                                 </div>
                                 <div class="admin-table__four">
-                                    apipay
+                                    {{$user->name}}
                                 </div>
-                                <div class="admin-table__three">
-                                    4441 1144 5375 6574
-                                </div>
-                                <div class="admin-table__five">
-                                    -
-                                </div>
+{{--                                <div class="admin-table__three">--}}
+{{--                                    4441 1144 5375 6574--}}
+{{--                                </div>--}}
+{{--                                <div class="admin-table__five">--}}
+{{--                                    ---}}
+{{--                                </div>--}}
                                 <div class="admin-table__six">
-                                    125 грн
+                                    {{$item->amount}} {{$item->currency}}
                                 </div>
                                 <div class="admin-table__seven">
-                                    500 грн
+                                    {{$item->total}}  {{$item->currency}}
                                 </div>
-                                <div class="admin-table__eight">
-                                    375 грн
-                                </div>
+{{--                                <div class="admin-table__eight">--}}
+{{--                                    375 грн--}}
+{{--                                </div>--}}
                                 <div class="admin-table__nine">
-                                    <span class="status done">Выполнен</span>
-                                    <button class="admin-table__nine-btn">
-                                        <img class="gear-img1" src="img/gear.png" alt="">
-                                        <img class="gear-img2" src="img/gear-color.png" alt="">
-                                    </button>
+                                    @if($item->status == 'success')
+                                        <span class="status done">Выполнен</span>
+                                    @endif
+                                    @if($item->status == 'fail')
+                                        <span class="status done">Не выполнен</span>
+                                    @endif
+                                    @if($item->status == 'process')
+                                        <span class="status done"><font color="orange">На проверке</font></span>
+                                    @endif
+                                    {{--                            <button class="admin-table__nine-btn">--}}
+                                    {{--                                <img class="gear-img1" src="img/gear.png" alt="">--}}
+                                    {{--                                <img class="gear-img2" src="img/gear-color.png" alt="">--}}
+                                    {{--                            </button>--}}
                                     <div class="gear__content">
-                                        <p>Завершен</p>
-                                        <p>Отменен</p>
-                                        <p>Приостановлен</p>
-                                        <p>Возврат</p>
-                                        <p>Удален</p>
+                                        @if($item->status == 'success')
+                                            <p>Завершен</p>
+                                        @endif
+                                        @if($item->status == 'fail')
+                                            <p>Не выполнен</p>
+                                        @endif
+                                        @if($item->status == 'process')
+                                            <p>В обработке</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
+                                @endforeach
+                            @endforeach
+                            @endforeach
                             <button class="edit-user__btn">
                                 Добавить
                             </button>

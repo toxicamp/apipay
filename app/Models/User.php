@@ -33,10 +33,6 @@ class User extends Authenticatable
         'kuna',
         '4bil',
         'global',
-        'BTC',
-        'RUB',
-        'UAH',
-        'USDT',
         'role'
 
 
@@ -117,6 +113,11 @@ class User extends Authenticatable
     public function isUser(){
         return $this->role==self::USER;
 
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transactions::class, 'shop_id');
     }
 
 

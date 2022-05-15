@@ -9,12 +9,27 @@
     <div class="admin-table__two">
         {{$user->email}}
     </div>
-    <div class="admin-table__three">
-        @if($user->UAH =='' and is_null($user->UAH)) 0 @else {{$user->UAH}}  @endif UAH
-    </div>
-    <div class="admin-table__four">
-        Оборот @if($user->UAH =='' and is_null($user->UAH)) 0 @else {{$user->UAH}}  @endif грн.
-    </div>
+
+        @if(empty($user->trans->toArray()))
+        <div class="admin-table__three">0,00 UAH</div>
+        @else
+            @foreach($user->trans as $currency=>$item)
+                <div class="admin-table__three">{{$item->sum('amount')}} {{$currency}}</div>
+            @endforeach
+        @endif
+
+    @if(empty($user->trans->toArray()))
+        <div class="admin-table__four">
+            Оборот 0,00 UAH
+        </div>
+    @else
+        @foreach($user->trans as $currency=>$item)
+        <div class="admin-table__four">
+            Оборот {{$item->sum('total')}} {{$currency}}
+        </div>
+        @endforeach
+    @endif
+
     <div class="admin-table__five">
         <button id="{{$user->id}}" class="edit">
             <img loading="lazy" src="{{ asset('img/edit.png') }}" alt="img" title="редактировать">
@@ -63,30 +78,30 @@
             </div>
             <input type="text" placeholder="Новый пароль">
         </div>
-        <div class="edit-user__input">
-            <div class="edit-user__input--title">
-                <span>Баланс</span><span>UAH</span>
-            </div>
-            <input type="text"  name="UAH" value="{{$user->UAH}}">
-        </div>
-        <div class="edit-user__input">
-            <div class="edit-user__input--title">
-                <span>Баланс</span><span>RUB</span>
-            </div>
-            <input type="text"  name="RUB" value="{{$user->RUB}}">
-        </div>
-        <div class="edit-user__input">
-            <div class="edit-user__input--title">
-                <span>Баланс</span><span>BTC</span>
-            </div>
-            <input type="text"  name="BTC" value="{{$user->BTC}}">
-        </div>
-        <div class="edit-user__input">
-            <div class="edit-user__input--title">
-                <span>Баланс</span><span>USDT</span>
-            </div>
-            <input type="text"  name="USDT" value="{{$user->USDT}}">
-        </div>
+{{--        <div class="edit-user__input">--}}
+{{--            <div class="edit-user__input--title">--}}
+{{--                <span>Баланс</span><span>UAH</span>--}}
+{{--            </div>--}}
+{{--            <input type="text"  name="UAH" value="{{$user->UAH}}">--}}
+{{--        </div>--}}
+{{--        <div class="edit-user__input">--}}
+{{--            <div class="edit-user__input--title">--}}
+{{--                <span>Баланс</span><span>RUB</span>--}}
+{{--            </div>--}}
+{{--            <input type="text"  name="RUB" value="{{$user->RUB}}">--}}
+{{--        </div>--}}
+{{--        <div class="edit-user__input">--}}
+{{--            <div class="edit-user__input--title">--}}
+{{--                <span>Баланс</span><span>BTC</span>--}}
+{{--            </div>--}}
+{{--            <input type="text"  name="BTC" value="{{$user->BTC}}">--}}
+{{--        </div>--}}
+{{--        <div class="edit-user__input">--}}
+{{--            <div class="edit-user__input--title">--}}
+{{--                <span>Баланс</span><span>USDT</span>--}}
+{{--            </div>--}}
+{{--            <input type="text"  name="USDT" value="{{$user->USDT}}">--}}
+{{--        </div>--}}
         <div class="edit-user__input">
             <div class="edit-user__input--title">
                 <span>Логин реферала</span>

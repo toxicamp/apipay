@@ -140,14 +140,24 @@
                 <p class="static__subtitle">сводная статистика</p>
                 <div class="turn-system">
 
+                    @if(empty($trans->toArray()))
+                        <div class="turn-system__wrap">
+                            <div class="turn-system__item">
+                                <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
+                                <span>    0,00 UAH  </span>
+                            </div>
+                        </div>
+                    @else
+
                     @foreach($trans as $currency=>$item)
                     <div class="turn-system__wrap">
                         <div class="turn-system__item">
                             <img loading="lazy" src={{asset("img/turn-system__item--icon.png")}} alt="img">
-                            <span>     {{$item->sum('amount')}} {{$currency}}  </span>
+                            <span>     {{$item->sum('total')}} {{$currency}}  </span>
                         </div>
                     </div>
                     @endforeach
+                    @endif
 
             </div>
             <div class="chart">

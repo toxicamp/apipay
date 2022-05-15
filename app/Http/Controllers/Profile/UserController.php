@@ -78,13 +78,16 @@ class UserController extends CabinetController
             $registration_data["google2fa_secret"] = $user->google2fa_secret;
         }
 
+        $transactions = Transactions::where('shop_id', auth()->user()->id)->where('status', '=', 'success')->orderBy('id', 'desc')->get();
 
 
 
         return view('profile.me',[
             'user'=>$user,
             'QR_Image' => $QR_Image,
-            'secret' => $registration_data['google2fa_secret']
+            'trans'=>$transactions->groupBy('currency'),
+            'secret' => $registration_data['google2fa_secret'
+           ]
         ]);
     }
 
@@ -108,19 +111,11 @@ class UserController extends CabinetController
             'name'=>$request->post('name'),
             'email'=>$request->post('email'),
             'kuna'=>$request->post('kuna'),
-            'BTC'=>$request->post('BTC'),
-            'RUB'=>$request->post('RUB'),
-            'UAH'=>$request->post('UAH'),
-            'USDT'=>$request->post('USDT'),
         ]);
 
         $user_currency = User::query()->where('id',$request->post('id'));
         $user_currency->update(['4bil'=>$request->post('4bil'),
             'global'=>$request->post('global'),
-            'BTC'=>$request->post('BTC'),
-            'RUB'=>$request->post('RUB'),
-            'UAH'=>$request->post('UAH'),
-            'USDT'=>$request->post('USDT'),
         ]);
 
 
@@ -156,9 +151,32 @@ class UserController extends CabinetController
 
 
 
-    public function transactions()
+    public function transactions(Request $request)
     {
-        return view('profile.transactions');
+        $build = Transactions::select('*');
+
+        if ($request->has('shop_id')){
+            $build->where($request->get('shop_id'), $request->get('value'));
+        }
+        
+        if ($request->has('select'))
+        {
+            $build->where($request->get('select'), $request->get('value'));
+        }
+        if ($request->has('status'))
+        {
+            $build->where('status',$request->get('status'));
+        }
+        if ($request->has('limit'))
+        {
+            $build->limit($request->get('limit'));
+        }
+
+        $users = User::query()->with('transactions')->withTrashed()->orderByDesc('id')->paginate(10);
+        $users->each(function ($item, $key) {
+            $item->trans=$item->transactions->groupBy('currency');
+        });
+        return view('profile.transactions', compact('users'));
     }
 
     public function conclusions()

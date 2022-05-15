@@ -82,11 +82,19 @@
             <div class="pc-profile__wrapper">
                 <h2 class="pc-profile__title title fz18">Профиль</h2>
                 <div class="pc-profile__info">
-                    Ваш оборот
-                    <span class="pc-profile__sum">{{$user->UAH}}грн</span>
+                   <b> Ваш оборот </b>
+                    @if(empty($trans->toArray()))
+                        <span class="pc-profile__sum">0.00 UAH</span>
+                    @else
+                        @foreach($trans as $currency=>$item)
 
-                    ваша скидка
-                    <span class="pc-profile__precent gradi-btn">0,0%</span>
+                            <span class="pc-profile__sum">{{$item->sum('total')}} {{$cyrrency}}</span>
+                        @endforeach
+
+                    @endif
+{{--                    <br>--}}
+{{--                    ваша скидка--}}
+{{--                    <span class="pc-profile__precent gradi-btn">0,0%</span>--}}
                 </div>
             </div>
 

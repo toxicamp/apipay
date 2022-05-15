@@ -27,7 +27,10 @@ class ProfileController extends CabinetController
      */
     public function index()
     {
-        $users = User::query()->withTrashed()->orderByDesc('id')->paginate(10);
+        $users = User::query()->with('transactions')->withTrashed()->orderByDesc('id')->paginate(10);
+        $users->each(function ($item, $key) {
+            $item->trans=$item->transactions->groupBy('currency');
+        });
 
         return view('users.index', [
             'users'=>$users
