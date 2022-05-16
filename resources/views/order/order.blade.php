@@ -13,7 +13,7 @@
                 </div>
                 <p class="text--black">Вы будете перенаправлены на страницу оплаты</p>
                 <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
-                   class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
+                   class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2" style="text-align: center;padding-top: 6px;">
                     Оплатить
                 </a>
 {{--                <button onclick="use_online_pay('form_pay_system3','amount');"--}}
@@ -27,7 +27,7 @@
                     <span class="main-payment__line-red custom-progress-bar" id="progress-bar-exchange-timer"></span>
                 </div>
                 <div class="main-payment__info">
-                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 15.45 </span> для оплаты счета
+                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 20мин </span> для оплаты счета
                 </div>
                 <div class="main-payment__info main-payment__info--two">
                     Статус счета: <img class="main-payment__info-img custom-animation--rotate" src="{{asset('img/circle.png')}}" alt=""> <span
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <script>
         function getUtc(){
