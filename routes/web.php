@@ -87,7 +87,7 @@ Route::post('/2fa', function () {
     return redirect('/home');
 })->name('2fa')->middleware('2fa');
 
-Route::get('/form/{payment}/{shop_id}/{currency}/{price}/{url_id}', [App\Http\Controllers\OrderController::class, 'index'])->name('order.index');
+Route::get('/form/{payment}/{hash}', [App\Http\Controllers\OrderController::class, 'index'])->name('order.index');
 Route::post('/pay-cul', [\App\Http\Controllers\OrderController::class, 'payCul']);
 Route::get('/table-excel', [\App\Http\Controllers\Profile\TableExcelController::class, 'index']);
 Route::post('/table', [\App\Http\Controllers\Profile\TableExcelController::class, 'store'])->name('table_save_complete');

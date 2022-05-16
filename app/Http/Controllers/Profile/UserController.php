@@ -245,7 +245,14 @@ class UserController extends CabinetController
             'transaction_id'=> $transaction->id
             ]);
 
-        $payForm->url = env('APP_URL').'/form/'.$paymList->name.'/'.auth()->user()->id.'/UAH/'.$request->get('payment').'/'.$payForm->id;
+        $array = [
+            'user_id'=>auth()->user()->id,
+            'currency'=>'UAH',
+            'payment'=>$request->get('payment'),
+            'url_id'=>$payForm->id
+        ];
+        $hash = base64_encode(implode(',', $array));
+        $payForm->url = env('APP_URL').'/form/'.$paymList->name.'/'.$hash;
         $payForm->save();
         $transaction->url_id = $payForm->id;
         $transaction->save();
