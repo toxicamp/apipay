@@ -88,7 +88,7 @@
                     @else
                         @foreach($trans as $currency=>$item)
 
-                            <span class="pc-profile__sum">{{$item->sum('total')}} {{$cyrrency}}</span>
+                            <span class="pc-profile__sum">{{$item->sum('total')}} {{$currency}}</span>
                         @endforeach
 
                     @endif
