@@ -4,6 +4,38 @@
 
     <div class="container">
         <div class="exchange__inner main-payment">
+            <div class="main-payment__top doubled-title">
+                <h2 class="title fz18">Оплата счета <span>ID:15151</span></h2>
+                <h2 class="title fz18">Сумма оплаты <span>31 151 грн.</span></h2>
+            </div>
+            <form class="main-payment__box main-payment__box2" action="/">
+                <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum">31 151 грн.</span>
+                </div>
+                <p class="text--black">Вы будете перенаправлены на страницу оплаты</p>
+                <button onclick="use_online_pay('form_pay_system3','amount');"
+                        class="main-payment__btn main-payment__btn2 gradi-btn btn-hover2">
+                    Оплатить
+                </button>
+
+            </form>
+            <div class="main-payment__bottom">
+                <div class="main-payment__line">
+                    <span class="main-payment__line-red custom-progress-bar" id="progress-bar-exchange-timer"></span>
+                </div>
+                <div class="main-payment__info">
+                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 15.45 </span> для оплаты счета
+                </div>
+                <div class="main-payment__info main-payment__info--two">
+                    Статус счета: <img class="main-payment__info-img custom-animation--rotate" src="img/circle.png" alt=""> <span
+                        class="main-payment__info-red">не
+                                оплачен</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="exchange__inner main-payment">
             <div class="main-payment__top" class="title fz18">Оплата счета <span>ID:{{$transaction_id }} Сумма оплаты: {{($tot2 /100)}} {{$currency}}</span>
             </div>
             @if($payment == 'easypay')

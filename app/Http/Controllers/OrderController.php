@@ -35,7 +35,7 @@ class OrderController extends Controller
         $currency = $arr[1];
         $price = $arr[2];
         $url_id = $arr[3];
-            
+
         $pay = PaymentList::where('name', $payment)->where('currency', $currency)->first();
 
         $paymForm = PaymentForm::where('user_id', $shop_id)->where('blocked', 0)->where('id', $url_id)->first();
