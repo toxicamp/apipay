@@ -44,8 +44,7 @@ class UserController extends CabinetController
     public function index()
     {
 
-
-        return view('profile.index');
+        return redirect(route('profile_me'));
     }
 
     /**
