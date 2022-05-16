@@ -24,7 +24,7 @@
             </form>
             <div class="main-payment__bottom">
                 <div class="main-payment__line">
-                    <span class="main-payment__line-red custom-progress-bar" id="progress-bar-exchange-timer"></span>
+                    <span class="main-payment__line-red" id="payPolosa"></span>
                 </div>
                 <div class="main-payment__info">
                     У вас есть <span class="main-payment__info-red" id="spanTimer"> 20мин </span> для оплаты счета
