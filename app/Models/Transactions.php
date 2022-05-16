@@ -40,4 +40,8 @@ class Transactions extends Model
         'url_id'
 
     ];
+
+    public function user(){
+        return $this->belongsTo (User::class, 'shop_id', 'id');
+    }
 }

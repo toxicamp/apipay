@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Dlnsk\HierarchicalRBAC\HRBACServiceProvider::class,
+        PragmaRX\Google2FALaravel\ServiceProvider::class,
 
 
         /*
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'rbacClass' => App\Classes\Authorization\AuthorizationClass::class,
+        'Google2FA' => PragmaRX\Google2FALaravel\Facade::class,
 
     ],
     /**

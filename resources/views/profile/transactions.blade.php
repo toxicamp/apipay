@@ -186,9 +186,7 @@
                                     Статус
                                 </div>
                             </div>
-                            @foreach($users as $user)
-                                @foreach($user->trans as $currency=>$items)
-                                    @foreach($items as $item)
+                            @foreach($users as $item)
                             <div class="admin-table__row">
                                 <div class="admin-table__first">
                                     {{$item->id}}
@@ -197,7 +195,7 @@
                                     {{$item->created_at}}
                                 </div>
                                 <div class="admin-table__four">
-                                    {{$user->name}}
+                                    {{$item->user->name}}
                                 </div>
 {{--                                <div class="admin-table__three">--}}
 {{--                                    4441 1144 5375 6574--}}
@@ -242,8 +240,6 @@
                                 </div>
                             </div>
                                 @endforeach
-                            @endforeach
-                            @endforeach
                             <button class="edit-user__btn">
                                 Добавить
                             </button>

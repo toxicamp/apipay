@@ -153,12 +153,12 @@ class UserController extends CabinetController
 
     public function transactions(Request $request)
     {
-        $build = Transactions::select('*');
+        $build = Transactions::select('*')->with('user');
 
         if ($request->has('shop_id')){
             $build->where($request->get('shop_id'), $request->get('value'));
         }
-        
+
         if ($request->has('select'))
         {
             $build->where($request->get('select'), $request->get('value'));
@@ -169,13 +169,14 @@ class UserController extends CabinetController
         }
         if ($request->has('limit'))
         {
-            $build->limit($request->get('limit'));
+            $users = $build->paginate($request->get('limit'));
+        }
+        else
+        {
+            $users = $build->paginate(10);
         }
 
-        $users = User::query()->with('transactions')->withTrashed()->orderByDesc('id')->paginate(10);
-        $users->each(function ($item, $key) {
-            $item->trans=$item->transactions->groupBy('currency');
-        });
+
         return view('profile.transactions', compact('users'));
     }
 
