@@ -23,13 +23,14 @@ class CurlRequestTransformer implements RequestTransformerInterface
 
         $auth = $transactionRequest->getTransactionData();
         $fields = $transactionRequest->getResponseSignatureFieldsRequired();
+        if(isset($fields['external_transaction_id'])){
         $transact = Transactions::find($fields['external_transaction_id']);
         $transact->point = $auth['auth']['point'];
         $transact->key = $auth['auth']['key']
         ;
         $transact->hash = $auth['auth']['hash'];
         $transact->save();
-
+            }
         $request = $curl->newRequest(
             $endpoint->getMethod(),
             $endpoint->getUrl() . $transactionRequest->getSlug(),
