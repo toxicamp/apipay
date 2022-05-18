@@ -5,6 +5,7 @@ namespace Payments\Wizard;
 use Payments\Collection\Dto;
 use Payments\Credential\AccountSecretCredential;
 use Payments\Request\TransactionCreateRequest;
+use Payments\Request\TransactionFindRequest;
 
 class TransactionFindWizard extends RequestWizard
 {
