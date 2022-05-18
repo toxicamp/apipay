@@ -1371,7 +1371,7 @@ body.scroll-hide {
   height: 38px;
   margin-top: 20px;
   transition: all 0.3s;
-  /* 
+  /*
   &:hover {
       transform: scale(1.05);
   } */
@@ -1446,7 +1446,7 @@ body.scroll-hide {
   min-width: 700px;
 }
 .admin-table.user__table .admin-table__two {
-  width: 100px;
+  width: 130px;
 }
 
 .admin-table__row {
@@ -1847,7 +1847,7 @@ body.scroll-hide {
 }
 
 .admin-trans {
-  /* 
+  /*
   .select-defolt.cancellation {
       margin-left: 18px;
 
@@ -1893,7 +1893,7 @@ body.scroll-hide {
   text-align: center;
 }
 .admin-trans .admin-table__five {
-  width: 40px;
+  width: 80px;
   text-align: center;
 }
 .admin-trans .admin-table__six {
@@ -5787,7 +5787,7 @@ body.scroll-hide {
     padding: 0;
   }
 
-  /* 
+  /*
   .modal-add {
       padding-top: 35px;
       margin: 0 -15px;
