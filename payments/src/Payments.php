@@ -7,6 +7,7 @@ use Payments\Credential\AccountSecretCredential;
 use Payments\Collection\Dto;
 use Payments\Request\TransactionCreateRequest;
 use Payments\Wizard\TransactionCreateWizard;
+use Payments\Wizard\TransactionFindWizard;
 
 class Payments
 {
@@ -102,6 +103,9 @@ class Payments
 
     }
     public function transactionFind(Dto $dto){
-
+        return TransactionFindWizard::post($this->credentials)
+            ->setDto($dto)
+            ->getRequest()
+            ->send();
     }
 }
