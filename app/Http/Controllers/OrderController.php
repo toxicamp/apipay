@@ -59,7 +59,7 @@ class OrderController extends Controller
         $sum = $price * ($percent / 100);  //сумма процента внутренней системы
 
         $total = $price + $pay_sum + $sum + $pay->commission + $commission;
-        $tot2 = $price + $sum + $commission;
+        $tot2 = ($price - $sum) + $commission;
         $total2 = $tot2;
         $tot2 *= 100;
 
