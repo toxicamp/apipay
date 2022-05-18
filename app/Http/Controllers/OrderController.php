@@ -151,6 +151,10 @@ class OrderController extends Controller
     public function success($transaction_id)
     {
         $transac = Transactions::find($transaction_id);
+        if($transac->status != 'process'){
+
+           return redirect(route('order_fail'));
+        }
         $transac->status = 'success';
         $transac->save();
 
