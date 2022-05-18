@@ -23,30 +23,29 @@ $adminDomainSet = "admin.{$currentDomain}";
 Route::group(array('prefix' => 'cabinet'), function()
 {
 
-    Route::get('/', [App\Http\Controllers\Profile\UserController::class, 'index'])->name('profile_index');
+    Route::get('/', [App\Http\Controllers\Profile\UserController::class, 'index'])->name('profile_index')->middleware(['2fa']);
     Route::get('/me', [App\Http\Controllers\Profile\UserController::class, 'me'])->name('profile_me')->middleware(['2fa']);
     Route::put('/update', [App\Http\Controllers\Profile\UserController::class, 'update'])->name('profile_update');
     Route::put('/2fagoogle', [App\Http\Controllers\Profile\UserController::class, 'twoFaGoogle'])->name('profile_2fagoogle');
-    Route::get('/transactions', [App\Http\Controllers\Profile\UserController::class, 'transactions'])->name('profile_transactions');
-    Route::get('/conclusions', [App\Http\Controllers\Profile\UserController::class, 'conclusions'])->name('profile_conclusions');
-    Route::get('/statUser', [App\Http\Controllers\Profile\UserController::class, 'statUser'])->name('profile_statUser');
-    Route::get('/userTransact', [App\Http\Controllers\Profile\UserController::class, 'userTransaction'])->name('profile_userTransact');
-    Route::get('/conclusionsCreate', [App\Http\Controllers\Profile\UserController::class, 'conclusionsCreate'])->name('profile_conclusionsCreate');
-    Route::get('/conclusionsPays', [App\Http\Controllers\Profile\UserController::class, 'conclusionsPays'])->name('profile_conclusionsPays');
+    Route::get('/transactions', [App\Http\Controllers\Profile\UserController::class, 'transactions'])->name('profile_transactions')->middleware(['2fa']);
+    Route::get('/conclusions', [App\Http\Controllers\Profile\UserController::class, 'conclusions'])->name('profile_conclusions')->middleware(['2fa']);
+    Route::get('/statUser', [App\Http\Controllers\Profile\UserController::class, 'statUser'])->name('profile_statUser')->middleware(['2fa']);
+    Route::get('/userTransact', [App\Http\Controllers\Profile\UserController::class, 'userTransaction'])->name('profile_userTransact')->middleware(['2fa']);
+    Route::get('/conclusionsCreate', [App\Http\Controllers\Profile\UserController::class, 'conclusionsCreate'])->name('profile_conclusionsCreate')->middleware(['2fa']);
+    Route::get('/conclusionsPays', [App\Http\Controllers\Profile\UserController::class, 'conclusionsPays'])->name('profile_conclusionsPays')->middleware(['2fa']);
 
-    Route::get('/sample', [App\Http\Controllers\Profile\UserController::class, 'sample'])->name('profile_sample');
-    Route::get('/discUser', [App\Http\Controllers\Profile\UserController::class, 'discUser'])->name('profile_discUser');
+    Route::get('/sample', [App\Http\Controllers\Profile\UserController::class, 'sample'])->name('profile_sample')->middleware(['2fa']);
+    Route::get('/discUser', [App\Http\Controllers\Profile\UserController::class, 'discUser'])->name('profile_discUser')->middleware(['2fa']);
     Route::get('/changePass', [App\Http\Controllers\Auth\ResetPasswordController::class, 'changePass'])->name('profile_changePass');
 
 
 
 
     Route::resource('/news', App\Http\Controllers\Profile\NewsController::class)->except([
-        'index'
-    ]);
-    Route::get('/api-document', [App\Http\Controllers\BaseController::class, 'apiDocument'])->name('apiDocument');
+        'index'])->middleware(['2fa']);
+    Route::get('/api-document', [App\Http\Controllers\BaseController::class, 'apiDocument'])->name('apiDocument')->middleware(['2fa']);
 
-    Route::get('/arbitrary-payment', [App\Http\Controllers\Profile\UserController::class, 'arbitraryPayment'])->name('profile_arbitraryPayment');
+    Route::get('/arbitrary-payment', [App\Http\Controllers\Profile\UserController::class, 'arbitraryPayment'])->name('profile_arbitraryPayment')->middleware(['2fa']);
     Route::post('/arbitrary-payment', [App\Http\Controllers\Profile\UserController::class, 'arbitraryPaymentSave'])->name('profile_arbitraryPaymentSave');
 
 });
