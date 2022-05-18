@@ -24,7 +24,7 @@ Route::group(array('prefix' => 'cabinet'), function()
 {
 
     Route::get('/', [App\Http\Controllers\Profile\UserController::class, 'index'])->name('profile_index');
-    Route::get('/me', [App\Http\Controllers\Profile\UserController::class, 'me'])->name('profile_me');//->middleware(['2fa']);
+    Route::get('/me', [App\Http\Controllers\Profile\UserController::class, 'me'])->name('profile_me')->middleware(['2fa']);
     Route::put('/update', [App\Http\Controllers\Profile\UserController::class, 'update'])->name('profile_update');
     Route::put('/2fagoogle', [App\Http\Controllers\Profile\UserController::class, 'twoFaGoogle'])->name('profile_2fagoogle');
     Route::get('/transactions', [App\Http\Controllers\Profile\UserController::class, 'transactions'])->name('profile_transactions');

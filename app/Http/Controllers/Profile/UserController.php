@@ -25,7 +25,6 @@ class UserController extends CabinetController
         }else{
             $this->middleware(['auth']);
         }
-dd(auth()->user());
 //        if (auth()->user()->is2Fa())
 //        {
 //            $this->middleware(['2fa']);
