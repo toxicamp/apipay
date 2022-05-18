@@ -37,7 +37,7 @@ class CurlRequestTransformer implements RequestTransformerInterface
             array_merge($auth, $fields),
             Request::ENCODING_JSON
         );
-dd($request);
+//dd($request);
         $response = $curl->sendRequest($request);
 //dd($response);
         return \json_decode($response->body, true);
