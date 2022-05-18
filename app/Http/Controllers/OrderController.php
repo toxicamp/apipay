@@ -156,6 +156,8 @@ class OrderController extends Controller
            return redirect(route('order_block'));
         }
 
+        request()->request->add('payment', 'settlepay');
+
         $dto = new Dto([
             'id' => $transac->id,
 ]);
