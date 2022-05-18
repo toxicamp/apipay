@@ -162,7 +162,9 @@ class OrderController extends Controller
             'id' => $transac->id,
 ]);
         $payResult = Payments::transactionFind($dto);
-dd($payResult);
+        if (isset($payResult ['error']) && isset($payResult ['error']['code']) && $payResult ['error']['code']>0){
+            return redirect(route('order_block'));
+        }
         $transac->status = 'success';
         $transac->save();
 
