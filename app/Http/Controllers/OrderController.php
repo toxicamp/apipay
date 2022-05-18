@@ -151,11 +151,16 @@ class OrderController extends Controller
     public function success($transaction_id)
     {
         $transac = Transactions::find($transaction_id);
-        dd($transac);
         if($transac->status != 'process'){
 
            return redirect(route('order_block'));
         }
+
+        $dto = new Dto([
+            'id' => $transac->id,
+]);
+        $payResult = Payments::transactionFind($dto);
+dd($payResult);
         $transac->status = 'success';
         $transac->save();
 
