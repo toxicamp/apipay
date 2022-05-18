@@ -13,7 +13,7 @@
         <div class="popup__wrapper">
             <span>ОТР код</span>
             <img class="popup__img" src="{{ asset('img/lock.png') }}" alt="img">
-            <input class="popup__input popup__input--password payment__input" id="one_time_password" type="" name="one_time_password">
+            <input class="popup__input popup__input--password payment__input" id="one_time_password" type="number" name="one_time_password">
         </div>
         <button type="submit" class="main__btn main__btn--header popup__btn">Войти</button>
     </form>
