@@ -220,7 +220,7 @@
                                 <p>Завершен</p>
                                 @endif
                                 @if($item->status == 'fail')
-                                <p>Не выполнен</p>
+                                <p>Не  выполнен</p>
                                  @endif
                                  @if($item->status == 'process')
                                  <p>В обработке</p>
