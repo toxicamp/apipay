@@ -71,7 +71,7 @@ abstract class ApiRequest implements RequestInterface
     {
 
         $paymentSlug = request()->get('payment');
-
+dd($paymentSlug);
         if (!$this->endpoint) {
             $className = '\Payments\Endpoint\Api'.ucfirst($paymentSlug).'Endpoint';
             $this->endpoint = new $className();
