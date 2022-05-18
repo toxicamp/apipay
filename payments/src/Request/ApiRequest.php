@@ -121,6 +121,7 @@ abstract class ApiRequest implements RequestInterface
         try {
             return $this->getTransformer()->transform($this);
         } catch (\Exception $e) {
+            dd($e->getTrace());
             throw new ApiException(new Reason(-1, $e->getMessage()));
         }
     }
