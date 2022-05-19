@@ -177,6 +177,7 @@
                             Статус
                         </div>
                     </div>
+                    {{dd(1111)}}
                     @foreach($trans as $item)
                     <div class="admin-table__row">
                         <div class="admin-table__first">
