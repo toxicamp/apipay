@@ -231,11 +231,14 @@
                                             <p>Завершен</p>
                                         @endif
                                         @if($item->status == 'fail')
-                                            <p>Не выполнен</p>
+                                            <p>Не оплачен</p>
                                         @endif
                                         @if($item->status == 'process')
                                             <p>В обработке</p>
                                         @endif
+                                            @if($item->status == 'block')
+                                                <p>Не выполнен</p>
+                                            @endif
                                     </div>
                                 </div>
                             </div>
