@@ -1446,7 +1446,7 @@ body.scroll-hide {
   min-width: 700px;
 }
 .admin-table.user__table .admin-table__two {
-  width: 100px;
+  width: 150px;
 }
 
 .admin-table__row {
@@ -1893,7 +1893,7 @@ body.scroll-hide {
   text-align: center;
 }
 .admin-trans .admin-table__five {
-  width: 40px;
+  width: 80px;
   text-align: center;
 }
 .admin-trans .admin-table__six {
