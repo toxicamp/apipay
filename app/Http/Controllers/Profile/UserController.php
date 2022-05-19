@@ -276,14 +276,19 @@ class UserController extends CabinetController
         {
             $build->where('status',$request->get('status'));
         }
+
+        $build->orderBy('id', 'desc');
+
         if ($request->has('limit'))
         {
-            $build->limit($request->get('limit'));
+            $transactions = $build->paginate($request->get('limit'));
+
         }
-
-//        dd(vsprintf(str_replace(['?'], ['\'%s\''], $build->toSql()), $build->getBindings()));
-
-        $transactions = $build->orderBy('id', 'desc')->get();
+        else
+        {
+            $transactions = $build->paginate(10);
+        }
+dd($transactions);
         return view('profile.userTransact', ['trans'=>$transactions]);
     }
     public function conclusionsCreate()
