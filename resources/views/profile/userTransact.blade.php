@@ -209,7 +209,7 @@
                              <span class="status done">Не оплачен</span>
                              @endif
                                 @if($item->status == 'block')
-                                    <span class="status done"><font color="red">отклонен</span>
+                                    <span class="status done"><font color="red">отклонен</font></span>
                                 @endif
                              @if($item->status == 'process')
                              <span class="status done"><font color="orange">На проверке</font></span>
