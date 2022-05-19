@@ -177,7 +177,6 @@
                             Статус
                         </div>
                     </div>
-                    {{dd(1111)}}
                     @foreach($trans as $item)
                     <div class="admin-table__row">
                         <div class="admin-table__first">
@@ -207,8 +206,11 @@
                             <span class="status done">Выполнен</span>
                             @endif
                             @if($item->status == 'fail')
-                             <span class="status done">Не выполнен</span>
+                             <span class="status done">Не оплачен</span>
                              @endif
+                                @if($item->status == 'block')
+                                    <span class="status done">Не выполнен</span>
+                                @endif
                              @if($item->status == 'process')
                              <span class="status done"><font color="orange">На проверке</font></span>
                              @endif
