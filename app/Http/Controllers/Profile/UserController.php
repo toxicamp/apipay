@@ -288,7 +288,6 @@ class UserController extends CabinetController
         {
             $transactions = $build->paginate(10);
         }
-dd($transactions);
         return view('profile.userTransact', ['trans'=>$transactions]);
     }
     public function conclusionsCreate()
