@@ -42,8 +42,10 @@ class UserController extends CabinetController
      */
     public function index()
     {
+        $staticSum = Transactions::where('status','success')->where('currency', 'UAH')->sum('amount');
+        $allSum = Transactions::where('status','success')->where('currency', 'UAH')->sum('total');
 
-        return redirect(route('profile_me'));
+        return view('profile.index', compact('staticSum', 'allSum'));
     }
 
     /**
