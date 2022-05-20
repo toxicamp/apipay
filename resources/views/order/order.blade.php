@@ -65,8 +65,9 @@
             }
             var strNow = now+'';
             var strNewData = newDate.getTime()+'';
-            // var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
-            var percent= (now/newDate.getTime())*100;
+            console.log(strNow.substr(6), strNewData.substr(6));
+            var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
+            // var percent= (now/newDate.getTime())*100;
             console.log(percent);
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
