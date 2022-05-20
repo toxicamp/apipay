@@ -68,7 +68,6 @@ class OrderController extends Controller
         }
 
         $createAtt = $paymForm->created_at->addMinutes(20);
-dump($createAtt);
         $now = Carbon::now()->timestamp;
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
         $jsCreateAtt = $createAt*1000;
