@@ -53,6 +53,7 @@
             var createAtt = @php echo $jsCreateAtt@endphp;
             var newDate = new Date(createAtt);
             var now = getUtc();
+            var nowNew = newDate.getTime()-now;
             console.log(newDate.getTime()-now);
 
             if (now > newDate.getTime()){
@@ -67,7 +68,8 @@
             var strNewData = newDate.getTime()+'';
             // console.log(strNow.substr(6), strNewData.substr(6));
             // var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
-            var percent = newDate.getTime()*100/now;
+            // var percent = newDate.getTime()*100/now;
+            var percent = nowNew/120000;
             // console.log(percent);
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
