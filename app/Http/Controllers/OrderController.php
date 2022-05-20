@@ -159,7 +159,7 @@ class OrderController extends Controller
         request()->request->add(['payment'=>'settlepay']);
 
         $dto = new Dto([
-//            'id' => $transac->id,
+            'id' => $transac->id,
 ]);
         $payResult = Payments::transactionFind($dto);
         dd($payResult);
