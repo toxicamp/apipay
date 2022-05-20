@@ -53,7 +53,7 @@
             var createAtt = @php echo $jsCreateAtt@endphp;
             var newDate = new Date(createAtt);
             var now = getUtc();
-            console.log(now);
+            console.log(now, newDate.getTime());
 
             if (now > newDate.getTime()){
 
