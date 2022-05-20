@@ -62,6 +62,7 @@ class OrderController extends Controller
         $tot2 = ($price - $sum) + $commission;
         $total2 = $tot2;
         $tot2 *= 100;
+        dd($total, $tot2);
 
         if ($pay->serv_limit != 0 && $pay->serv_limit < $price) {
             abort('Привышение лимитов платежа!', 406);
