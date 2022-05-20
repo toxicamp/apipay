@@ -4514,7 +4514,8 @@ body.scroll-hide {
 }
 
 .main-payment {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: -25%;
 }
 .main-payment::before {
   display: none;
