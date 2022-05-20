@@ -58,6 +58,6 @@ class TransactionFindRequest extends ApiRequest
     }
     public function getSlug()
     {
-        return '/transaction/find';
+        return '/transaction/info';
     }
 }
