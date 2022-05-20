@@ -69,8 +69,8 @@
             // console.log(strNow.substr(6), strNewData.substr(6));
             // var percent = parseInt(strNow.substr(6))/parseInt(strNewData.substr(6))*100;
             // var percent = newDate.getTime()*100/now;
-            // var percent = nowNew*100/1200000;
-            var percent = (nowNew/1200000)*100;
+            var testPerc = nowNew*100/1200000;
+            var percent = 1200000*(1200000/testPerc);
             console.log(percent);
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
