@@ -74,7 +74,8 @@ class OrderController extends Controller
         $jsCreateAtt = $createAtt->timestamp*1000.0000009394591;
         $jsCreateAtNot20 = $paymForm->created_at->timestamp*1000.0000009394591;
         $jsNow = $now*1000.0000009394591;
-        dump($jsCreateAtt, $jsCreateAtNot20, $jsNow);
+        $proc = $now*100/$createAt;
+        dump($jsCreateAtt, $jsCreateAtNot20, $jsNow, $proc);
 
         if ($now < $createAt && $transaction->status == 'process' && !is_null($transaction->pay_result)){
 
