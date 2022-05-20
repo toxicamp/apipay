@@ -155,17 +155,21 @@ class OrderController extends Controller
 
            return redirect(route('order_block', $transaction_id));
         }
+        if ($transac->status == 'process')
+        {
+            request()->request->add(['payment'=>'settlepay']);
 
-        request()->request->add(['payment'=>'settlepay']);
+            $dto = new Dto([
+                'id' => $transac->id,
+            ]);
+            $payResult = Payments::transactionFind($dto);
 
-        $dto = new Dto([
-            'id' => $transac->id,
-]);
-        $payResult = Payments::transactionFind($dto);
-        dd($payResult);
-        if (isset($payResult ['error']) && isset($payResult ['error']['code']) && $payResult ['error']['code']>0){
-            return redirect(route('order_fail', $transaction_id));
+            if (isset($payResult ['error']) && isset($payResult ['error']['code']) && $payResult ['error']['code']>0){
+                return redirect(route('order_fail', $transaction_id));
+            }
         }
+
+
         $transac->status = 'success';
         $transac->save();
 
