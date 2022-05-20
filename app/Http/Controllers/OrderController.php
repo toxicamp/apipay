@@ -151,7 +151,7 @@ class OrderController extends Controller
     public function success($transaction_id)
     {
         $transac = Transactions::find($transaction_id);
-        if($transac->status != 'process'){
+        if($transac->status != 'process' && $transac->status != 'success'){
 
            return redirect(route('order_block', $transaction_id));
         }
@@ -163,7 +163,7 @@ class OrderController extends Controller
 ]);
         $payResult = Payments::transactionFind($dto);
         if (isset($payResult ['error']) && isset($payResult ['error']['code']) && $payResult ['error']['code']>0){
-            return redirect(route('order_block', $transaction_id));
+            return redirect(route('order_fail', $transaction_id));
         }
         $transac->status = 'success';
         $transac->save();

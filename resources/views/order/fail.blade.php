@@ -8,7 +8,7 @@
                 <h2 class="title fz18">Сумма оплаты <span>{{$transac->total}} {{$transac->currency}}</span></h2>
             </div>
             <form class="main-payment__box main-payment__box2" action="/">
-                <div class="payment-amount nmar custom-text--large--red">Оплата не прошла!</span>
+                <div class="payment-amount nmar custom-text--large--red">Оплата не прошла! Ошибка транзакции!</span>
                 </div>
 
                 <div class="custom-icon--result">
