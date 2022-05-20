@@ -59,10 +59,9 @@ class OrderController extends Controller
         $sum = $price * ($percent / 100);  //сумма процента внутренней системы
 
         $total = ($price - $sum) + $pay_sum  + $pay->commission + $commission;
-        $tot2 = ($price - $sum) + $commission;
+        $tot2 = $price + $commission;
         $total2 = $tot2;
         $tot2 *= 100;
-        dd($total, $tot2);
 
         if ($pay->serv_limit != 0 && $pay->serv_limit < $price) {
             abort('Привышение лимитов платежа!', 406);
