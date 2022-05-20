@@ -6,7 +6,7 @@
         <div class="exchange__inner main-payment">
             <div class="main-payment__top doubled-title">
                 <h2 class="title fz18">Оплата счета <span>ID:{{$transaction_id }}</span></h2>
-                <h2 class="title fz18">Сумма оплаты <span>{{($tot2 /100)}} {{$currency}}</span></h2>
+{{--                <h2 class="title fz18">Сумма оплаты <span>{{($tot2 /100)}} {{$currency}}</span></h2>--}}
             </div>
             <form class="main-payment__box main-payment__box2" action="/">
                 <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum">{{$total }} {{$currency }}.</span>
