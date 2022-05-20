@@ -53,6 +53,7 @@
             var createAtt = @php echo $createAtt->timestamp @endphp;
             var newDate = new Date(createAtt*1000.0000009394591);
             var now = getUtc();
+            console.log(now);
 
             if (now > newDate.getTime()){
 
