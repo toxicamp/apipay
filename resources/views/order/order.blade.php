@@ -3,7 +3,7 @@
     @inject('carbon', 'Carbon\Carbon')
 
     <div class="container">
-        <div class="exchange__inner main-payment">
+        <div class="exchange__inner main-payment" style="margin-top: -25%">
             <div class="main-payment__top doubled-title">
                 <h2 class="title fz18">Оплата счета <span>ID:{{$transaction_id }}</span></h2>
 {{--                <h2 class="title fz18">Сумма оплаты <span>{{($tot2 /100)}} {{$currency}}</span></h2>--}}
