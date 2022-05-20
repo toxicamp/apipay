@@ -72,7 +72,9 @@ class OrderController extends Controller
         $now = Carbon::now()->timestamp;
         $createAt = $paymForm->created_at->addMinutes(20)->timestamp;
         $jsCreateAtt = $createAtt->timestamp*1000.0000009394591;
-        dump($now, $createAt, $createAt*1000.0000009394591);
+        $jsCreateAtNot20 = $paymForm->created_at->timestamp*1000.0000009394591;
+        $jsNow = $now*1000.0000009394591;
+        dump($jsCreateAtt, $jsCreateAtNot20, $jsNow);
 
         if ($now < $createAt && $transaction->status == 'process' && !is_null($transaction->pay_result)){
 
@@ -133,7 +135,7 @@ class OrderController extends Controller
 
         $newSession = Session::get('transaction_id_'. $shop_id.'_'.$paymForm->id);
 
-        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt', 'jsCreateAtt'));
+        return view('order.order', compact('payResult', 'transaction_id', 'price', 'currency', 'shop_id', 'payment', 'total', 'tot2','now', 'createAt', 'createAtt', 'jsCreateAtt', 'jsCreateAtNot20', 'jsNow'));
 
     }
 
