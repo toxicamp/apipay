@@ -51,6 +51,7 @@
         function blockBy(transaction_id){
 
             var createAtt = @php echo $createAtt->timestamp @endphp;
+            console.log(createAtt);
             var newDate = new Date(createAtt*1000);
             var now = getUtc();
 
@@ -72,19 +73,9 @@
 
         }
 
-        setTimeout(function(){
-            var load = document.getElementById('payPolosa');
-            load.style.width=30+'%';
-        }, 10000);
-        setTimeout(function(){
-            var load = document.getElementById('payPolosa');
-            load.style.width=40+'%';
-        }, 20000);
-        setTimeout(function(){
-            setInterval(function () {blockBy({{$transaction_id}});}, 1000);
-        }, 30000);
 
-        // setInterval(function () {blockBy();}, 1000);
+        setInterval(function () {blockBy();}, 1000);
+
     </script>
 @endsection
 
