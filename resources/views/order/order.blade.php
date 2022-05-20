@@ -51,7 +51,7 @@
         function blockBy(transaction_id){
 
             var createAtt = @php echo $createAtt->timestamp @endphp;
-            var newDate = new Date(createAtt*1000.0000009394591);
+            var newDate = new Date(createAtt*500.0000009394591);
             var now = getUtc();
 
             if (now > newDate.getTime()){
