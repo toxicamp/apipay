@@ -9,7 +9,7 @@
 {{--                <h2 class="title fz18">Сумма оплаты <span>{{($tot2 /100)}} {{$currency}}</span></h2>--}}
             </div>
             <form class="main-payment__box main-payment__box2" action="/">
-                <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum">{{$tot2 /100 }} {{$currency }}.</span>
+                <div class="payment-amount">Сумма платежа: <span class="payment-amount__sum">{{$total }} {{$currency }}.</span>
                 </div>
                 <p class="text--black">Вы будете перенаправлены на страницу оплаты</p>
                 <a href="{{$payResult['response']['result']['pay_url']}}" id="payOrder"
