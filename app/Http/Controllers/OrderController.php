@@ -58,7 +58,7 @@ class OrderController extends Controller
         $pay_sum = $price * ($pay->percent / 100);   //сумма комиссий платежки
         $sum = $price * ($percent / 100);  //сумма процента внутренней системы
 
-        $total = $price - $sum; //+ $pay_sum  + $pay->commission + $commission;
+        $total = ($price - $sum) + $pay_sum  + $pay->commission + $commission;
         $tot2 = $price + $commission;
         $total2 = $tot2;
         $tot2 *= 100;
@@ -87,7 +87,8 @@ class OrderController extends Controller
                  $transaction->currency=$currency;
                  $transaction->shop_id=$shop_id;
                  $transaction->payment=$payment;
-                 $transaction->total=$total2;
+                $transaction->total=$total;
+//                 $transaction->total=$total2;
                  $transaction->pay_commission=$pay_sum;
                  $transaction->pay_percent=$pay->percent;
                  $transaction->pay_limit=$pay->limit;
