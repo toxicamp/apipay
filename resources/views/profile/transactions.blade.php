@@ -243,9 +243,9 @@
                                 </div>
                             </div>
                                 @endforeach
-                            <button class="edit-user__btn">
-                                Добавить
-                            </button>
+{{--                            <button class="edit-user__btn">--}}
+{{--                                Добавить--}}
+{{--                            </button>--}}
 
             </div>
         @endif

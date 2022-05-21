@@ -163,6 +163,7 @@ class UserController extends CabinetController
         if ($request->has('shop_id')){
             $build->where($request->get('shop_id'), $request->get('value'));
         }
+        $build->orderBy('id', 'desc');
 
         if ($request->has('select'))
         {
