@@ -5,7 +5,7 @@
         <div class="exchange__inner main-payment" style="margin-top: -25%">
             <div class="main-payment__top doubled-title">
                 <h2 class="title fz18">Оплата счета <span>ID:{{$transac->id}}</span></h2>
-                <h2 class="title fz18">Сумма оплаты <span>{{$tot2 / 100 }} {{$transac->currency}}</span></h2>
+                <h2 class="title fz18">Сумма оплаты <span>{{$transac->total}} {{$transac->currency}}</span></h2>
             </div>
             <form class="main-payment__box main-payment__box2" action="/">
                 <div class="payment-amount nmar custom-text--large--red">Время для оплаты данного счёта истекло!</span>
