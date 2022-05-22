@@ -250,10 +250,11 @@
             </div>
                     </div>
                 </section>
+                <div class="pagination"> {{ $users->links() }}</div>
             </div>
         @endif
     @endsection
-                        <div class="pagination"> {{ $users->links() }}</div>
+
 
     <nav class="nav">
         <ul class="nav__list">
