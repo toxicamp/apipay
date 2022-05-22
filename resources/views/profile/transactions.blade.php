@@ -253,7 +253,7 @@
             </div>
         @endif
     @endsection
-{{--                        <div class="pagination"> {{ $users->links() }}</div>--}}
+                        <div class="pagination"> {{ $users->links() }}</div>
 
     <nav class="nav">
         <ul class="nav__list">
