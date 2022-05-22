@@ -58,7 +58,7 @@ Route::group(array('prefix' => 'admin'), function()
     Route::get('/discount', [App\Http\Controllers\Profile\UserController::class, 'discount'])->name('profile_discount');
     Route::get('/fast-output', [App\Http\Controllers\Profile\UserController::class, 'fastOutput'])->name('profile_fastOutput');
     Route::get('/user-page', [App\Http\Controllers\Profile\UserController::class, 'userPage'])->name('profile_userPage');
-
+    Route::post('/status-update', [App\Http\Controllers\Profile\UserController::class, 'statusTransactionUpdate'])->name('profile_statusUpdate');
     Route::resource('/users', App\Http\Controllers\Profile\ProfileController::class);
 
 

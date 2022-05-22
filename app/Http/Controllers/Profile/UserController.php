@@ -310,6 +310,16 @@ class UserController extends CabinetController
     {
         return view('profile.discUser');
     }
+    public function statusTransactionUpdate(Request $request)
+    {
+        $transaction_id = $request->get('id');
+        $status = $request->get('stat');
+dd($transaction_id, $status);
+        $statusTrans= Transactions::find($transaction_id);
+        $statusTrans->status = $status;
+        $statusTrans->save();
+
+    }
 //    public function changePass()
 //    {
 //        return view('profile.changePass');

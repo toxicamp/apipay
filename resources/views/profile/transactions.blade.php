@@ -217,29 +217,37 @@
                                         <span class="status done">Выполнен</span>
                                     @endif
                                     @if($item->status == 'fail')
-                                        <span class="status done">Не выполнен</span>
+                                        <span class="status done">Не оплачен</span>
                                     @endif
                                     @if($item->status == 'process')
                                         <span class="status done"><font color="orange">На проверке</font></span>
                                     @endif
-                                    {{--                            <button class="admin-table__nine-btn">--}}
-                                    {{--                                <img class="gear-img1" src="img/gear.png" alt="">--}}
-                                    {{--                                <img class="gear-img2" src="img/gear-color.png" alt="">--}}
-                                    {{--                            </button>--}}
-                                    <div class="gear__content">
-                                        @if($item->status == 'success')
-                                            <p>Завершен</p>
+                                        @if($item->status == 'block')
+                                            <p>Не выполнен</p>
                                         @endif
-                                        @if($item->status == 'fail')
-                                            <p>Не оплачен</p>
-                                        @endif
-                                        @if($item->status == 'process')
-                                            <p>В обработке</p>
-                                        @endif
-                                            @if($item->status == 'block')
-                                                <p>Не выполнен</p>
-                                            @endif
-                                    </div>
+                                        <button class="admin-table__nine-btn">
+                                            <img class="gear-img1" src="{{ asset('img/gear.png')}}" alt="">
+                                            <img class="gear-img2" src="{{ asset('img/gear-color.png')}}" alt="">
+                                        </button>
+                                        <div class="gear__content">
+                                            <p onclick="statusUpdate({{$item->id}}, 'success')">Выполнен</p>
+                                            <p onclick="statusUpdate({{$item->id}}, 'fail')">Не выполнен</p>
+                                            <p onclick="statusUpdate({{$item->id}}, 'block')">Заблокирован</p>
+                                        </div>
+{{--                                    <div class="gear__content">--}}
+{{--                                        @if($item->status == 'success')--}}
+{{--                                            <p>Завершен</p>--}}
+{{--                                        @endif--}}
+{{--                                        @if($item->status == 'fail')--}}
+{{--                                            <p>Не оплачен</p>--}}
+{{--                                        @endif--}}
+{{--                                        @if($item->status == 'process')--}}
+{{--                                            <p>В обработке</p>--}}
+{{--                                        @endif--}}
+{{--                                            @if($item->status == 'block')--}}
+{{--                                                <p>Не выполнен</p>--}}
+{{--                                            @endif--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                                 @endforeach
@@ -285,6 +293,18 @@
 </div>
 <script src="{{ asset('js/vendor.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script>
+    function statusUpdate(transaction_id, status){
+        $.ajax({
+            method: "POST",
+            url: "/admin/status-update",
+            data: { id: transaction_id, stat: status }
+        })
+            .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+            });
+    }
+</script>
 
 </body>
 
