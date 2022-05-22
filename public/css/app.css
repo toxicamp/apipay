@@ -4597,6 +4597,10 @@ input[type=button].btn-block {
   border-radius: 0.25rem;
 }
 
+.pagination .flex  {
+    display: none;
+}
+
 .page-link {
   position: relative;
   display: block;

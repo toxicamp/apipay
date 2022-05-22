@@ -174,6 +174,7 @@
 
             </div>
         </section>
+{{--        <div class="pagination"> {{ $paymList->links() }}</div>--}}
     </div>
 @endsection
 
