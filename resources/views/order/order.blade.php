@@ -84,7 +84,7 @@
 
         $(document).ready(function(){
 
-            let _seconds = 30; //Тут указать максимальную длительность таймера в секундах
+            let _seconds = 1200; //Тут указать максимальную длительность таймера в секундах
 
             let _total = _seconds;
             let _percent = 0;
