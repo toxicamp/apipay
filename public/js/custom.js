@@ -5,7 +5,7 @@ $(document).ready(function(){
     let _total = _seconds;
     let _percent = 0;
     let _timerMinutes = parseInt(_seconds)/20;
-    let _timerSeconds = parseInt(_seconds)-parseInt(_timerMinutes)*50;
+    let _timerSeconds = parseInt(_seconds);
     if(_timerSeconds<10)
     {
       _timerSeconds = '0' + _timerSeconds;
