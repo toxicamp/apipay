@@ -27,7 +27,7 @@
                     <span class="main-payment__line-red" id="payPolosa"></span>
                 </div>
                 <div class="main-payment__info">
-                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 20мин </span> для оплаты счета
+                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 30 </span> для оплаты счета
                 </div>
                 <div class="main-payment__info main-payment__info--two">
                     Статус счета: <img class="main-payment__info-img custom-animation--rotate" src="{{asset('img/circle.png')}}" alt=""> <span
@@ -81,6 +81,44 @@
 
         setInterval(function () {blockBy({{$transaction_id}});}, 1000);
 
+
+        $(document).ready(function(){
+
+            let _seconds = 30; //Тут указать максимальную длительность таймера в секундах
+
+            let _total = _seconds;
+            let _percent = 0;
+            let _timerMinutes = parseInt(_seconds)/60;
+            let _timerSeconds = parseInt(_seconds)-parseInt(_timerMinutes)*60;
+            if(_timerSeconds<10)
+            {
+                _timerSeconds = '0' + _timerSeconds;
+            }
+            let timerData = parseInt(_timerMinutes) + ':'+_timerSeconds;
+            $('#spanTimer').text(timerData);
+            var interval = null;
+            interval = setInterval(function()
+            { // запускаем интервал
+                if (_seconds > 0)
+                {
+                    _seconds--; // вычитаем 1
+                    _percent = 100 - (_seconds /  _total) * 100;
+                    _timerMinutes = parseInt(_seconds)/60;
+                    _timerSeconds = parseInt(_seconds)-parseInt(_timerMinutes)*60;
+                    if(_timerSeconds<10)
+                    {
+                        _timerSeconds = '0' + _timerSeconds;
+                    }
+                    timerData = parseInt(_timerMinutes) + ':'+_timerSeconds;
+                    $('#spanTimer').text(timerData);
+                    $('#progress-bar-exchange-timer').css("width", _percent + '%');
+                }
+                else
+                {
+                    clearInterval(interval); // очищаем интервал, чтобы он не продолжал работу при _Seconds = 0
+                }
+            }, 1000);
+        });
     </script>
 @endsection
 
