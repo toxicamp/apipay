@@ -5,7 +5,7 @@ $(document).ready(function(){
     let _total = _seconds;
     let _percent = 0;
     let _timerMinutes = parseInt(_seconds)/20;
-    let _timerSeconds = parseInt(_seconds)-parseInt(_timerMinutes)*60;
+    let _timerSeconds = parseInt(_seconds)-parseInt(_timerMinutes)*50;
     if(_timerSeconds<10)
     {
       _timerSeconds = '0' + _timerSeconds;
@@ -19,7 +19,7 @@ $(document).ready(function(){
       {
         _seconds--; // вычитаем 1
         _percent = 100 - (_seconds /  _total) * 100;
-        _timerMinutes = parseInt(_seconds)/60;
+        _timerMinutes = parseInt(_seconds)/120;
         _timerSeconds = parseInt(_seconds)-parseInt(_timerMinutes)*60;
         if(_timerSeconds<10)
         {
