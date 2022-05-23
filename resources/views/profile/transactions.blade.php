@@ -186,6 +186,7 @@
                                     Статус
                                 </div>
                             </div>
+                            @csrf
                             @foreach($users as $item)
                             <div class="admin-table__row">
                                 <div class="admin-table__first">
@@ -214,16 +215,16 @@
 {{--                                </div>--}}
                                 <div class="admin-table__nine">
                                     @if($item->status == 'success')
-                                        <span class="status done">Выполнен</span>
+                                        <span id="status_transaction_{{$item->id}}" class="status done">Выполнен</span>
                                     @endif
                                     @if($item->status == 'fail')
-                                        <span class="status done">Не оплачен</span>
+                                        <span id="status_transaction_{{$item->id}}" class="status done">Не оплачен</span>
                                     @endif
                                     @if($item->status == 'process')
-                                        <span class="status done"><font color="orange">На проверке</font></span>
+                                        <span id="status_transaction_{{$item->id}}" class="status done">На проверке</span>
                                     @endif
                                         @if($item->status == 'block')
-                                            <p>Не выполнен</p>
+                                            <span id="status_transaction_{{$item->id}}">Не выполнен</span>
                                         @endif
                                         <button class="admin-table__nine-btn">
                                             <img class="gear-img1" src="{{ asset('img/gear.png')}}" alt="">
@@ -231,8 +232,8 @@
                                         </button>
                                         <div class="gear__content">
                                             <p onclick="statusUpdate({{$item->id}}, 'success')">Выполнен</p>
-                                            <p onclick="statusUpdate({{$item->id}}, 'fail')">Не выполнен</p>
-                                            <p onclick="statusUpdate({{$item->id}}, 'block')">Заблокирован</p>
+                                            <p onclick="statusUpdate({{$item->id}}, 'fail')">Не оплачен</p>
+                                            <p onclick="statusUpdate({{$item->id}}, 'block')">Не выполнен</p>
                                         </div>
 {{--                                    <div class="gear__content">--}}
 {{--                                        @if($item->status == 'success')--}}
@@ -258,7 +259,7 @@
             </div>
                     </div>
                 </section>
-                <div class="pagination"> {{ $users->links() }}</div>
+                <div class="pagination"> {{ $users->links('vendor.pagination.custom') }}</div>
             </div>
         @endif
     @endsection
@@ -298,10 +299,10 @@
         $.ajax({
             method: "POST",
             url: "/admin/status-update",
-            data: { id: transaction_id, stat: status }
+            data: { id: transaction_id, stat: status, "_token": "{{ csrf_token() }}"}
         })
-            .done(function( msg ) {
-                alert( "Data Saved: " + msg );
+            .done(function( obj ) {
+                $('#status_transaction').text(obj.status);
             });
     }
 </script>

@@ -314,10 +314,17 @@ class UserController extends CabinetController
     {
         $transaction_id = $request->get('id');
         $status = $request->get('stat');
-dd($transaction_id, $status);
+
         $statusTrans= Transactions::find($transaction_id);
         $statusTrans->status = $status;
         $statusTrans->save();
+
+        $listStatus=[
+            'success'=>'Выполнен',
+            'fail'=>'Не оплачен',
+            'block'=>'Не выполнен'
+        ];
+        return ['status'=>$listStatus[$status]];
 
     }
 //    public function changePass()

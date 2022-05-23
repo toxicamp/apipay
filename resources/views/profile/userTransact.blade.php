@@ -238,7 +238,7 @@
                 </div>
                 </form>
         </section>
-        <div class="pagination"> {{ $trans->links() }}</div>
+        <div class="pagination"> {{ $trans->links('vendor.pagination.custom') }}</div>
 
 {{--        <ul class="pagination">--}}
 {{--            <li class="pagination__item active">--}}
