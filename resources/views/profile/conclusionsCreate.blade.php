@@ -40,7 +40,7 @@
         <div class="header-admin__static">
             <div class="header-title">
                 <span>Вывод</span>
-                <span>Собрать</span>
+                <span>Создать</span>
             </div>
             <img loading="lazy" src="{{ asset('img/calendar.png') }}" alt="img">
             <div class="header-admin__static--date">
