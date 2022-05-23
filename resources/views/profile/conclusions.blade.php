@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>История Вывода</title>
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -40,9 +42,8 @@
         </div>
         <div class="header-admin__static">
             <div class="header-title">
-                <span>Выводы</span>
-                <span>изменение
-                    статусов платежа</span>
+                <span>Вывод</span>
+                <span>История</span>
                 <span></span>
             </div>
             <img loading="lazy" src="{{ asset('img/calendar.png') }}" alt="img">
