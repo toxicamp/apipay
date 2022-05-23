@@ -48,7 +48,7 @@ class OrderController extends Controller
 
 
         if($price < $pay->limit){
-            throw new \Exception('Миннимальная сумма 5', 400);
+            throw new \Exception('Миннимальная сумма 100', 400);
         }
 
         $commission = $pay->serv_commission;
