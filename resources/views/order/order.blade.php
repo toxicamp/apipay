@@ -27,7 +27,7 @@
                     <span class="main-payment__line-red" id="payPolosa"></span>
                 </div>
                 <div class="main-payment__info">
-                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 30 </span> для оплаты счета
+                    У вас есть <span class="main-payment__info-red" id="spanTimer"> 15.45 </span> для оплаты счета
                 </div>
                 <div class="main-payment__info main-payment__info--two">
                     Статус счета: <img class="main-payment__info-img custom-animation--rotate" src="{{asset('img/circle.png')}}" alt=""> <span
