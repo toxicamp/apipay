@@ -2,17 +2,17 @@ $(document).ready(function(){
 
     let _seconds = 60; //Тут указать максимальную длительность таймера в секундах
 
-    // let _total = _seconds;
-    // let _percent = 0;
-    // let _timerMinutes = parseInt(_seconds)/20;
-    // let _timerSeconds = parseInt(_seconds);
-    // if(_timerSeconds<10)
-    // {
-    //   _timerSeconds = '0' + _timerSeconds;
-    // }
-    // let timerData = parseInt(_timerMinutes) + ':'+_timerSeconds;
-    // $('#spanTimer').text(timerData);
-    // var interval = null;
+    let _total = _seconds;
+    let _percent = 0;
+    let _timerMinutes = parseInt(_seconds)/20;
+    let _timerSeconds = parseInt(_seconds);
+    if(_timerSeconds<10)
+    {
+      _timerSeconds = '0' + _timerSeconds;
+    }
+    let timerData = parseInt(_timerMinutes) + ':'+_timerSeconds;
+    $('#spanTimer').text(timerData);
+    var interval = null;
     interval = setInterval(function()
     { // запускаем интервал
       if (_seconds > 0)
