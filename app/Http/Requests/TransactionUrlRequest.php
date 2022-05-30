@@ -24,7 +24,7 @@ class TransactionUrlRequest extends FormRequest
     public function rules()
     {
         return [
-            'payment' => 'min:99'
+            'payment' => 'numeric|min:99'
             ];
     }
 
