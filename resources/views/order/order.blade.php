@@ -56,11 +56,6 @@
             }, 1000);
         }
 
-        window.onload = function () {
-            var fiveMinutes = 60 * 20,
-                display = document.querySelector('#time');
-            startTimer(fiveMinutes, display);
-        };
     </script>
 
     <script>
@@ -100,6 +95,12 @@
             load.style.width=percent+'%';
 
 
+            window.onload = function () {
+                var timeLoad = createAtt - nowNew;
+                // var fiveMinutes = 60 * 20,
+                    display = document.querySelector('#time');
+                startTimer(timeLoad, display);
+            };
         }
 
 
