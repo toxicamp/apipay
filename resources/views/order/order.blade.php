@@ -56,6 +56,19 @@
             }, 1000);
         }
 
+        window.onload = function () {
+            var timeLeft = 60 * 20,
+                display = document.querySelector('#time');
+
+            var minutes = localStorage.getItem("minutes"); //read minutes
+            var seconds = localStorage.getItem("seconds"); //read seconds
+
+            if (minutes && seconds){
+                timeLeft = Number(minutes) * 60 + Number(seconds); //set time with val from storage
+            }
+
+            startTimer(timeLeft, display);
+        };
     </script>
 
     <script>
@@ -90,20 +103,11 @@
             // var percent = newDate.getTime()*100/now;
             var percent =nowNew*100/1200000;
             // var percent = (testPerc/100)*100;
-            // console.log(percent);
+            console.log(percent);
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
 
 
-            window.onload = function () {
-                var countDown = 60 * 20;
-                var oldVal = localStorage.getItem('time');
-                if (oldVal && oldVal > 0) {
-                    countDown = oldVal;
-                }
-                var display = document.querySelector('#time');
-                startTimer(countDown, display);
-            };
         }
 
 
