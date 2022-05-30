@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\CabinetController;
+use App\Http\Requests\TransactionUrlRequest;
 use App\Models\PaymentForm;
 use App\Models\PaymentList;
 use App\Models\Transactions;
@@ -229,7 +230,7 @@ class UserController extends CabinetController
         return view('profile.arbitrary-payment', compact('listPay','paymList'));
     }
 
-    public function arbitraryPaymentSave(Request $request)
+    public function arbitraryPaymentSave(TransactionUrlRequest $request)
     {
         $transaction = Transactions::create([
             'amount'=>$request->get('payment'),
