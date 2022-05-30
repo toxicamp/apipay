@@ -90,13 +90,13 @@
             // var percent = newDate.getTime()*100/now;
             var percent =nowNew*100/1200000;
             // var percent = (testPerc/100)*100;
-            console.log((createAtt - nowNew)/60);
+            // console.log(percent);
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
 
 
             window.onload = function () {
-                var timeLoad = (createAtt - nowNew)/60;
+                var timeLoad = (createAtt - nowNew)/60/60;
                 console.log(timeLoad);
                 var fiveMinutes = 60 * 20,
                     display = document.querySelector('#time');
