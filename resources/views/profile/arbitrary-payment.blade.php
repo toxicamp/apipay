@@ -81,6 +81,15 @@
     <div class="page-content">
         <section class="arbitrary-payment">
             <h2 class="arbitrary-payment__title title fz18">Создать произвольный платеж</h2>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="arbitrary-payment__form" action="{{route('profile_arbitraryPaymentSave')}}" method="POST" >
                 @csrf
                 <div class="arbitrary-payment__item arbitrary-payment__item1">
