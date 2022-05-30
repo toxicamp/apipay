@@ -90,7 +90,7 @@
             // var percent = newDate.getTime()*100/now;
             var percent =nowNew*100/1200000;
             // var percent = (testPerc/100)*100;
-            // console.log(percent);
+            console.log((createAtt - nowNew)/60);
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
 
