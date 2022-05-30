@@ -96,7 +96,9 @@
 
 
             window.onload = function () {
-                var timeLoad = createAtt / nowNew;
+                var timeLoad = createAtt - nowNew;
+                var  countdown = localStorage["currentTime"] || 22073600;
+
                 var fiveMinutes = 60 * 20,
                     display = document.querySelector('#time');
                 startTimer(fiveMinutes, display);
