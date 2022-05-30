@@ -97,7 +97,8 @@
 
             window.onload = function () {
                 var timeLoad = createAtt - nowNew;
-                // var fiveMinutes = 60 * 20,
+                console.log(timeLoad);
+                var fiveMinutes = 60 * 20,
                     display = document.querySelector('#time');
                 startTimer(timeLoad, display);
             };
