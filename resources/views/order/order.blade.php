@@ -96,11 +96,13 @@
 
 
             window.onload = function () {
-                var timeLoad = createAtt - nowNew;
-                localStorage.removeItem("blockBy");
-                var fiveMinutes = 60 * 20,
-                    display = document.querySelector('#time');
-                startTimer(fiveMinutes, display);
+                var countDown = 60 * 20;
+                var oldVal = localStorage.getItem('time');
+                if (oldVal && oldVal > 0) {
+                    countDown = oldVal;
+                }
+                var display = document.querySelector('#time');
+                startTimer(countDown, display);
             };
         }
 
