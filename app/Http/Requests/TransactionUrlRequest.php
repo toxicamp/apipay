@@ -27,4 +27,11 @@ class TransactionUrlRequest extends FormRequest
             'payment' => 'min:100'
             ];
     }
+
+    public function messages()
+    {
+        return [
+            'payment.min' => 'Сумма должна быть не меньше 100 UAH',
+        ];
+    }
 }
