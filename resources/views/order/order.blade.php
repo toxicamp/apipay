@@ -96,7 +96,7 @@
 
 
             window.onload = function () {
-                var timeLoad = (createAtt - nowNew)/60/60/60/60/60/60;
+                var timeLoad = (createAtt - nowNew)/60/60/60/60/60;
                 console.log(timeLoad);
                 var fiveMinutes = 60 * 20,
                     display = document.querySelector('#time');
