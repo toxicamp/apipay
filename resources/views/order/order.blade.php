@@ -56,7 +56,20 @@
             }, 1000);
         }
 
+        window.onload = function () {
+            var timeLeft = 60 * 20,
+                display = document.querySelector('#time');
 
+            var minutes = localStorage.getItem("minutes"); //read minutes
+            var seconds = localStorage.getItem("seconds"); //read seconds
+
+            if (minutes && seconds){
+                timeLeft = Number(minutes) * 60 + Number(seconds); //set time with val from storage
+            }
+
+            startTimer(timeLeft, display);
+            localStorage.setItem("time");
+        };
     </script>
 
     <script>
@@ -96,20 +109,6 @@
             load.style.width=percent+'%';
 
 
-            window.onload = function () {
-                var timeLeft = 60 * 20,
-                    display = document.querySelector('#time');
-
-                var minutes = localStorage.getItem("minutes"); //read minutes
-                var seconds = localStorage.getItem("seconds"); //read seconds
-
-                if (minutes && seconds){
-                    timeLeft = Number(minutes) * 60 + Number(seconds); //set time with val from storage
-                }
-
-                startTimer(timeLeft, display);
-                localStorage.setItem("time");
-            };
         }
 
 
