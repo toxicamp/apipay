@@ -108,6 +108,7 @@
                 }
 
                 startTimer(timeLeft, display);
+                localStorage.setItem("time");
             };
         }
 
