@@ -84,18 +84,6 @@
 
                 document.location.href='/block/'+transaction_id;
             }
-            var timeLeft = 60 * 20,
-                display = document.querySelector('#time');
-
-            var minutes = localStorage.getItem("minutes"); //read minutes
-            var seconds = localStorage.getItem("seconds"); //read seconds
-
-            if (minutes && seconds){
-                timeLeft = Number(minutes) * 60 + Number(seconds); //set time with val from storage
-            }
-
-            startTimer(timeLeft, display);
-
             var strNow = now+'';
             var strNewData = newDate.getTime()+'';
             // console.log(strNow.substr(6), strNewData.substr(6));
@@ -108,9 +96,20 @@
             load.style.width=percent+'%';
 
 
-            // window.onload = function () {
-            //
-            // };
+            window.onload = function () {
+                var timeLeft = 60 * 20,
+                    display = document.querySelector('#time');
+
+                var minutes = localStorage.getItem("minutes"); //read minutes
+                var seconds = localStorage.getItem("seconds"); //read seconds
+
+                if (minutes && seconds){
+                    timeLeft = Number(minutes) * 60 + Number(seconds); //set time with val from storage
+                }
+
+                startTimer(timeLeft, display);
+                var load = document.getElementById('time');
+            };
         }
 
 
