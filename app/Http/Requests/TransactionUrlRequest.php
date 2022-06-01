@@ -24,7 +24,8 @@ class TransactionUrlRequest extends FormRequest
     public function rules()
     {
         return [
-            'payment' => 'numeric|min:99'
+            'payment' => 'numeric|min:99|max:14000',
+
             ];
     }
 
@@ -32,6 +33,7 @@ class TransactionUrlRequest extends FormRequest
     {
         return [
             'payment.min' => 'Сумма должна быть не меньше 100 UAH',
+            'payment.max' => 'Сумма должна быть не больше 14000 UAH',
         ];
     }
 }
