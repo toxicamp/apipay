@@ -39,9 +39,22 @@
     </div>
 
     <script>
-        // function startTimer(duration, display, transaction_id) {
-        //
-        // }
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
 
 
     </script>
@@ -82,23 +95,8 @@
             var load = document.getElementById('payPolosa');
             load.style.width=percent+'%';
 
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10)
-                seconds = parseInt(timer % 60, 10);
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-
-
-            window.onload = function (transaction_id) {
+            window.onload = function () {
                 var timeLeft = 60 * 20,
                     display = document.querySelector('#time');
 
