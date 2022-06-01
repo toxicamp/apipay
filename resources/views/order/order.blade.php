@@ -96,7 +96,7 @@
             load.style.width=percent+'%';
 
 
-            window.onload = function () {
+            window.onload = function (transaction_id) {
                 var timeLeft = 60 * 20,
                     display = document.querySelector('#time');
 
@@ -108,7 +108,6 @@
                 }
 
                 startTimer(timeLeft, display);
-                var load = document.getElementById('time');
             };
         }
 
