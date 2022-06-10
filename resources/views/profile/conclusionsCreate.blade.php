@@ -170,19 +170,19 @@
                         </div>
                         <div class="select__content">
                             <div class="select__input">
-                                <input type="radio" name="select-radio">
+                                <input type="radio" name="valute" value="RUB">
                                 <span class="select__item">Рублевый счет</span>
                             </div>
                             <div class="select__input">
-                                <input type="radio" name="select-radio">
+                                <input type="radio" name="valute" value="USD">
                                 <span class="select__item">Долларовый счет</span>
                             </div>
                             <div class="select__input">
-                                <input type="radio" name="select-radio">
+                                <input type="radio" name="valute" value="UAH">
                                 <span class="select__item">Гривневый счет</span>
                             </div>
                             <div class="select__input">
-                                <input type="radio" name="select-radio">
+                                <input type="radio" name="valute" value="BTC">
                                 <span class="select__item">счет BTC</span>
                             </div>
                         </div>
@@ -201,24 +201,24 @@
                             </div>
                             <div class="select__content">
                                 <div class="select__input">
-                                    <input type="radio" name="select-radio">
+                                    <input type="radio" name="return_valute" value="RUB">
                                     <span class="select__item">RUB</span>
                                 </div>
                                 <div class="select__input">
-                                    <input type="radio" name="select-radio">
+                                    <input type="radio" name="return_valute" value="UAH">
                                     <span class="select__item">UAH</span>
                                 </div>
                                 <div class="select__input">
-                                    <input type="radio" name="select-radio">
-                                    <span class="select__item">USDT</span>
+                                    <input type="radio" name="return_valute" value="USD">
+                                    <span class="select__item">USD</span>
                                 </div>
                                 <div class="select__input">
-                                    <input type="radio" name="select-radio">
+                                    <input type="radio" name="return_valute" value="BTC">
                                     <span class="select__item">BTC</span>
                                 </div>
                             </div>
                         </div>
-                        <input class="input-output" type="text">
+                        <input class="input-output" type="text" name="return">
                     </div>
                 </div>
                 {{--<div class="output-create__item">
