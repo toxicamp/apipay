@@ -300,6 +300,11 @@ class UserController extends CabinetController
         return view('profile.conclusionsCreate');
     }
 
+    public function conclusionsStore(Request $request)
+    {
+        dd($request->all());
+    }
+
     public function conclusionsPays()
     {
         return view('profile.conclusionsPays');

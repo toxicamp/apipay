@@ -32,6 +32,7 @@ Route::group(array('prefix' => 'cabinet'), function()
     Route::get('/statUser', [App\Http\Controllers\Profile\UserController::class, 'statUser'])->name('profile_statUser')->middleware(['2fa']);
     Route::get('/userTransact', [App\Http\Controllers\Profile\UserController::class, 'userTransaction'])->name('profile_userTransact')->middleware(['2fa']);
     Route::get('/conclusionsCreate', [App\Http\Controllers\Profile\UserController::class, 'conclusionsCreate'])->name('profile_conclusionsCreate')->middleware(['2fa']);
+    Route::post('/conclusionsCreate', [App\Http\Controllers\Profile\UserController::class, 'conclusionsStore'])->name('profile_conclusionsStore')->middleware(['2fa']);
     Route::get('/conclusionsPays', [App\Http\Controllers\Profile\UserController::class, 'conclusionsPays'])->name('profile_conclusionsPays')->middleware(['2fa']);
 
     Route::get('/sample', [App\Http\Controllers\Profile\UserController::class, 'sample'])->name('profile_sample')->middleware(['2fa']);

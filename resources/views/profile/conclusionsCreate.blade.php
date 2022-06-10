@@ -161,7 +161,7 @@
     <div class="page-content">
         <section class="output-create">
             <h2 class="output-create__title title fz18">Вывод</h2>
-            <form class="page-content__box" action="/">
+            <form class="page-content__box" action="/conclusionsCreate" method="post">
                 <div class="output-create__item">
                     Способ оплаты
                     <div class="select">
@@ -221,14 +221,14 @@
                         <input class="input-output" type="text">
                     </div>
                 </div>
-                <div class="output-create__item">
+                {{--<div class="output-create__item">
                     Сумма с учетом комисии
                     <input class="payment__input output-create__input" name="commission" type="text">
                 </div>
                 <div class="output-create__item">
                     Курс обмена
                     <input class="payment__input output-create__input" name="commission" type="text">
-                </div>
+                </div>--}}
                 <div class="output-create__btn--wrap">
                     <button class="output-create__btn gradi-btn btn-hover2">Создать заявку</button>
                 </div>
